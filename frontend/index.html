@@ -239,7 +239,7 @@
 
 <!-- SHOP BY CATEGORY -->
 <section class="section">
-  <div class="container">
+  <div class="container" style="max-width: 1650px;">
     <div class="section-heading fade-in">
       <span class="label">Collections</span>
       <div class="amber-rule"></div>
@@ -376,17 +376,22 @@
       </div>
     </a>`).join('');
 
-  let isDown = false, startX, scrollLeft, isDragging = false;
+  let isDown = false, isHovered = false, startX, scrollLeft, isDragging = false;
+  let exactScroll = 0;
   function autoScroll() {
-    if (!isDown) {
-      cGrid.scrollLeft += 0.8;
-      if (cGrid.scrollLeft >= cGrid.scrollWidth / 2) cGrid.scrollLeft = 0;
+    if (!isDown && !isHovered) {
+      exactScroll += 0.3;
+      if (exactScroll >= cGrid.scrollWidth / 2) exactScroll = 0;
+      cGrid.scrollLeft = exactScroll;
+    } else {
+      exactScroll = cGrid.scrollLeft;
     }
     requestAnimationFrame(autoScroll);
   }
   requestAnimationFrame(autoScroll);
+  cGrid.addEventListener('mouseenter', () => { isHovered = true; });
   cGrid.addEventListener('mousedown', e => { isDown = true; isDragging = false; startX = e.pageX - cGrid.offsetLeft; scrollLeft = cGrid.scrollLeft; });
-  cGrid.addEventListener('mouseleave', () => { isDown = false; });
+  cGrid.addEventListener('mouseleave', () => { isDown = false; isHovered = false; });
   cGrid.addEventListener('mouseup', () => { isDown = false; });
   cGrid.addEventListener('mousemove', e => {
     if (!isDown) return;
