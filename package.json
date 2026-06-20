@@ -1,0 +1,10 @@
+{
+  "name": "ka-fragrances",
+  "version": "1.0.0",
+  "description": "K&A Fragrances — Full Stack Store",
+  "scripts": {
+    "dev": "cd backend && npm run dev",
+    "start": "cd backend && npm start",
+    "install:backend": "cd backend && npm install"
+  }
+}

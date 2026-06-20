@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>K&A Fragrances — Original Perfumes, Decants & Samples</title>
+  <meta name="description" content="Shop authentic Middle Eastern, Designer, and Niche fragrances. Decants from 2ml. Discover your signature scent with K&A Fragrances." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/images/ka logo.webp" alt="K&A Logo">
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">K&A Fragrances</span>
+        <span class="nav-logo-tagline">Original · Niche · Decant</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#topaz-flame">Topaz Flame</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+      </button>
+      <button class="nav-icon-btn" data-open-search id="search-btn" title="Search (Ctrl+K)">
+        <i class="fas fa-search"></i>
+      </button>
+      <button class="nav-icon-btn" data-open-cart id="cart-btn" title="Cart">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="badge cart-badge" style="display:none">0</span>
+      </button>
+      <button class="nav-hamburger" id="nav-hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- SEARCH MODAL -->
+<div class="search-modal" id="search-modal">
+  <div class="search-modal-inner">
+    <p class="search-modal-title">Search Fragrances</p>
+    <div class="search-input-wrap">
+      <input type="text" id="search-input" placeholder="Brand, name, notes…" autocomplete="off">
+      <button class="search-close-btn" data-close-search>✕</button>
+    </div>
+    <div id="search-results"></div>
+  </div>
+</div>
+
+<!-- CART SIDEBAR -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<aside class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <button class="cart-close" id="cart-close-btn">✕</button>
+  </div>
+  <div class="cart-empty" id="cart-empty">
+    <div class="cart-empty-icon">🛍️</div>
+    <p>Your cart is empty</p>
+    <a href="shop.html" class="btn btn-ghost" onclick="closeCart()">Browse Fragrances</a>
+  </div>
+  <div id="cart-content" style="display:none;flex:1;display:flex;flex-direction:column;">
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal">
+        <span class="cart-subtotal-label">Subtotal</span>
+        <span class="cart-subtotal-price" id="cart-total">A$0.00</span>
+      </div>
+      <a href="contact.html" class="btn btn-amber" style="width:100%;justify-content:center;" onclick="closeCart()">
+        Proceed to Order &nbsp;<i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</aside>
+
+<!-- SCROLL TO TOP -->
+<button class="scroll-top" id="scroll-top" title="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- WHATSAPP FLOAT -->
+<a class="whatsapp-float" href="https://wa.me/639XXXXXXXXX?text=Hi!%20I%27m%20interested%20in%20a%20fragrance."
+  target="_blank" rel="noopener" title="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg-slider">
+    <div class="hero-bg-slide slide-1 active"></div>
+    <div class="hero-bg-slide slide-2"></div>
+    <div class="hero-bg-slide slide-3"></div>
+  </div>
+  <div class="hero-slider-controls">
+    <button class="hero-slider-btn" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+    <button class="hero-slider-btn" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span class="label">K&A Fragrances</span>
+      </div>
+      <h1 class="hero-title">
+        Every Scent<br>
+        In Every<br>
+        <em>Measure.</em>
+      </h1>
+      <p class="hero-sub">
+        Original Middle Eastern, Designer &amp; Niche fragrances —
+        from a single 2ml decant to a full bottle. Try before you commit.
+      </p>
+      <div class="hero-actions">
+        <a href="shop.html" class="btn btn-amber">
+          Shop Fragrances <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="#topaz-flame" class="btn btn-ghost">
+          Topaz Flame
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track" id="marquee-track"></div>
+</div>
+
+<!-- CATEGORY FILTER BAR -->
+<div class="cat-bar-wrap">
+  <div class="container">
+    <div class="cat-bar" id="cat-bar">
+      <button class="cat-pill active" data-cat="all">All</button>
+      <button class="cat-pill" data-cat="middle-eastern">Middle Eastern</button>
+      <button class="cat-pill" data-cat="designer">Designer</button>
+      <button class="cat-pill" data-cat="niche">Niche</button>
+      <button class="cat-pill" data-cat="signature">Topaz Flame</button>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED PRODUCTS -->
+<section class="section" style="background:var(--surface);padding-top:4rem;padding-bottom:5rem;">
+  <div class="container">
+    <div class="section-heading fade-in">
+      <span class="label">Hand-Picked</span>
+      <div class="amber-rule"></div>
+      <h2>Featured Fragrances</h2>
+      <p>Best sellers and new arrivals loved by our community.</p>
+    </div>
+    <div class="products-grid" id="featured-grid"></div>
+    <div style="text-align:center;margin-top:3rem;" class="fade-in">
+      <a href="shop.html" class="btn btn-ghost">View All Fragrances <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- TOPAZ FLAME SHOWCASE -->
+<section class="tf-showcase" id="topaz-flame">
+  <div class="tf-particles">
+    <span class="tf-particle"></span><span class="tf-particle"></span>
+    <span class="tf-particle"></span><span class="tf-particle"></span>
+    <span class="tf-particle"></span><span class="tf-particle"></span>
+    <span class="tf-particle"></span><span class="tf-particle"></span>
+    <span class="tf-particle"></span><span class="tf-particle"></span>
+    <span class="tf-particle"></span><span class="tf-particle"></span>
+  </div>
+  <div class="container">
+    <div class="tf-grid">
+      <div class="tf-image-wrap fade-in">
+        <div class="tf-image-glow"></div>
+        <img src="assets/images/Topaz.webp" alt="Topaz Flame by K&A Fragrances" loading="lazy">
+      </div>
+      <div class="tf-content fade-in">
+        <div class="tf-tag">
+          <i class="fas fa-fire"></i>
+          <span>K&A Exclusive — Limited Release</span>
+        </div>
+        <h2 class="tf-title">Topaz Flame</h2>
+        <p class="tf-subtitle">by K&A Fragrances — Our Only In-House Creation</p>
+        <div class="tf-rating">
+          <span class="tf-stars">★★★★★</span>
+          <span class="tf-rating-text">5.0 · 136 reviews</span>
+        </div>
+        <p class="tf-desc">
+          A bold fusion of Middle Eastern opulence and modern elegance. Opens with bergamot,
+          cardamom, and pink pepper — deepens into caramel, lavender, and cinnamon — settles
+          into vanilla and amber woods. <strong style="color:var(--amber-200)">Crafted in-house. This is the scent that defines K&A.</strong>
+        </p>
+        <div class="tf-notes">
+          <div class="tf-note">
+            <div class="tf-note-label">Top Notes</div>
+            <div class="tf-note-value">Bergamot, Cardamom, Pink Pepper</div>
+          </div>
+          <div class="tf-note">
+            <div class="tf-note-label">Heart Notes</div>
+            <div class="tf-note-value">Caramel, Lavender, Cinnamon</div>
+          </div>
+          <div class="tf-note">
+            <div class="tf-note-label">Base Notes</div>
+            <div class="tf-note-value">Vanilla, Amber Woods</div>
+          </div>
+        </div>
+        <div class="tf-variants" id="tf-variants"></div>
+        <div class="tf-price-display" id="tf-price">A$2,999.00</div>
+        <div class="tf-price-label" id="tf-size-label">50ml Full Bottle</div>
+        <div class="tf-actions">
+          <button class="btn btn-amber" id="tf-add-cart" onclick="addTfToCart()">
+            <i class="fas fa-shopping-bag"></i> Add to Cart
+          </button>
+          <a href="https://wa.me/639XXXXXXXXX?text=Hi!%20I%27m%20interested%20in%20Topaz%20Flame!"
+            class="btn btn-ghost" target="_blank">
+            <i class="fab fa-whatsapp"></i> Ask About This
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="tf-divider"></div>
+
+<!-- SHOP BY CATEGORY -->
+<section class="section">
+  <div class="container">
+    <div class="section-heading fade-in">
+      <span class="label">Collections</span>
+      <div class="amber-rule"></div>
+      <h2>Shop by Category</h2>
+      <p>From rich Arabic ouds to rare niche artisans — find your world of scent.</p>
+    </div>
+    <div class="categories-wrap">
+      <div class="categories-grid" id="categories-grid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- DECANTS INFO -->
+<section class="section" style="background:var(--surface);padding-top:4rem;padding-bottom:5rem;">
+  <div class="container">
+    <div class="section-heading fade-in">
+      <span class="label">Try Before You Buy</span>
+      <div class="amber-rule"></div>
+      <h2>Decants &amp; Samples</h2>
+      <p>Every fragrance in our shop is available as a 2ml, 5ml, or 10ml decant — pick your size on any product.</p>
+    </div>
+    <div class="products-grid" id="decants-preview-grid"></div>
+    <div style="text-align:center;margin-top:3rem;" class="fade-in">
+      <a href="shop.html" class="btn btn-amber"><i class="fas fa-flask"></i> Shop All Fragrances</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">K&A Fragrances</div>
+        <div class="amber-rule"></div>
+        <p class="footer-brand-desc">Your trusted source for 100% original Middle Eastern, Designer, and Niche fragrances — plus affordable decants and samples.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/639XXXXXXXXX" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Shop</div>
+        <div class="footer-links">
+          <a href="shop.html?cat=middle-eastern">Middle Eastern</a>
+          <a href="shop.html?cat=designer">Designer</a>
+          <a href="shop.html?cat=niche">Niche</a>
+          <a href="shop.html">All Fragrances</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Information</div>
+        <div class="footer-links">
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="contact.html#faq">FAQ</a>
+          <a href="contact.html#authenticity">Authenticity Guarantee</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links">
+          <a href="https://wa.me/639XXXXXXXXX"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+          <a href="mailto:hello@kafragrances.com"><i class="fas fa-envelope"></i> Email Us</a>
+          <a href="#"><i class="fab fa-facebook-f"></i> Facebook Page</a>
+          <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 K&A Fragrances. All rights reserved.</p>
+      <p class="footer-copy">100% Original · Authentic Guarantee</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/script.js"></script>
+<script>
+  // ── HERO SLIDER ──
+  const heroSlides = document.querySelectorAll('.hero-bg-slide');
+  let currentSlide = 0;
+  let slideInterval = setInterval(nextSlide, 7000);
+  function showSlide(i) {
+    heroSlides.forEach(s => s.classList.remove('active'));
+    heroSlides[i].classList.add('active');
+  }
+  function nextSlide() { currentSlide = (currentSlide + 1) % heroSlides.length; showSlide(currentSlide); resetInterval(); }
+  function prevSlide() { currentSlide = (currentSlide - 1 + heroSlides.length) % heroSlides.length; showSlide(currentSlide); resetInterval(); }
+  function resetInterval() { clearInterval(slideInterval); slideInterval = setInterval(nextSlide, 7000); }
+
+  // ── MARQUEE ──
+  const marqueeItems = ['Designer Brands', 'Middle Eastern Oud', 'Niche Fragrances', 'Decants from 2ml', '100% Original', 'Best Price Guarantee', 'Topaz Flame'];
+  const track = document.getElementById('marquee-track');
+  const tripled = [...marqueeItems, ...marqueeItems, ...marqueeItems];
+  track.innerHTML = tripled.map(t => `<span class="marquee-item"><span class="marquee-dot"></span>${t}</span>`).join('');
+
+  // ── CATEGORY FILTER BAR ──
+  const catPills = document.querySelectorAll('.cat-pill');
+  let activeCat = 'all';
+  catPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      catPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      activeCat = pill.dataset.cat;
+      renderFeatured(activeCat);
+    });
+  });
+
+  // ── FEATURED PRODUCTS ──
+  function renderFeatured(cat) {
+    const fGrid = document.getElementById('featured-grid');
+    let products = cat === 'all'
+      ? KA_PRODUCTS.filter(p => p.badge === 'hot' || p.badge === 'new' || p.badge === 'signature').slice(0, 8)
+      : KA_PRODUCTS.filter(p => p.category === cat).slice(0, 8);
+    fGrid.innerHTML = products.map(p => buildProductCard(p)).join('');
+    observeFadeIns(fGrid);
+  }
+  renderFeatured('all');
+
+  // ── CATEGORIES CAROUSEL ──
+  const cGrid = document.getElementById('categories-grid');
+  const rouletteCats = [...KA_CATEGORIES, ...KA_CATEGORIES, ...KA_CATEGORIES, ...KA_CATEGORIES];
+  cGrid.innerHTML = rouletteCats.map(cat => `
+    <a href="shop.html?cat=${cat.id}" class="cat-card fade-in">
+      <img src="${cat.image}" alt="${cat.name}" loading="lazy" onerror="this.src='assets/images/decants.png'">
+      <div class="cat-card-body">
+        <div class="cat-name">${cat.name}</div>
+        <div class="cat-desc">${cat.description}</div>
+        <div class="cat-count">${cat.count} products</div>
+      </div>
+    </a>`).join('');
+
+  let isDown = false, startX, scrollLeft, isDragging = false;
+  function autoScroll() {
+    if (!isDown) {
+      cGrid.scrollLeft += 0.8;
+      if (cGrid.scrollLeft >= cGrid.scrollWidth / 2) cGrid.scrollLeft = 0;
+    }
+    requestAnimationFrame(autoScroll);
+  }
+  requestAnimationFrame(autoScroll);
+  cGrid.addEventListener('mousedown', e => { isDown = true; isDragging = false; startX = e.pageX - cGrid.offsetLeft; scrollLeft = cGrid.scrollLeft; });
+  cGrid.addEventListener('mouseleave', () => { isDown = false; });
+  cGrid.addEventListener('mouseup', () => { isDown = false; });
+  cGrid.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - cGrid.offsetLeft;
+    if (Math.abs(x - startX) > 5) isDragging = true;
+    cGrid.scrollLeft = scrollLeft - (x - startX) * 2;
+  });
+  cGrid.addEventListener('click', e => { if (isDragging) { e.preventDefault(); e.stopPropagation(); isDragging = false; } });
+
+  // ── DECANTS PREVIEW ──
+  const dGrid = document.getElementById('decants-preview-grid');
+  const decantPreview = KA_PRODUCTS.filter(p => p.category === 'niche').slice(0, 4);
+  dGrid.innerHTML = decantPreview.map(p => buildProductCard(p)).join('');
+  observeFadeIns(dGrid);
+
+  // ── TOPAZ FLAME SHOWCASE ──
+  const tf = KA_PRODUCTS.find(p => p.id === 0);
+  let tfSelectedIdx = 3; // default: 50ml
+  if (tf) {
+    const tfVariantsEl = document.getElementById('tf-variants');
+    tfVariantsEl.innerHTML = tf.variants.map((v, i) => `
+      <button class="tf-variant-pill ${i === tfSelectedIdx ? 'active' : ''}" onclick="selectTfVariant(${i}, this)">
+        <span class="tf-variant-size">${v.size}</span>
+        <span class="tf-variant-type">${v.type === 'decant' ? 'Decant' : 'Bottle'}</span>
+        <span class="tf-variant-price">A$${Number(v.price).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span>
+      </button>`).join('');
+    updateTfPrice();
+  }
+  function selectTfVariant(idx, btn) {
+    tfSelectedIdx = idx;
+    document.querySelectorAll('.tf-variant-pill').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    updateTfPrice();
+  }
+  function updateTfPrice() {
+    const v = tf.variants[tfSelectedIdx];
+    document.getElementById('tf-price').textContent = 'A$' + Number(v.price).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    document.getElementById('tf-size-label').textContent = `${v.size} ${v.type === 'decant' ? 'Decant' : 'Full Bottle'}`;
+  }
+  function addTfToCart() { Cart.add(tf, tfSelectedIdx); }
+
+  // ── FADE-IN OBSERVER ──
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+
+  // ── THEME ──
+  const savedTheme = localStorage.getItem('ka-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('ka-theme', next);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>K&A Fragrances — Project Progress Report</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+    :root {
+      --gold:         #ffffff;
+      --gold-dim:     #aaaaaa;
+      --black:        #0a0a0a;
+      --dark:         #111111;
+      --dark-2:       #1a1a1a;
+      --dark-3:       #242424;
+      --dark-4:       #2e2e2e;
+      --text:         #f0f0f0;
+      --muted:        #888888;
+      --dim:          #555555;
+      --green:        #4ade80;
+      --green-bg:     rgba(74,222,128,0.08);
+      --green-border: rgba(74,222,128,0.25);
+      --yellow:       #facc15;
+      --yellow-bg:    rgba(250,204,21,0.08);
+      --yellow-border:rgba(250,204,21,0.25);
+      --blue:         #60a5fa;
+      --blue-bg:      rgba(96,165,250,0.08);
+      --blue-border:  rgba(96,165,250,0.25);
+      --red:          #f87171;
+      --red-bg:       rgba(248,113,113,0.08);
+      --red-border:   rgba(248,113,113,0.25);
+      --purple:       #c084fc;
+      --purple-bg:    rgba(192,132,252,0.08);
+      --purple-border:rgba(192,132,252,0.25);
+      --font-serif:   'Cormorant Garamond', Georgia, serif;
+      --font-display: 'Playfair Display', serif;
+      --font-sans:    'Inter', sans-serif;
+      --radius:       14px;
+      --radius-sm:    8px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--black);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 3rem 0 2.5rem;
+      background: linear-gradient(180deg, #111 0%, #0a0a0a 100%);
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+    .header-inner {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .header-brand {
+      font-family: var(--font-serif);
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .header-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1.1;
+    }
+    .header-title span { font-style: italic; color: var(--gold-dim); }
+    .header-meta {
+      text-align: right;
+    }
+    .header-date {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: 0.5rem;
+    }
+    .header-version {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.9rem;
+      background: var(--dark-3);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 100px;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+    .header-version i { color: var(--green); font-size: 0.5rem; }
+
+    /* ── SUMMARY BAR ── */
+    .summary-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin: 2.5rem 0;
+    }
+    .summary-item {
+      background: var(--dark-2);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .summary-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .summary-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+
+    /* ── PHASE LABEL ── */
+    .phase-label {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 3rem 0 1.5rem;
+    }
+    .phase-label-text {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--dim);
+      white-space: nowrap;
+    }
+    .phase-label-line {
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--dark-2);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+    .card:hover { border-color: rgba(255,255,255,0.12); }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1.5rem 1.75rem;
+      cursor: pointer;
+      user-select: none;
+    }
+    .card-icon {
+      width: 42px; height: 42px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .card-title-wrap { flex: 1; }
+    .card-title {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+    }
+    .card-subtitle {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .card-badges {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: 1px solid;
+    }
+    .badge-done     { color: var(--green);  background: var(--green-bg);  border-color: var(--green-border); }
+    .badge-progress { color: var(--yellow); background: var(--yellow-bg); border-color: var(--yellow-border); }
+    .badge-planned  { color: var(--blue);   background: var(--blue-bg);   border-color: var(--blue-border); }
+    .badge-blocked  { color: var(--red);    background: var(--red-bg);    border-color: var(--red-border); }
+    .badge-stack    { color: var(--purple); background: var(--purple-bg); border-color: var(--purple-border); }
+
+    .card-chevron {
+      color: var(--dim);
+      font-size: 0.8rem;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+    .card.open .card-chevron { transform: rotate(180deg); }
+
+    /* ── CARD BODY ── */
+    .card-body {
+      display: none;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .card.open .card-body { display: block; }
+
+    /* ── TASK LIST ── */
+    .task-list {
+      padding: 1.25rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .task {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      background: var(--dark-3);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .task-check {
+      width: 18px; height: 18px;
+      border-radius: 4px;
+      border: 1.5px solid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .task-check.done    { border-color: var(--green);  background: var(--green-bg);  color: var(--green); }
+    .task-check.active  { border-color: var(--yellow); background: var(--yellow-bg); color: var(--yellow); }
+    .task-check.pending { border-color: var(--dim);    background: transparent;      color: transparent; }
+    .task-text { flex: 1; }
+    .task-name {
+      font-size: 0.85rem;
+      color: var(--text);
+      margin-bottom: 0.15rem;
+    }
+    .task-name.done-text { color: var(--muted); text-decoration: line-through; }
+    .task-desc {
+      font-size: 0.72rem;
+      color: var(--dim);
+      line-height: 1.5;
+    }
+    .task-tag {
+      font-size: 0.6rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 100px;
+      background: var(--dark-4);
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      flex-shrink: 0;
+      align-self: center;
+    }
+
+    /* ── PROGRESS BAR ── */
+    .progress-wrap {
+      padding: 0 1.75rem 1.25rem;
+    }
+    .progress-bar-track {
+      height: 3px;
+      background: var(--dark-4);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 100px;
+      background: linear-gradient(90deg, var(--green), rgba(74,222,128,0.4));
+      transition: width 0.6s ease;
+    }
+    .progress-bar-fill.yellow { background: linear-gradient(90deg, var(--yellow), rgba(250,204,21,0.4)); }
+    .progress-bar-fill.blue   { background: linear-gradient(90deg, var(--blue),   rgba(96,165,250,0.4)); }
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    .progress-pct { font-size: 0.7rem; color: var(--muted); }
+
+    /* ── TECH STACK GRID ── */
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 0.75rem;
+      padding: 1.25rem 1.75rem;
+    }
+    .stack-item {
+      padding: 0.85rem 1rem;
+      background: var(--dark-3);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+    .stack-item i { font-size: 1.1rem; width: 20px; text-align: center; }
+    .stack-info {}
+    .stack-name { font-size: 0.8rem; color: var(--text); font-weight: 500; }
+    .stack-role { font-size: 0.65rem; color: var(--dim); }
+
+    /* ── NOTES BOX ── */
+    .notes-box {
+      margin: 0 1.75rem 1.25rem;
+      padding: 1rem 1.25rem;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-left: 3px solid rgba(255,255,255,0.2);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ── */
+    .report-footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin-top: 4rem;
+      padding: 2rem 0;
+      text-align: center;
+    }
+    .report-footer p {
+      font-size: 0.72rem;
+      color: var(--dim);
+      letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 768px) {
+      .summary-bar { grid-template-columns: repeat(2, 1fr); }
+      .header-inner { flex-direction: column; align-items: flex-start; }
+      .header-meta { text-align: left; }
+    }
+    @media (max-width: 480px) {
+      .summary-bar { grid-template-columns: 1fr 1fr; }
+      .card-badges { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <div>
+        <div class="header-brand">K&A Fragrances — Internal</div>
+        <h1 class="header-title">Project Progress <span>Report</span></h1>
+      </div>
+      <div class="header-meta">
+        <div class="header-date">Last updated: June 20, 2026</div>
+        <div class="header-version"><i class="fas fa-circle"></i> Active Development</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- SUMMARY -->
+  <div class="summary-bar">
+    <div class="summary-item">
+      <span class="summary-num">3</span>
+      <span class="summary-label">Completed</span>
+    </div>
+    <div class="summary-item">
+      <span class="summary-num">0</span>
+      <span class="summary-label">In Progress</span>
+    </div>
+    <div class="summary-item">
+      <span class="summary-num">4</span>
+      <span class="summary-label">Planned</span>
+    </div>
+    <div class="summary-item">
+      <span class="summary-num">7</span>
+      <span class="summary-label">Total Phases</span>
+    </div>
+  </div>
+
+  <!-- PHASE 1 -->
+  <div class="phase-label">
+    <span class="phase-label-text">Phase 1 — Foundation</span>
+    <div class="phase-label-line"></div>
+  </div>
+
+  <!-- CARD: Project Structure & Backend Setup -->
+  <div class="card open">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="card-icon" style="background:var(--green-bg);color:var(--green);">
+        <i class="fas fa-folder-tree"></i>
+      </div>
+      <div class="card-title-wrap">
+        <div class="card-title">Project Structure & Backend Setup</div>
+        <div class="card-subtitle">Organized frontend/backend folders, Express API, static file serving</div>
+      </div>
+      <div class="card-badges">
+        <span class="badge badge-done"><i class="fas fa-check"></i> &nbsp;Done</span>
+      </div>
+      <i class="fas fa-chevron-down card-chevron"></i>
+    </div>
+    <div class="card-body">
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span class="progress-pct">100% complete</span>
+          <span class="progress-pct">5 / 5 tasks</span>
+        </div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width:100%"></div></div>
+      </div>
+      <div class="task-list">
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text"><div class="task-name done-text">Organized folder structure (frontend/ + backend/)</div></div>
+          <span class="task-tag">Structure</span>
+        </div>
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text"><div class="task-name done-text">Moved all HTML, CSS, JS, images into correct folders</div></div>
+          <span class="task-tag">Migration</span>
+        </div>
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text"><div class="task-name done-text">Fixed all internal path references after move</div></div>
+          <span class="task-tag">Bugfix</span>
+        </div>
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text"><div class="task-name done-text">Express server set up — serves frontend + API on port 3000</div></div>
+          <span class="task-tag">Backend</span>
+        </div>
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text"><div class="task-name done-text">npm run dev works from project root via nodemon</div></div>
+          <span class="task-tag">DevEx</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD: UI Improvements -->
+  <div class="card open">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="card-icon" style="background:var(--green-bg);color:var(--green);">
+        <i class="fas fa-paintbrush"></i>
+      </div>
+      <div class="card-title-wrap">
+        <div class="card-title">UI Polish — Initial Pass</div>
+        <div class="card-subtitle">CSS fixes, scroll-to-top, product card improvements</div>
+      </div>
+      <div class="card-badges">
+        <span class="badge badge-done"><i class="fas fa-check"></i> &nbsp;Done</span>
+      </div>
+      <i class="fas fa-chevron-down card-chevron"></i>
+    </div>
+    <div class="card-body">
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span class="progress-pct">100% complete</span>
+          <span class="progress-pct">4 / 4 tasks</span>
+        </div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width:100%"></div></div>
+      </div>
+      <div class="task-list">
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text"><div class="task-name done-text">Fixed broken CSS background-image URL (Topaz Flame banner)</div></div>
+          <span class="task-tag">Bugfix</span>
+        </div>
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text"><div class="task-name done-text">Added scroll-to-top button with smooth visibility toggle</div></div>
+          <span class="task-tag">UX</span>
+        </div>
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text"><div class="task-name done-text">Product card add-button scale animation on hover</div></div>
+          <span class="task-tag">UX</span>
+        </div>
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text"><div class="task-name done-text">Passive scroll listener for better performance</div></div>
+          <span class="task-tag">Perf</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 2 -->
+  <div class="phase-label">
+    <span class="phase-label-text">Phase 2 — Design & Stack</span>
+    <div class="phase-label-line"></div>
+  </div>
+
+  <!-- CARD: Custom Design Overhaul -->
+  <div class="card open">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="card-icon" style="background:var(--green-bg);color:var(--green);">
+        <i class="fas fa-wand-magic-sparkles"></i>
+      </div>
+      <div class="card-title-wrap">
+        <div class="card-title">Custom Design Overhaul</div>
+        <div class="card-subtitle">Design system v2 — Bodoni Moda + DM Sans + Space Mono, warm ink/amber palette, vial selectors</div>
+      </div>
+      <div class="card-badges">
+        <span class="badge badge-done"><i class="fas fa-check"></i> &nbsp;Done</span>
+      </div>
+      <i class="fas fa-chevron-down card-chevron"></i>
+    </div>
+    <div class="card-body">
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span class="progress-pct">100% complete</span>
+          <span class="progress-pct">6 / 6 tasks</span>
+        </div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width:100%"></div></div>
+      </div>
+      <div class="task-list">
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text">
+            <div class="task-name done-text">Design system v2 — palette, typography, spacing tokens</div>
+            <div class="task-desc">Warm ink blacks (#0C0A07) + topaz amber (#C4924A) + ivory (#F0E8D8). Bodoni Moda display · DM Sans body · Space Mono prices/measurements</div>
+          </div>
+          <span class="task-tag">/frontend-design</span>
+        </div>
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text">
+            <div class="task-name done-text">Hero section redesign</div>
+            <div class="task-desc">Crossfade banner slider (Sospiro → Valentino → Bujari), editorial Bodoni headline "Every Scent In Every Measure." with amber italic, animated scroll hint</div>
+          </div>
+          <span class="task-tag">Homepage</span>
+        </div>
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text">
+            <div class="task-name done-text">Product cards + signature vial fill indicator</div>
+            <div class="task-desc">CSS glass vial tubes on size selectors — liquid fill height proportional to ml volume (2ml=8% → 100ml=94%). Animates on selection. Unique to K&A, exists on no other fragrance site.</div>
+          </div>
+          <span class="task-tag">Signature</span>
+        </div>
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text">
+            <div class="task-name done-text">Shop page — sidebar filters & live search</div>
+            <div class="task-desc">Category, availability, price slider, scent tags filters. Live search. Sort by price/rating. URL param ?cat= pre-selects category.</div>
+          </div>
+          <span class="task-tag">Shop</span>
+        </div>
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text">
+            <div class="task-name done-text">Mobile-first responsive CSS</div>
+            <div class="task-desc">Hamburger mobile menu, collapsible sidebar, responsive grid (auto-fill minmax), touch-friendly vial selectors</div>
+          </div>
+          <span class="task-tag">Mobile</span>
+        </div>
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text">
+            <div class="task-name done-text">Topaz Flame showcase + category carousel</div>
+            <div class="task-desc">Full-bleed showcase with floating fire particles, notes breakdown, variant picker. Infinite drag-to-scroll category carousel with auto-pan animation.</div>
+          </div>
+          <span class="task-tag">Homepage</span>
+        </div>
+      </div>
+      <div class="notes-box">
+        <strong>Design system v2 shipped June 20, 2026.</strong> All pages now use consistent CSS tokens. Light/dark mode toggle with localStorage persistence. About &amp; Contact pages still use v1 styling — update in a future pass.
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD: /gstack -->
+  <div class="card">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="card-icon" style="background:var(--purple-bg);color:var(--purple);">
+        <i class="fas fa-layer-group"></i>
+      </div>
+      <div class="card-title-wrap">
+        <div class="card-title">Tech Stack — /gstack</div>
+        <div class="card-subtitle">Choose and scaffold the production tech stack</div>
+      </div>
+      <div class="card-badges">
+        <span class="badge badge-planned">Planned</span>
+        <span class="badge badge-stack">/gstack</span>
+      </div>
+      <i class="fas fa-chevron-down card-chevron"></i>
+    </div>
+    <div class="card-body">
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span class="progress-pct">0% complete</span>
+          <span class="progress-pct">0 / 4 tasks</span>
+        </div>
+        <div class="progress-bar-track"><div class="progress-bar-fill blue" style="width:0%"></div></div>
+      </div>
+      <div class="stack-grid">
+        <div class="stack-item">
+          <i class="fab fa-react" style="color:#61dafb"></i>
+          <div class="stack-info"><div class="stack-name">Next.js</div><div class="stack-role">Frontend framework</div></div>
+        </div>
+        <div class="stack-item">
+          <i class="fas fa-server" style="color:var(--purple)"></i>
+          <div class="stack-info"><div class="stack-name">Express / Supabase</div><div class="stack-role">Backend / DB</div></div>
+        </div>
+        <div class="stack-item">
+          <i class="fas fa-database" style="color:var(--blue)"></i>
+          <div class="stack-info"><div class="stack-name">PostgreSQL</div><div class="stack-role">Database</div></div>
+        </div>
+        <div class="stack-item">
+          <i class="fas fa-cloud" style="color:var(--green)"></i>
+          <div class="stack-info"><div class="stack-name">Vercel</div><div class="stack-role">Hosting & CDN</div></div>
+        </div>
+      </div>
+      <div class="task-list">
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">Run /gstack to scaffold production project</div>
+            <div class="task-desc">Migrate from vanilla HTML to Next.js / chosen framework</div>
+          </div>
+          <span class="task-tag">/gstack</span>
+        </div>
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">Set up Supabase project & database schema</div>
+            <div class="task-desc">Products, orders, inventory, users tables</div>
+          </div>
+          <span class="task-tag">DB</span>
+        </div>
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">Deploy preview environment on Vercel</div>
+            <div class="task-desc">CI/CD pipeline, environment variables, domain setup</div>
+          </div>
+          <span class="task-tag">Infra</span>
+        </div>
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">Migrate product data from JS arrays to DB</div>
+            <div class="task-desc">Seed script, image storage in Supabase/Cloudinary</div>
+          </div>
+          <span class="task-tag">Data</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 3 -->
+  <div class="phase-label">
+    <span class="phase-label-text">Phase 3 — Commerce</span>
+    <div class="phase-label-line"></div>
+  </div>
+
+  <!-- CARD: Order & Inventory System -->
+  <div class="card">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="card-icon" style="background:var(--blue-bg);color:var(--blue);">
+        <i class="fas fa-boxes-stacked"></i>
+      </div>
+      <div class="card-title-wrap">
+        <div class="card-title">Order & Inventory System</div>
+        <div class="card-subtitle">Real-time stock tracking, order management dashboard, WhatsApp notifications</div>
+      </div>
+      <div class="card-badges">
+        <span class="badge badge-planned">Planned</span>
+      </div>
+      <i class="fas fa-chevron-down card-chevron"></i>
+    </div>
+    <div class="card-body">
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span class="progress-pct">0% complete</span>
+          <span class="progress-pct">0 / 7 tasks</span>
+        </div>
+        <div class="progress-bar-track"><div class="progress-bar-fill blue" style="width:0%"></div></div>
+      </div>
+      <div class="task-list">
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">Orders table — schema & API routes</div>
+            <div class="task-desc">POST /api/orders, GET /api/orders/:id, status updates</div>
+          </div>
+          <span class="task-tag">Backend</span>
+        </div>
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">Inventory table — per-variant stock levels</div>
+            <div class="task-desc">Track stock for each product size (2ml, 5ml, 10ml, full bottle)</div>
+          </div>
+          <span class="task-tag">Backend</span>
+        </div>
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">Auto-decrement stock on order placement</div>
+            <div class="task-desc">Prevent overselling, mark sold-out automatically</div>
+          </div>
+          <span class="task-tag">Logic</span>
+        </div>
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">WhatsApp order notification (Twilio or Meta API)</div>
+            <div class="task-desc">Auto-send order summary to seller on each new order</div>
+          </div>
+          <span class="task-tag">Notifications</span>
+        </div>
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">Admin dashboard — order list & status management</div>
+            <div class="task-desc">View, filter, update order status (pending → packed → shipped)</div>
+          </div>
+          <span class="task-tag">Admin</span>
+        </div>
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">Low-stock alerts</div>
+            <div class="task-desc">Notify seller when any variant drops below threshold</div>
+          </div>
+          <span class="task-tag">Admin</span>
+        </div>
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">Customer order tracking page</div>
+            <div class="task-desc">Simple status page customers can check via order link</div>
+          </div>
+          <span class="task-tag">Frontend</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD: Payment Gateway -->
+  <div class="card">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="card-icon" style="background:var(--blue-bg);color:var(--blue);">
+        <i class="fas fa-credit-card"></i>
+      </div>
+      <div class="card-title-wrap">
+        <div class="card-title">Payment Gateway Integration</div>
+        <div class="card-subtitle">GCash, PayMaya, card payments — Philippines-first</div>
+      </div>
+      <div class="card-badges">
+        <span class="badge badge-planned">Planned</span>
+      </div>
+      <i class="fas fa-chevron-down card-chevron"></i>
+    </div>
+    <div class="card-body">
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span class="progress-pct">0% complete</span>
+          <span class="progress-pct">0 / 6 tasks</span>
+        </div>
+        <div class="progress-bar-track"><div class="progress-bar-fill blue" style="width:0%"></div></div>
+      </div>
+      <div class="task-list">
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">Choose payment provider — PayMongo (recommended for PH)</div>
+            <div class="task-desc">Supports GCash, Maya, card, QR Ph in one integration</div>
+          </div>
+          <span class="task-tag">Decision</span>
+        </div>
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">Create PayMongo account & get API keys</div>
+            <div class="task-desc">Sandbox keys for dev, live keys for production</div>
+          </div>
+          <span class="task-tag">Setup</span>
+        </div>
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">POST /api/payments/create — create payment link</div>
+            <div class="task-desc">Generate PayMongo payment link per order, redirect customer</div>
+          </div>
+          <span class="task-tag">Backend</span>
+        </div>
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">Webhook handler — confirm payment & update order</div>
+            <div class="task-desc">Listen for PayMongo events, auto-confirm paid orders</div>
+          </div>
+          <span class="task-tag">Backend</span>
+        </div>
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">Checkout page — cart → payment flow</div>
+            <div class="task-desc">Name, address, payment method selection, order summary</div>
+          </div>
+          <span class="task-tag">Frontend</span>
+        </div>
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">Order confirmation page & email receipt</div>
+            <div class="task-desc">Thank-you page with order ID, estimated delivery, receipt copy</div>
+          </div>
+          <span class="task-tag">Frontend</span>
+        </div>
+      </div>
+      <div class="notes-box">
+        <strong>Recommended:</strong> PayMongo — built for the Philippines, supports GCash + Maya + cards + QR Ph. No monthly fee, 2.45% per transaction.
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD: Shipping Setup -->
+  <div class="card">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="card-icon" style="background:var(--blue-bg);color:var(--blue);">
+        <i class="fas fa-truck"></i>
+      </div>
+      <div class="card-title-wrap">
+        <div class="card-title">Shipping Setup</div>
+        <div class="card-subtitle">Courier integration, rate calculation, tracking, COD support</div>
+      </div>
+      <div class="card-badges">
+        <span class="badge badge-planned">Planned</span>
+      </div>
+      <i class="fas fa-chevron-down card-chevron"></i>
+    </div>
+    <div class="card-body">
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span class="progress-pct">0% complete</span>
+          <span class="progress-pct">0 / 5 tasks</span>
+        </div>
+        <div class="progress-bar-track"><div class="progress-bar-fill blue" style="width:0%"></div></div>
+      </div>
+      <div class="task-list">
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">Choose shipping partner — Lalamove / J&T / Borzo</div>
+            <div class="task-desc">API-enabled couriers for same-day and next-day Metro Manila + provincial</div>
+          </div>
+          <span class="task-tag">Decision</span>
+        </div>
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">Shipping rate calculator at checkout</div>
+            <div class="task-desc">Quote courier rate based on buyer address, package weight</div>
+          </div>
+          <span class="task-tag">Frontend</span>
+        </div>
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">POST /api/shipping/book — auto-book courier on paid order</div>
+            <div class="task-desc">Trigger booking after PayMongo webhook confirms payment</div>
+          </div>
+          <span class="task-tag">Backend</span>
+        </div>
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">Tracking number display on order status page</div>
+            <div class="task-desc">Show live tracking link from courier API</div>
+          </div>
+          <span class="task-tag">Frontend</span>
+        </div>
+        <div class="task">
+          <div class="task-check pending"></div>
+          <div class="task-text">
+            <div class="task-name">COD (Cash on Delivery) option</div>
+            <div class="task-desc">Allow COD for select areas, flag for manual confirmation</div>
+          </div>
+          <span class="task-tag">Logic</span>
+        </div>
+      </div>
+      <div class="notes-box">
+        <strong>Recommended flow:</strong> Customer checks out → selects shipping → PayMongo processes payment → webhook fires → courier is booked automatically → tracking number sent to customer via SMS/WhatsApp.
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="report-footer">
+  <div class="container">
+    <p>K&A Fragrances — Internal Project Report &nbsp;·&nbsp; Updated June 20, 2026 &nbsp;·&nbsp; Confidential</p>
+  </div>
+</footer>
+
+<script>
+  function toggle(header) {
+    const card = header.closest('.card');
+    card.classList.toggle('open');
+  }
+
+  // Set today's date dynamically
+  const dateEl = document.querySelector('.header-date');
+  if (dateEl) {
+    const now = new Date();
+    dateEl.textContent = 'Last updated: ' + now.toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+  }
+</script>
+</body>
+</html>
