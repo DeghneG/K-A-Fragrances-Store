@@ -1,0 +1,800 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "K&A Logo K&A Fragrances Original · Niche · Decant" [ref=e4] [cursor=pointer]:
+        - /url: index.html
+        - img "K&A Logo" [ref=e5]
+        - generic [ref=e6]:
+          - generic [ref=e7]: K&A Fragrances
+          - text: Original · Niche · Decant
+      - list [ref=e8]:
+        - listitem [ref=e9]:
+          - link "Home" [ref=e10] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=e11]:
+          - link "Shop" [ref=e12] [cursor=pointer]:
+            - /url: shop.html
+        - listitem [ref=e13]:
+          - link "About" [ref=e14] [cursor=pointer]:
+            - /url: about.html
+        - listitem [ref=e15]:
+          - link "Contact" [ref=e16] [cursor=pointer]:
+            - /url: contact.html
+        - listitem [ref=e17]:
+          - link "Topaz Flame" [ref=e18] [cursor=pointer]:
+            - /url: "#topaz-flame"
+      - generic [ref=e19]:
+        - button "" [ref=e20] [cursor=pointer]:
+          - generic [ref=e21]: 
+          - text: 
+        - button "" [ref=e22] [cursor=pointer]:
+          - generic [ref=e23]: 
+        - button "" [ref=e24] [cursor=pointer]:
+          - generic [ref=e25]: 
+  - generic:
+    - generic:
+      - paragraph: Search Fragrances
+      - generic:
+        - textbox "Brand, name, notes…"
+        - button "✕"
+  - complementary [ref=e26]:
+    - generic [ref=e27]:
+      - heading "Your Cart" [level=3] [ref=e28]
+      - button "✕" [ref=e29] [cursor=pointer]
+    - generic [ref=e30]:
+      - generic [ref=e31]: 🛍️
+      - paragraph [ref=e32]: Your cart is empty
+      - link "Browse Fragrances" [ref=e33] [cursor=pointer]:
+        - /url: shop.html
+    - text: 
+  - button "":
+    - generic: 
+  - link "" [ref=e34] [cursor=pointer]:
+    - /url: https://wa.me/639XXXXXXXXX?text=Hi!%20I%27m%20interested%20in%20a%20fragrance.
+    - generic [ref=e35]: 
+  - generic [ref=e36]:
+    - generic:
+      - button "" [ref=e41] [cursor=pointer]:
+        - generic [ref=e42]: 
+      - button "" [ref=e43] [cursor=pointer]:
+        - generic [ref=e44]: 
+    - generic [ref=e47]:
+      - generic [ref=e50]: K&A Fragrances
+      - heading "Every Scent In Every Measure." [level=1] [ref=e51]:
+        - text: Every Scent
+        - text: In Every
+        - emphasis [ref=e52]: Measure.
+      - paragraph [ref=e53]: Original Middle Eastern, Designer & Niche fragrances — from a single 2ml decant to a full bottle. Try before you commit.
+      - generic [ref=e54]:
+        - link "Shop Fragrances " [ref=e55] [cursor=pointer]:
+          - /url: shop.html
+          - text: Shop Fragrances
+          - generic [ref=e56]: 
+        - link "Topaz Flame" [ref=e57] [cursor=pointer]:
+          - /url: "#topaz-flame"
+    - generic [ref=e60]: Scroll
+  - generic [ref=e62]:
+    - generic [ref=e63]: Designer Brands
+    - generic [ref=e65]: Middle Eastern Oud
+    - generic [ref=e67]: Niche Fragrances
+    - generic [ref=e69]: Decants from 2ml
+    - generic [ref=e71]: 100% Original
+    - generic [ref=e73]: Best Price Guarantee
+    - generic [ref=e75]: Topaz Flame
+    - generic [ref=e77]: Designer Brands
+    - generic [ref=e79]: Middle Eastern Oud
+    - generic [ref=e81]: Niche Fragrances
+    - generic [ref=e83]: Decants from 2ml
+    - generic [ref=e85]: 100% Original
+    - generic [ref=e87]: Best Price Guarantee
+    - generic [ref=e89]: Topaz Flame
+    - generic [ref=e91]: Designer Brands
+    - generic [ref=e93]: Middle Eastern Oud
+    - generic [ref=e95]: Niche Fragrances
+    - generic [ref=e97]: Decants from 2ml
+    - generic [ref=e99]: 100% Original
+    - generic [ref=e101]: Best Price Guarantee
+    - generic [ref=e103]: Topaz Flame
+  - generic [ref=e107]:
+    - button "All" [ref=e108] [cursor=pointer]
+    - button "Middle Eastern" [ref=e109] [cursor=pointer]
+    - button "Designer" [ref=e110] [cursor=pointer]
+    - button "Niche" [ref=e111] [cursor=pointer]
+    - button "Topaz Flame" [ref=e112] [cursor=pointer]
+  - generic [ref=e114]:
+    - generic [ref=e115]:
+      - generic [ref=e116]: Hand-Picked
+      - heading "Featured Fragrances" [level=2] [ref=e118]
+      - paragraph [ref=e119]: Best sellers and new arrivals loved by our community.
+    - generic [ref=e120]:
+      - generic [ref=e121]:
+        - generic [ref=e122]:
+          - img "Topaz Flame" [ref=e123]
+          - generic [ref=e124]: K&A Exclusive
+          - button " Add to Cart" [ref=e126] [cursor=pointer]:
+            - generic [ref=e127]: 
+            - text: Add to Cart
+        - generic [ref=e128]:
+          - generic [ref=e129]: K&A Fragrances
+          - generic [ref=e130]: Topaz Flame
+          - generic [ref=e131]: Top · Bergamot, Cardamom, Pink Pepper
+          - generic [ref=e132]:
+            - generic [ref=e133]: ★★★★★
+            - generic [ref=e134]: (136)
+          - generic [ref=e135]:
+            - button "2ml ₱149" [ref=e136] [cursor=pointer]:
+              - generic [ref=e140]: 2ml
+              - generic [ref=e141]: ₱149
+            - button "5ml ₱279" [ref=e142] [cursor=pointer]:
+              - generic [ref=e146]: 5ml
+              - generic [ref=e147]: ₱279
+            - button "10ml ₱499" [ref=e148] [cursor=pointer]:
+              - generic [ref=e152]: 10ml
+              - generic [ref=e153]: ₱499
+            - button "50ml ₱3.0k" [ref=e154] [cursor=pointer]:
+              - generic [ref=e158]: 50ml
+              - generic [ref=e159]: ₱3.0k
+          - generic [ref=e160]:
+            - generic [ref=e161]:
+              - generic [ref=e162]: ₱149
+              - generic [ref=e163]: 2ml Decant
+            - button "+" [ref=e164] [cursor=pointer]:
+              - generic [ref=e165]: +
+      - generic [ref=e166]:
+        - generic [ref=e167]:
+          - img "Shaghaf Oud Aswad" [ref=e168]
+          - generic [ref=e169]: Best Seller
+          - button " Add to Cart" [ref=e171] [cursor=pointer]:
+            - generic [ref=e172]: 
+            - text: Add to Cart
+        - generic [ref=e173]:
+          - generic [ref=e174]: Swiss Arabian
+          - generic [ref=e175]: Shaghaf Oud Aswad
+          - generic [ref=e176]: Top · Black Oud, Saffron
+          - generic [ref=e177]:
+            - generic [ref=e178]: ★★★★★
+            - generic [ref=e179]: (67)
+          - generic [ref=e180]:
+            - button "2ml ₱109" [ref=e181] [cursor=pointer]:
+              - generic [ref=e185]: 2ml
+              - generic [ref=e186]: ₱109
+            - button "5ml ₱219" [ref=e187] [cursor=pointer]:
+              - generic [ref=e191]: 5ml
+              - generic [ref=e192]: ₱219
+            - button "10ml ₱389" [ref=e193] [cursor=pointer]:
+              - generic [ref=e197]: 10ml
+              - generic [ref=e198]: ₱389
+            - button "75ml ₱2.2k" [ref=e199] [cursor=pointer]:
+              - generic [ref=e203]: 75ml
+              - generic [ref=e204]: ₱2.2k
+          - generic [ref=e205]:
+            - generic [ref=e206]:
+              - generic [ref=e207]: ₱109
+              - generic [ref=e208]: 2ml Decant
+            - button "+" [ref=e209] [cursor=pointer]:
+              - generic [ref=e210]: +
+      - generic [ref=e211]:
+        - generic [ref=e212]:
+          - img "Amber Oud Gold" [ref=e213]
+          - generic [ref=e214]: New
+          - button " Add to Cart" [ref=e216] [cursor=pointer]:
+            - generic [ref=e217]: 
+            - text: Add to Cart
+        - generic [ref=e218]:
+          - generic [ref=e219]: Al Haramain
+          - generic [ref=e220]: Amber Oud Gold
+          - generic [ref=e221]: Top · Bergamot, Grapefruit
+          - generic [ref=e222]:
+            - generic [ref=e223]: ★★★★★
+            - generic [ref=e224]: (28)
+          - generic [ref=e225]:
+            - button "2ml ₱79" [ref=e226] [cursor=pointer]:
+              - generic [ref=e230]: 2ml
+              - generic [ref=e231]: ₱79
+            - button "5ml ₱165" [ref=e232] [cursor=pointer]:
+              - generic [ref=e236]: 5ml
+              - generic [ref=e237]: ₱165
+            - button "10ml ₱299" [ref=e238] [cursor=pointer]:
+              - generic [ref=e242]: 10ml
+              - generic [ref=e243]: ₱299
+            - button "60ml ₱1.6k" [ref=e244] [cursor=pointer]:
+              - generic [ref=e248]: 60ml
+              - generic [ref=e249]: ₱1.6k
+          - generic [ref=e250]:
+            - generic [ref=e251]:
+              - generic [ref=e252]: ₱79
+              - generic [ref=e253]: 2ml Decant
+            - button "+" [ref=e254] [cursor=pointer]:
+              - generic [ref=e255]: +
+      - generic [ref=e256]:
+        - generic [ref=e257]:
+          - img "Sauvage EDP" [ref=e258]
+          - generic [ref=e259]: Best Seller
+          - button " Add to Cart" [ref=e261] [cursor=pointer]:
+            - generic [ref=e262]: 
+            - text: Add to Cart
+        - generic [ref=e263]:
+          - generic [ref=e264]: Dior
+          - generic [ref=e265]: Sauvage EDP
+          - generic [ref=e266]: Top · Bergamot, Pepper
+          - generic [ref=e267]:
+            - generic [ref=e268]: ★★★★★
+            - generic [ref=e269]: (120)
+          - generic [ref=e270]:
+            - button "2ml ₱129" [ref=e271] [cursor=pointer]:
+              - generic [ref=e275]: 2ml
+              - generic [ref=e276]: ₱129
+            - button "5ml ₱249" [ref=e277] [cursor=pointer]:
+              - generic [ref=e281]: 5ml
+              - generic [ref=e282]: ₱249
+            - button "10ml ₱449" [ref=e283] [cursor=pointer]:
+              - generic [ref=e287]: 10ml
+              - generic [ref=e288]: ₱449
+            - button "100ml ₱3.5k" [ref=e289] [cursor=pointer]:
+              - generic [ref=e293]: 100ml
+              - generic [ref=e294]: ₱3.5k
+          - generic [ref=e295]:
+            - generic [ref=e296]:
+              - generic [ref=e297]: ₱129
+              - generic [ref=e298]: 2ml Decant
+            - button "+" [ref=e299] [cursor=pointer]:
+              - generic [ref=e300]: +
+      - generic [ref=e301]:
+        - generic [ref=e302]:
+          - img "Black Opium EDP" [ref=e303]
+          - generic [ref=e304]: New
+          - button " Add to Cart" [ref=e306] [cursor=pointer]:
+            - generic [ref=e307]: 
+            - text: Add to Cart
+        - generic [ref=e308]:
+          - generic [ref=e309]: YSL
+          - generic [ref=e310]: Black Opium EDP
+          - generic [ref=e311]: Top · Pink Pepper, Orange Blossom
+          - generic [ref=e312]:
+            - generic [ref=e313]: ★★★★★
+            - generic [ref=e314]: (58)
+          - generic [ref=e315]:
+            - button "2ml ₱119" [ref=e316] [cursor=pointer]:
+              - generic [ref=e320]: 2ml
+              - generic [ref=e321]: ₱119
+            - button "5ml ₱219" [ref=e322] [cursor=pointer]:
+              - generic [ref=e326]: 5ml
+              - generic [ref=e327]: ₱219
+            - button "10ml ₱399" [ref=e328] [cursor=pointer]:
+              - generic [ref=e332]: 10ml
+              - generic [ref=e333]: ₱399
+            - button "90ml ₱3.1k" [ref=e334] [cursor=pointer]:
+              - generic [ref=e338]: 90ml
+              - generic [ref=e339]: ₱3.1k
+          - generic [ref=e340]:
+            - generic [ref=e341]:
+              - generic [ref=e342]: ₱119
+              - generic [ref=e343]: 2ml Decant
+            - button "+" [ref=e344] [cursor=pointer]:
+              - generic [ref=e345]: +
+      - generic [ref=e346]:
+        - generic [ref=e347]:
+          - img "Angels' Share" [ref=e348]
+          - generic [ref=e349]: New
+          - button " Add to Cart" [ref=e351] [cursor=pointer]:
+            - generic [ref=e352]: 
+            - text: Add to Cart
+        - generic [ref=e353]:
+          - generic [ref=e354]: Kilian
+          - generic [ref=e355]: Angels' Share
+          - generic [ref=e356]: Top · Cognac, Cinnamon
+          - generic [ref=e357]:
+            - generic [ref=e358]: ★★★★★
+            - generic [ref=e359]: (19)
+          - generic [ref=e360]:
+            - button "2ml ₱329" [ref=e361] [cursor=pointer]:
+              - generic [ref=e365]: 2ml
+              - generic [ref=e366]: ₱329
+            - button "5ml ₱570" [ref=e367] [cursor=pointer]:
+              - generic [ref=e371]: 5ml
+              - generic [ref=e372]: ₱570
+            - button "10ml ₱1.1k" [ref=e373] [cursor=pointer]:
+              - generic [ref=e377]: 10ml
+              - generic [ref=e378]: ₱1.1k
+            - button "50ml ₱8.5k" [ref=e379] [cursor=pointer]:
+              - generic [ref=e383]: 50ml
+              - generic [ref=e384]: ₱8.5k
+          - generic [ref=e385]:
+            - generic [ref=e386]:
+              - generic [ref=e387]: ₱329
+              - generic [ref=e388]: 2ml Decant
+            - button "+" [ref=e389] [cursor=pointer]:
+              - generic [ref=e390]: +
+      - generic [ref=e391]:
+        - generic [ref=e392]:
+          - img "Aventus" [ref=e393]
+          - generic [ref=e394]: Best Seller
+          - button " Add to Cart" [ref=e396] [cursor=pointer]:
+            - generic [ref=e397]: 
+            - text: Add to Cart
+        - generic [ref=e398]:
+          - generic [ref=e399]: Creed
+          - generic [ref=e400]: Aventus
+          - generic [ref=e401]: Top · Pineapple, Bergamot, Blackcurrant
+          - generic [ref=e402]:
+            - generic [ref=e403]: ★★★★★
+            - generic [ref=e404]: (88)
+          - generic [ref=e405]:
+            - button "2ml ₱199" [ref=e406] [cursor=pointer]:
+              - generic [ref=e410]: 2ml
+              - generic [ref=e411]: ₱199
+            - button "5ml ₱399" [ref=e412] [cursor=pointer]:
+              - generic [ref=e416]: 5ml
+              - generic [ref=e417]: ₱399
+            - button "10ml ₱749" [ref=e418] [cursor=pointer]:
+              - generic [ref=e422]: 10ml
+              - generic [ref=e423]: ₱749
+            - button "100ml ₱12.5k" [ref=e424] [cursor=pointer]:
+              - generic [ref=e428]: 100ml
+              - generic [ref=e429]: ₱12.5k
+          - generic [ref=e430]:
+            - generic [ref=e431]:
+              - generic [ref=e432]: ₱199
+              - generic [ref=e433]: 2ml Decant
+            - button "+" [ref=e434] [cursor=pointer]:
+              - generic [ref=e435]: +
+    - link "View All Fragrances " [ref=e437] [cursor=pointer]:
+      - /url: shop.html
+      - text: View All Fragrances
+      - generic [ref=e438]: 
+  - generic [ref=e441]:
+    - img "Topaz Flame by K&A Fragrances" [ref=e444]
+    - generic [ref=e445]:
+      - generic [ref=e446]:
+        - generic [ref=e447]: 
+        - generic [ref=e448]: K&A Exclusive — Limited Release
+      - heading "Topaz Flame" [level=2] [ref=e449]
+      - paragraph [ref=e450]: by K&A Fragrances — Our Only In-House Creation
+      - generic [ref=e451]:
+        - generic [ref=e452]: ★★★★★
+        - generic [ref=e453]: 5.0 · 136 reviews
+      - paragraph [ref=e454]:
+        - text: A bold fusion of Middle Eastern opulence and modern elegance. Opens with bergamot, cardamom, and pink pepper — deepens into caramel, lavender, and cinnamon — settles into vanilla and amber woods.
+        - strong [ref=e455]: Crafted in-house. This is the scent that defines K&A.
+      - generic [ref=e456]:
+        - generic [ref=e457]:
+          - generic [ref=e458]: Top Notes
+          - generic [ref=e459]: Bergamot, Cardamom, Pink Pepper
+        - generic [ref=e460]:
+          - generic [ref=e461]: Heart Notes
+          - generic [ref=e462]: Caramel, Lavender, Cinnamon
+        - generic [ref=e463]:
+          - generic [ref=e464]: Base Notes
+          - generic [ref=e465]: Vanilla, Amber Woods
+      - generic [ref=e466]:
+        - button "2ml Decant ₱149" [ref=e467] [cursor=pointer]:
+          - generic [ref=e468]: 2ml
+          - generic [ref=e469]: Decant
+          - generic [ref=e470]: ₱149
+        - button "5ml Decant ₱279" [ref=e471] [cursor=pointer]:
+          - generic [ref=e472]: 5ml
+          - generic [ref=e473]: Decant
+          - generic [ref=e474]: ₱279
+        - button "10ml Decant ₱499" [ref=e475] [cursor=pointer]:
+          - generic [ref=e476]: 10ml
+          - generic [ref=e477]: Decant
+          - generic [ref=e478]: ₱499
+        - button "50ml Bottle ₱2,999" [ref=e479] [cursor=pointer]:
+          - generic [ref=e480]: 50ml
+          - generic [ref=e481]: Bottle
+          - generic [ref=e482]: ₱2,999
+      - generic [ref=e483]: ₱2,999
+      - generic [ref=e484]: 50ml Full Bottle
+      - generic [ref=e485]:
+        - button " Add to Cart" [ref=e486] [cursor=pointer]:
+          - generic [ref=e487]: 
+          - text: Add to Cart
+        - link " Ask About This" [ref=e488] [cursor=pointer]:
+          - /url: https://wa.me/639XXXXXXXXX?text=Hi!%20I%27m%20interested%20in%20Topaz%20Flame!
+          - generic [ref=e489]: 
+          - text: Ask About This
+  - generic [ref=e492]:
+    - generic [ref=e493]:
+      - generic [ref=e494]: Collections
+      - heading "Shop by Category" [level=2] [ref=e496]
+      - paragraph [ref=e497]: From rich Arabic ouds to rare niche artisans — find your world of scent.
+    - generic [ref=e499]:
+      - link "Middle Eastern Middle Eastern Rich Ouds, Amber & Oriental Treasures 3 products" [ref=e500] [cursor=pointer]:
+        - /url: shop.html?cat=middle-eastern
+        - img "Middle Eastern" [ref=e501]
+        - generic [ref=e502]:
+          - generic [ref=e503]: Middle Eastern
+          - generic [ref=e504]: Rich Ouds, Amber & Oriental Treasures
+          - generic [ref=e505]: 3 products
+      - link "Designer Designer Iconic Houses & Global Signatures 4 products" [ref=e506] [cursor=pointer]:
+        - /url: shop.html?cat=designer
+        - img "Designer" [ref=e507]
+        - generic [ref=e508]:
+          - generic [ref=e509]: Designer
+          - generic [ref=e510]: Iconic Houses & Global Signatures
+          - generic [ref=e511]: 4 products
+      - link "Niche Niche Artisan & Rare Collectibles 6 products" [ref=e512] [cursor=pointer]:
+        - /url: shop.html?cat=niche
+        - img "Niche" [ref=e513]
+        - generic [ref=e514]:
+          - generic [ref=e515]: Niche
+          - generic [ref=e516]: Artisan & Rare Collectibles
+          - generic [ref=e517]: 6 products
+      - link "Summer Samples Summer Samples Fresh & Aquatic Scents 0 products" [ref=e518] [cursor=pointer]:
+        - /url: shop.html?cat=summer
+        - img "Summer Samples" [ref=e519]
+        - generic [ref=e520]:
+          - generic [ref=e521]: Summer Samples
+          - generic [ref=e522]: Fresh & Aquatic Scents
+          - generic [ref=e523]: 0 products
+      - link "Winter Samples Winter Samples Warm & Cozy Fragrances 0 products" [ref=e524] [cursor=pointer]:
+        - /url: shop.html?cat=winter
+        - img "Winter Samples" [ref=e525]
+        - generic [ref=e526]:
+          - generic [ref=e527]: Winter Samples
+          - generic [ref=e528]: Warm & Cozy Fragrances
+          - generic [ref=e529]: 0 products
+      - link "Bundles Bundles Curated Sets & Collections 0 products" [ref=e530] [cursor=pointer]:
+        - /url: shop.html?cat=bundles
+        - img "Bundles" [ref=e531]
+        - generic [ref=e532]:
+          - generic [ref=e533]: Bundles
+          - generic [ref=e534]: Curated Sets & Collections
+          - generic [ref=e535]: 0 products
+      - link "All Seasons All Seasons Versatile Year-Round Signatures 0 products" [ref=e536] [cursor=pointer]:
+        - /url: shop.html?cat=all
+        - img "All Seasons" [ref=e537]
+        - generic [ref=e538]:
+          - generic [ref=e539]: All Seasons
+          - generic [ref=e540]: Versatile Year-Round Signatures
+          - generic [ref=e541]: 0 products
+      - link "Middle Eastern Middle Eastern Rich Ouds, Amber & Oriental Treasures 3 products" [ref=e542] [cursor=pointer]:
+        - /url: shop.html?cat=middle-eastern
+        - img "Middle Eastern" [ref=e543]
+        - generic [ref=e544]:
+          - generic [ref=e545]: Middle Eastern
+          - generic [ref=e546]: Rich Ouds, Amber & Oriental Treasures
+          - generic [ref=e547]: 3 products
+      - link "Designer Designer Iconic Houses & Global Signatures 4 products" [ref=e548] [cursor=pointer]:
+        - /url: shop.html?cat=designer
+        - img "Designer" [ref=e549]
+        - generic [ref=e550]:
+          - generic [ref=e551]: Designer
+          - generic [ref=e552]: Iconic Houses & Global Signatures
+          - generic [ref=e553]: 4 products
+      - link "Niche Niche Artisan & Rare Collectibles 6 products" [ref=e554] [cursor=pointer]:
+        - /url: shop.html?cat=niche
+        - img "Niche" [ref=e555]
+        - generic [ref=e556]:
+          - generic [ref=e557]: Niche
+          - generic [ref=e558]: Artisan & Rare Collectibles
+          - generic [ref=e559]: 6 products
+      - link "Summer Samples Summer Samples Fresh & Aquatic Scents 0 products" [ref=e560] [cursor=pointer]:
+        - /url: shop.html?cat=summer
+        - img "Summer Samples" [ref=e561]
+        - generic [ref=e562]:
+          - generic [ref=e563]: Summer Samples
+          - generic [ref=e564]: Fresh & Aquatic Scents
+          - generic [ref=e565]: 0 products
+      - link "Winter Samples Winter Samples Warm & Cozy Fragrances 0 products" [ref=e566] [cursor=pointer]:
+        - /url: shop.html?cat=winter
+        - img "Winter Samples" [ref=e567]
+        - generic [ref=e568]:
+          - generic [ref=e569]: Winter Samples
+          - generic [ref=e570]: Warm & Cozy Fragrances
+          - generic [ref=e571]: 0 products
+      - link "Bundles Bundles Curated Sets & Collections 0 products" [ref=e572] [cursor=pointer]:
+        - /url: shop.html?cat=bundles
+        - img "Bundles" [ref=e573]
+        - generic [ref=e574]:
+          - generic [ref=e575]: Bundles
+          - generic [ref=e576]: Curated Sets & Collections
+          - generic [ref=e577]: 0 products
+      - link "All Seasons All Seasons Versatile Year-Round Signatures 0 products" [ref=e578] [cursor=pointer]:
+        - /url: shop.html?cat=all
+        - img "All Seasons" [ref=e579]
+        - generic [ref=e580]:
+          - generic [ref=e581]: All Seasons
+          - generic [ref=e582]: Versatile Year-Round Signatures
+          - generic [ref=e583]: 0 products
+      - link "Middle Eastern Middle Eastern Rich Ouds, Amber & Oriental Treasures 3 products" [ref=e584] [cursor=pointer]:
+        - /url: shop.html?cat=middle-eastern
+        - img "Middle Eastern" [ref=e585]
+        - generic [ref=e586]:
+          - generic [ref=e587]: Middle Eastern
+          - generic [ref=e588]: Rich Ouds, Amber & Oriental Treasures
+          - generic [ref=e589]: 3 products
+      - link "Designer Designer Iconic Houses & Global Signatures 4 products" [ref=e590] [cursor=pointer]:
+        - /url: shop.html?cat=designer
+        - img "Designer" [ref=e591]
+        - generic [ref=e592]:
+          - generic [ref=e593]: Designer
+          - generic [ref=e594]: Iconic Houses & Global Signatures
+          - generic [ref=e595]: 4 products
+      - link "Niche Niche Artisan & Rare Collectibles 6 products" [ref=e596] [cursor=pointer]:
+        - /url: shop.html?cat=niche
+        - img "Niche" [ref=e597]
+        - generic [ref=e598]:
+          - generic [ref=e599]: Niche
+          - generic [ref=e600]: Artisan & Rare Collectibles
+          - generic [ref=e601]: 6 products
+      - link "Summer Samples Summer Samples Fresh & Aquatic Scents 0 products" [ref=e602] [cursor=pointer]:
+        - /url: shop.html?cat=summer
+        - img "Summer Samples" [ref=e603]
+        - generic [ref=e604]:
+          - generic [ref=e605]: Summer Samples
+          - generic [ref=e606]: Fresh & Aquatic Scents
+          - generic [ref=e607]: 0 products
+      - link "Winter Samples Winter Samples Warm & Cozy Fragrances 0 products" [ref=e608] [cursor=pointer]:
+        - /url: shop.html?cat=winter
+        - img "Winter Samples" [ref=e609]
+        - generic [ref=e610]:
+          - generic [ref=e611]: Winter Samples
+          - generic [ref=e612]: Warm & Cozy Fragrances
+          - generic [ref=e613]: 0 products
+      - link "Bundles Bundles Curated Sets & Collections 0 products" [ref=e614] [cursor=pointer]:
+        - /url: shop.html?cat=bundles
+        - img "Bundles" [ref=e615]
+        - generic [ref=e616]:
+          - generic [ref=e617]: Bundles
+          - generic [ref=e618]: Curated Sets & Collections
+          - generic [ref=e619]: 0 products
+      - link "All Seasons All Seasons Versatile Year-Round Signatures 0 products" [ref=e620] [cursor=pointer]:
+        - /url: shop.html?cat=all
+        - img "All Seasons" [ref=e621]
+        - generic [ref=e622]:
+          - generic [ref=e623]: All Seasons
+          - generic [ref=e624]: Versatile Year-Round Signatures
+          - generic [ref=e625]: 0 products
+      - link "Middle Eastern Middle Eastern Rich Ouds, Amber & Oriental Treasures 3 products" [ref=e626] [cursor=pointer]:
+        - /url: shop.html?cat=middle-eastern
+        - img "Middle Eastern" [ref=e627]
+        - generic [ref=e628]:
+          - generic [ref=e629]: Middle Eastern
+          - generic [ref=e630]: Rich Ouds, Amber & Oriental Treasures
+          - generic [ref=e631]: 3 products
+      - link "Designer Designer Iconic Houses & Global Signatures 4 products" [ref=e632] [cursor=pointer]:
+        - /url: shop.html?cat=designer
+        - img "Designer" [ref=e633]
+        - generic [ref=e634]:
+          - generic [ref=e635]: Designer
+          - generic [ref=e636]: Iconic Houses & Global Signatures
+          - generic [ref=e637]: 4 products
+      - link "Niche Niche Artisan & Rare Collectibles 6 products" [ref=e638] [cursor=pointer]:
+        - /url: shop.html?cat=niche
+        - img "Niche" [ref=e639]
+        - generic [ref=e640]:
+          - generic [ref=e641]: Niche
+          - generic [ref=e642]: Artisan & Rare Collectibles
+          - generic [ref=e643]: 6 products
+      - link "Summer Samples Summer Samples Fresh & Aquatic Scents 0 products" [ref=e644] [cursor=pointer]:
+        - /url: shop.html?cat=summer
+        - img "Summer Samples" [ref=e645]
+        - generic [ref=e646]:
+          - generic [ref=e647]: Summer Samples
+          - generic [ref=e648]: Fresh & Aquatic Scents
+          - generic [ref=e649]: 0 products
+      - link "Winter Samples Winter Samples Warm & Cozy Fragrances 0 products" [ref=e650] [cursor=pointer]:
+        - /url: shop.html?cat=winter
+        - img "Winter Samples" [ref=e651]
+        - generic [ref=e652]:
+          - generic [ref=e653]: Winter Samples
+          - generic [ref=e654]: Warm & Cozy Fragrances
+          - generic [ref=e655]: 0 products
+      - link "Bundles Bundles Curated Sets & Collections 0 products" [ref=e656] [cursor=pointer]:
+        - /url: shop.html?cat=bundles
+        - img "Bundles" [ref=e657]
+        - generic [ref=e658]:
+          - generic [ref=e659]: Bundles
+          - generic [ref=e660]: Curated Sets & Collections
+          - generic [ref=e661]: 0 products
+      - link "All Seasons All Seasons Versatile Year-Round Signatures 0 products" [ref=e662] [cursor=pointer]:
+        - /url: shop.html?cat=all
+        - img "All Seasons" [ref=e663]
+        - generic [ref=e664]:
+          - generic [ref=e665]: All Seasons
+          - generic [ref=e666]: Versatile Year-Round Signatures
+          - generic [ref=e667]: 0 products
+  - generic [ref=e669]:
+    - generic [ref=e670]:
+      - generic [ref=e671]: Try Before You Buy
+      - heading "Decants & Samples" [level=2] [ref=e673]
+      - paragraph [ref=e674]: Every fragrance in our shop is available as a 2ml, 5ml, or 10ml decant — pick your size on any product.
+    - generic [ref=e675]:
+      - generic [ref=e676]:
+        - generic [ref=e677]:
+          - img "By the Fireplace" [ref=e678]
+          - generic [ref=e679]: Niche
+          - button " Add to Cart" [ref=e681] [cursor=pointer]:
+            - generic [ref=e682]: 
+            - text: Add to Cart
+        - generic [ref=e683]:
+          - generic [ref=e684]: Maison Margiela
+          - generic [ref=e685]: By the Fireplace
+          - generic [ref=e686]: Top · Orange Blossom, Cloves, Chestnut
+          - generic [ref=e687]:
+            - generic [ref=e688]: ★★★★★
+            - generic [ref=e689]: (44)
+          - generic [ref=e690]:
+            - button "2ml ₱199" [ref=e691] [cursor=pointer]:
+              - generic [ref=e695]: 2ml
+              - generic [ref=e696]: ₱199
+            - button "5ml ₱349" [ref=e697] [cursor=pointer]:
+              - generic [ref=e701]: 5ml
+              - generic [ref=e702]: ₱349
+            - button "10ml ₱629" [ref=e703] [cursor=pointer]:
+              - generic [ref=e707]: 10ml
+              - generic [ref=e708]: ₱629
+            - button "100ml ₱5.2k" [ref=e709] [cursor=pointer]:
+              - generic [ref=e713]: 100ml
+              - generic [ref=e714]: ₱5.2k
+          - generic [ref=e715]:
+            - generic [ref=e716]:
+              - generic [ref=e717]: ₱199
+              - generic [ref=e718]: 2ml Decant
+            - button "+" [ref=e719] [cursor=pointer]:
+              - generic [ref=e720]: +
+      - generic [ref=e721]:
+        - generic [ref=e722]:
+          - img "Bal d'Afrique" [ref=e723]
+          - generic [ref=e724]: Niche
+          - generic [ref=e725]: Sold Out
+          - button "Sold Out" [disabled] [ref=e727] [cursor=pointer]
+        - generic [ref=e728]:
+          - generic [ref=e729]: Byredo
+          - generic [ref=e730]: Bal d'Afrique
+          - generic [ref=e731]: Top · Bergamot, African Marigold
+          - generic [ref=e732]:
+            - generic [ref=e733]: ★★★★★
+            - generic [ref=e734]: (31)
+          - generic [ref=e735]:
+            - button "2ml ₱249" [ref=e736] [cursor=pointer]:
+              - generic [ref=e740]: 2ml
+              - generic [ref=e741]: ₱249
+            - button "5ml ₱450" [ref=e742] [cursor=pointer]:
+              - generic [ref=e746]: 5ml
+              - generic [ref=e747]: ₱450
+            - button "10ml ₱820" [ref=e748] [cursor=pointer]:
+              - generic [ref=e752]: 10ml
+              - generic [ref=e753]: ₱820
+            - button "100ml ₱6.8k" [ref=e754] [cursor=pointer]:
+              - generic [ref=e758]: 100ml
+              - generic [ref=e759]: ₱6.8k
+          - generic [ref=e760]:
+            - generic [ref=e761]:
+              - generic [ref=e762]: ₱249
+              - generic [ref=e763]: 2ml Decant
+            - generic [ref=e764]: SOLD OUT
+      - generic [ref=e765]:
+        - generic [ref=e766]:
+          - img "Angels' Share" [ref=e767]
+          - generic [ref=e768]: New
+          - button " Add to Cart" [ref=e770] [cursor=pointer]:
+            - generic [ref=e771]: 
+            - text: Add to Cart
+        - generic [ref=e772]:
+          - generic [ref=e773]: Kilian
+          - generic [ref=e774]: Angels' Share
+          - generic [ref=e775]: Top · Cognac, Cinnamon
+          - generic [ref=e776]:
+            - generic [ref=e777]: ★★★★★
+            - generic [ref=e778]: (19)
+          - generic [ref=e779]:
+            - button "2ml ₱329" [ref=e780] [cursor=pointer]:
+              - generic [ref=e784]: 2ml
+              - generic [ref=e785]: ₱329
+            - button "5ml ₱570" [ref=e786] [cursor=pointer]:
+              - generic [ref=e790]: 5ml
+              - generic [ref=e791]: ₱570
+            - button "10ml ₱1.1k" [ref=e792] [cursor=pointer]:
+              - generic [ref=e796]: 10ml
+              - generic [ref=e797]: ₱1.1k
+            - button "50ml ₱8.5k" [ref=e798] [cursor=pointer]:
+              - generic [ref=e802]: 50ml
+              - generic [ref=e803]: ₱8.5k
+          - generic [ref=e804]:
+            - generic [ref=e805]:
+              - generic [ref=e806]: ₱329
+              - generic [ref=e807]: 2ml Decant
+            - button "+" [ref=e808] [cursor=pointer]:
+              - generic [ref=e809]: +
+      - generic [ref=e810]:
+        - generic [ref=e811]:
+          - img "Aventus" [ref=e812]
+          - generic [ref=e813]: Best Seller
+          - button " Add to Cart" [ref=e815] [cursor=pointer]:
+            - generic [ref=e816]: 
+            - text: Add to Cart
+        - generic [ref=e817]:
+          - generic [ref=e818]: Creed
+          - generic [ref=e819]: Aventus
+          - generic [ref=e820]: Top · Pineapple, Bergamot, Blackcurrant
+          - generic [ref=e821]:
+            - generic [ref=e822]: ★★★★★
+            - generic [ref=e823]: (88)
+          - generic [ref=e824]:
+            - button "2ml ₱199" [ref=e825] [cursor=pointer]:
+              - generic [ref=e829]: 2ml
+              - generic [ref=e830]: ₱199
+            - button "5ml ₱399" [ref=e831] [cursor=pointer]:
+              - generic [ref=e835]: 5ml
+              - generic [ref=e836]: ₱399
+            - button "10ml ₱749" [ref=e837] [cursor=pointer]:
+              - generic [ref=e841]: 10ml
+              - generic [ref=e842]: ₱749
+            - button "100ml ₱12.5k" [ref=e843] [cursor=pointer]:
+              - generic [ref=e847]: 100ml
+              - generic [ref=e848]: ₱12.5k
+          - generic [ref=e849]:
+            - generic [ref=e850]:
+              - generic [ref=e851]: ₱199
+              - generic [ref=e852]: 2ml Decant
+            - button "+" [ref=e853] [cursor=pointer]:
+              - generic [ref=e854]: +
+    - link " Shop All Fragrances" [ref=e856] [cursor=pointer]:
+      - /url: shop.html
+      - generic [ref=e857]: 
+      - text: Shop All Fragrances
+  - contentinfo [ref=e858]:
+    - generic [ref=e859]:
+      - generic [ref=e860]:
+        - generic [ref=e861]:
+          - generic [ref=e862]: K&A Fragrances
+          - paragraph [ref=e864]: Your trusted source for 100% original Middle Eastern, Designer, and Niche fragrances — plus affordable decants and samples.
+          - generic [ref=e865]:
+            - link "" [ref=e866] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e867]: 
+            - link "" [ref=e868] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e869]: 
+            - link "" [ref=e870] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e871]: 
+            - link "" [ref=e872] [cursor=pointer]:
+              - /url: https://wa.me/639XXXXXXXXX
+              - generic [ref=e873]: 
+        - generic [ref=e874]:
+          - generic [ref=e875]: Shop
+          - generic [ref=e876]:
+            - link "Middle Eastern" [ref=e877] [cursor=pointer]:
+              - /url: shop.html?cat=middle-eastern
+            - link "Designer" [ref=e878] [cursor=pointer]:
+              - /url: shop.html?cat=designer
+            - link "Niche" [ref=e879] [cursor=pointer]:
+              - /url: shop.html?cat=niche
+            - link "All Fragrances" [ref=e880] [cursor=pointer]:
+              - /url: shop.html
+        - generic [ref=e881]:
+          - generic [ref=e882]: Information
+          - generic [ref=e883]:
+            - link "About Us" [ref=e884] [cursor=pointer]:
+              - /url: about.html
+            - link "Contact" [ref=e885] [cursor=pointer]:
+              - /url: contact.html
+            - link "FAQ" [ref=e886] [cursor=pointer]:
+              - /url: contact.html#faq
+            - link "Authenticity Guarantee" [ref=e887] [cursor=pointer]:
+              - /url: contact.html#authenticity
+        - generic [ref=e888]:
+          - generic [ref=e889]: Contact
+          - generic [ref=e890]:
+            - link " WhatsApp Us" [ref=e891] [cursor=pointer]:
+              - /url: https://wa.me/639XXXXXXXXX
+              - generic [ref=e892]: 
+              - text: WhatsApp Us
+            - link " Email Us" [ref=e893] [cursor=pointer]:
+              - /url: mailto:hello@kafragrances.com
+              - generic [ref=e894]: 
+              - text: Email Us
+            - link " Facebook Page" [ref=e895] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e896]: 
+              - text: Facebook Page
+            - link " Instagram" [ref=e897] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e898]: 
+              - text: Instagram
+      - generic [ref=e899]:
+        - paragraph [ref=e900]: © 2025 K&A Fragrances. All rights reserved.
+        - paragraph [ref=e901]: 100% Original · Authentic Guarantee
