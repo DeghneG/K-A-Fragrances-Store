@@ -1,64 +1,128 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us â€” K&A Fragrances</title>
-  <meta name="description" content="Welcome to K&A Fragrances, where your scent journey begins. Discover exclusive scents in tiny treasures." />
+  <title>About Us — K&A Fragrances</title>
+  <meta name="description" content="Learn about K&A Fragrances — your trusted source for authentic Middle Eastern, Designer, and Niche fragrances and decants." />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    .page-hero { padding:9rem 0 4rem; background:linear-gradient(135deg,var(--dark),var(--black)); border-bottom:1px solid rgba(255,255,255,.06); }
-    .page-hero h1 { font-size:clamp(2.5rem,5vw,4rem); margin-bottom:1rem; }
-    .page-hero p { font-size:1.1rem; color:var(--text-muted); max-width:600px; line-height:1.8; }
-    
-    .about-section { padding: 4rem 0; }
-    .about-content { max-width: 800px; margin: 0 auto; }
-    .about-content h2 { font-size: 2rem; margin: 2rem 0 1rem; color: var(--text-primary); }
-    .about-content h3 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--gold); font-family: var(--font-sans); font-weight: 500; }
-    .about-content p { font-size: 1rem; color: var(--text-muted); line-height: 1.9; margin-bottom: 1.5rem; }
-    
+    .page-hero {
+      padding: 9rem 0 5rem;
+      background: linear-gradient(160deg, var(--ink-900) 0%, var(--ink-950) 100%);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    .page-hero .label { display: block; margin-bottom: 1rem; }
+    .page-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 1.25rem;
+      color: var(--text-primary);
+    }
+    .page-hero p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      line-height: 1.85;
+      margin: 0 auto;
+    }
+
+    .about-section { padding: 5rem 0; }
+    .about-content { max-width: 760px; margin: 0 auto; }
+    .about-content h2 {
+      font-size: 2rem;
+      margin: 2.5rem 0 0.75rem;
+      color: var(--text-primary);
+    }
+    .about-content h2:first-of-type { margin-top: 0; }
+    .about-content p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.95;
+      margin-bottom: 1.25rem;
+    }
+
     .highlight-quote {
       font-family: var(--font-display);
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      color: var(--gold);
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      color: var(--amber-400);
       text-align: center;
       margin: 4rem 0;
-      line-height: 1.3;
-      position: relative;
+      line-height: 1.35;
+      font-style: italic;
     }
-    .highlight-quote::before, .highlight-quote::after {
+    .highlight-quote::before,
+    .highlight-quote::after {
       content: '';
       display: block;
-      width: 40px;
+      width: 48px;
       height: 1px;
-      background: var(--gold);
+      background: var(--amber-400);
       margin: 1.5rem auto;
+      opacity: 0.5;
     }
 
     .reasons-list {
       list-style: none;
       padding: 0;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
     }
     .reasons-list li {
-      position: relative;
-      padding-left: 2rem;
-      margin-bottom: 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
       color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .reasons-list li::before { content: ''; display: none; }
+    .reason-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(196,146,74,0.12);
+      border: 1px solid var(--border-amber);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--amber-400);
+      font-size: 0.75rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .reasons-list strong { color: var(--text-primary); display: block; margin-bottom: 0.2rem; }
+
+    .about-cta {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 3rem 2rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+    }
+    .about-cta h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+    .about-cta p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
       line-height: 1.8;
     }
-    .reasons-list li::before {
-      content: 'âœ“';
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-      font-weight: bold;
-    }
-    .reasons-list strong { color: var(--text-primary); }
 
-    .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
-    .fade-in.visible{opacity:1;transform:translateY(0);}
+    .fade-in { opacity:0; transform:translateY(20px); transition:opacity .6s ease,transform .6s ease; }
+    .fade-in.visible { opacity:1; transform:translateY(0); }
   </style>
 </head>
 <body>
@@ -70,7 +134,7 @@
       <img src="assets/images/ka logo.webp" alt="K&A Logo">
       <div class="nav-logo-text">
         <span class="nav-logo-name">K&A Fragrances</span>
-        <span class="nav-logo-tagline">ORIGINAL - NICHE - DECANT</span>
+        <span class="nav-logo-tagline">Original · Niche · Decant</span>
       </div>
     </a>
     <ul class="nav-links" id="nav-links">
@@ -104,8 +168,8 @@
   <div class="search-modal-inner">
     <p class="search-modal-title">Search Fragrances</p>
     <div class="search-input-wrap">
-      <input type="text" id="search-input" placeholder="Brand, name, notesâ€¦" autocomplete="off">
-      <button class="search-close-btn" data-close-search>âœ•</button>
+      <input type="text" id="search-input" placeholder="Brand, name, notes…" autocomplete="off">
+      <button class="search-close-btn" data-close-search>✕</button>
     </div>
     <div id="search-results"></div>
   </div>
@@ -114,36 +178,50 @@
 <!-- CART SIDEBAR -->
 <div class="cart-overlay" id="cart-overlay"></div>
 <aside class="cart-sidebar" id="cart-sidebar">
-  <div class="cart-header"><h3>Your Cart</h3><button class="cart-close" id="cart-close-btn">âœ•</button></div>
-  <div class="cart-empty" id="cart-empty"><div class="cart-empty-icon">ðŸ›ï¸</div><p>Your cart is empty</p></div>
-  <div id="cart-content" style="display:none;flex:1;flex-direction:column;">
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <button class="cart-close" id="cart-close-btn">✕</button>
+  </div>
+  <div class="cart-empty" id="cart-empty">
+    <div class="cart-empty-icon">🛍️</div>
+    <p>Your cart is empty</p>
+    <a href="shop.html" class="btn btn-ghost" onclick="closeCart()">Browse Fragrances</a>
+  </div>
+  <div id="cart-content" style="display:none;flex:1;display:flex;flex-direction:column;">
     <div class="cart-items" id="cart-items"></div>
     <div class="cart-footer">
       <div class="cart-subtotal">
         <span class="cart-subtotal-label">Subtotal</span>
-        <span class="cart-subtotal-price" id="cart-total">â‚±0</span>
+        <span class="cart-subtotal-price" id="cart-total">A$0.00</span>
       </div>
-      <a href="contact.html" class="btn btn-gold" style="width:100%;justify-content:center;" onclick="closeCart()">Proceed to Order</a>
+      <a href="contact.html" class="btn btn-amber" style="width:100%;justify-content:center;" onclick="closeCart()">
+        Proceed to Order &nbsp;<i class="fas fa-arrow-right"></i>
+      </a>
     </div>
   </div>
 </aside>
+
+<!-- SCROLL TO TOP -->
+<button class="scroll-top" id="scroll-top" title="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-chevron-up"></i>
+</button>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
   <div class="container">
     <span class="label">Our Story</span>
-    <span class="gold-line left"></span>
+    <div class="amber-rule center"></div>
     <h1>About K&A Fragrances</h1>
-    <p>Welcome to K&A Fragrances, where your scent journey begins. We are passionate about fragrances and believe that everyone deserves the opportunity to discover their signature scent without the risk of blind buying.</p>
+    <p>We are passionate fragrance curators dedicated to helping you discover your signature scent — without the risk of blind buying.</p>
   </div>
 </div>
 
 <!-- MAIN CONTENT -->
 <section class="about-section">
   <div class="container about-content">
-    
+
     <div class="fade-in">
-      <p>Our mission is to provide you with the finest selection of authentic sample-sized fragrances, allowing you to explore the world of luxury scents without breaking the bank.</p>
+      <p>Our mission is to provide you with the finest selection of authentic fragrances — from rich Middle Eastern ouds and iconic designer bottles to rare niche artisan perfumes — available in sample sizes from just 2ml, so you can explore without committing.</p>
     </div>
 
     <div class="highlight-quote fade-in">
@@ -152,41 +230,48 @@
 
     <div class="fade-in">
       <h2>Our Vision</h2>
-      <p>At K&A Fragrances, we are more than just a fragrance retailer. We are curators of sensory experiences, experts in the art of scent, and advocates for thoughtful consumption. Our vision is to empower our customers to make informed decisions about their fragrance purchases by offering them the chance to test and experience popular niche and designer fragrances.</p>
+      <p>At K&A Fragrances, we are more than a fragrance retailer. We are curators of sensory experiences — experts in the art of scent and advocates for thoughtful consumption. Our vision is to empower every customer to make confident fragrance decisions by offering them the chance to experience a scent before they invest in a full bottle.</p>
     </div>
 
     <div class="fade-in">
-      <h2>Why Samples?</h2>
-      <p>We understand the frustration of purchasing a full-sized fragrance only to find out it's not the right fit. That's why we're dedicated to offering sample sizes of popular scents at a fraction of the cost. Our samples allow you to explore and enjoy a variety of fragrances, discovering which ones truly resonate with your unique preferences.</p>
-      
-      <p>By providing samples, we aim to:</p>
+      <h2>Why Decants &amp; Samples?</h2>
+      <p>We understand the frustration of spending on a full-sized fragrance only to find it's not quite right. That's why every fragrance in our catalog is available as a 2ml, 5ml, or 10ml decant — at a fraction of the full-bottle price.</p>
       <ul class="reasons-list">
-        <li><strong>Save You Money:</strong> Avoid the costly mistake of blind buying by testing out fragrances before committing to a full-sized bottle.</li>
-        <li><strong>Offer Variety:</strong> Experience a wide range of scents from the comfort of your home, with no pressure to choose just one.</li>
-        <li><strong>Promote Thoughtful Consumption:</strong> Encourage mindful purchasing decisions, reducing waste and ensuring you only invest in fragrances you love.</li>
+        <li>
+          <span class="reason-icon"><i class="fas fa-piggy-bank"></i></span>
+          <div><strong>Save Your Money</strong>Try before you commit — avoid the costly mistake of blind buying a full bottle.</div>
+        </li>
+        <li>
+          <span class="reason-icon"><i class="fas fa-layer-group"></i></span>
+          <div><strong>Explore More</strong>Experience a wide range of scents from the comfort of your home, with no pressure to choose just one.</div>
+        </li>
+        <li>
+          <span class="reason-icon"><i class="fas fa-leaf"></i></span>
+          <div><strong>Shop Mindfully</strong>Encourage intentional purchases — invest only in fragrances you genuinely love.</div>
+        </li>
       </ul>
     </div>
 
     <div class="fade-in">
       <h2>Our Passion</h2>
-      <p>With a deep passion for fragrance, K&A Fragrances prides itself on being a trusted authority in the world of scents. We carefully select each sample, ensuring that you receive only the best and most sought-after fragrances on the market. We are committed to providing exceptional customer service and sharing our knowledge to help you find the perfect scent.</p>
+      <p>With a deep passion for the art of fragrance, K&A Fragrances carefully selects each scent in our catalog — ensuring you receive only the best and most sought-after fragrances in the world. Every item we carry is 100% authentic, sourced from verified suppliers. We take pride in our Authenticity Guarantee and back it on every single order.</p>
     </div>
 
     <div class="fade-in">
-      <h2>Join Us on the Scent Journey</h2>
-      <p>We invite you to join the K&A Fragrances community and embark on a journey of olfactory discovery. Whether you're searching for a new everyday scent, a special occasion fragrance, or simply want to explore the world of niche and designer perfumes, we are here to guide you every step of the way. Let's make every scent experience memorable and meaningful.</p>
-      <p>Discover your next favourite fragrance with K&A Fragrances. Your perfect scent is just a sample away.</p>
+      <h2>Join the Scent Journey</h2>
+      <p>Whether you're searching for a new everyday signature, a special occasion scent, or simply want to explore the world of niche and designer perfumes — we're here to guide you. Let's make every scent experience memorable and meaningful.</p>
     </div>
 
-    <div style="text-align:center;margin-top:4rem;" class="fade-in">
-      <a href="shop.html" class="btn btn-gold">Explore Our Collection</a>
+    <div class="about-cta fade-in">
+      <h3>Ready to Discover Your Scent?</h3>
+      <p>Browse our full catalog of authentic Middle Eastern, Designer, and Niche fragrances — available in decants from 2ml.</p>
+      <a href="shop.html" class="btn btn-amber">
+        <i class="fas fa-flask"></i> Explore Our Collection
+      </a>
     </div>
 
   </div>
 </section>
-
-<!-- WHATSAPP -->
-<a class="whatsapp-float" href="https://wa.me/639XXXXXXXXX" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -194,13 +279,13 @@
     <div class="footer-grid">
       <div>
         <div class="footer-brand-name">K&A Fragrances</div>
-        <span class="gold-line left"></span>
-        <p class="footer-brand-desc">Your trusted source for 100% original Middle Eastern, Designer, and Niche fragrances â€” plus affordable decants and samples.</p>
+        <div class="amber-rule"></div>
+        <p class="footer-brand-desc">Your trusted source for 100% original Middle Eastern, Designer, and Niche fragrances — plus affordable decants and samples.</p>
         <div class="footer-socials">
-          <a href="#" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-btn" title="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/639XXXXXXXXX" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/639XXXXXXXXX" class="social-btn"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
       <div>
@@ -232,8 +317,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copy">Â© 2025 K&A Fragrances. All rights reserved.</p>
-      <p class="footer-copy">100% Original Â· Authentic Guarantee</p>
+      <p class="footer-copy">© 2025 K&A Fragrances. All rights reserved.</p>
+      <p class="footer-copy">100% Original · Authentic Guarantee</p>
     </div>
   </div>
 </footer>
@@ -242,8 +327,17 @@
 <script src="js/cart.js"></script>
 <script src="js/script.js"></script>
 <script>
-  const io = new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.1});
-  document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
+  const savedTheme = localStorage.getItem('ka-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('ka-theme', next);
+  });
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  }), { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
 </script>
 </body>
 </html>

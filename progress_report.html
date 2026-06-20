@@ -392,7 +392,7 @@
   <!-- SUMMARY -->
   <div class="summary-bar">
     <div class="summary-item">
-      <span class="summary-num">3</span>
+      <span class="summary-num">4</span>
       <span class="summary-label">Completed</span>
     </div>
     <div class="summary-item">
@@ -596,7 +596,7 @@
         </div>
       </div>
       <div class="notes-box">
-        <strong>Design system v2 shipped June 20, 2026.</strong> All pages now use consistent CSS tokens. Light/dark mode toggle with localStorage persistence. About &amp; Contact pages still use v1 styling — update in a future pass.
+        <strong>Design system v2 shipped June 20, 2026.</strong> All pages now use consistent CSS custom property tokens (--ink-*, --amber-*, --text-*, --border, etc). Light/dark mode toggle with localStorage persistence. V1 compatibility aliases (--gold, --dark-2, --dark-3, --dark-4) added to :root to bridge old code. All pages — index, shop, about, contact — fully migrated to v2.
       </div>
     </div>
   </div>
@@ -916,6 +916,107 @@
       </div>
       <div class="notes-box">
         <strong>Recommended flow:</strong> Customer checks out → selects shipping → PayMongo processes payment → webhook fires → courier is booked automatically → tracking number sent to customer via SMS/WhatsApp.
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 4 -->
+  <div class="phase-label">
+    <span class="phase-label-text">Phase 4 — Australian Market & UI Polish</span>
+    <div class="phase-label-line"></div>
+  </div>
+
+  <!-- CARD: AU Dollar Pricing & Multi-page UI Polish -->
+  <div class="card open">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="card-icon" style="background:var(--green-bg);color:var(--green);">
+        <i class="fas fa-gem"></i>
+      </div>
+      <div class="card-title-wrap">
+        <div class="card-title">Australian Dollar Pricing &amp; UI Polish</div>
+        <div class="card-subtitle">A$ pricing, navbar layout, light/dark contrast, about/contact/shop overhaul, universal footer</div>
+      </div>
+      <div class="card-badges">
+        <span class="badge badge-done"><i class="fas fa-check"></i> &nbsp;Done</span>
+      </div>
+      <i class="fas fa-chevron-down card-chevron"></i>
+    </div>
+    <div class="card-body">
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span class="progress-pct">100% complete</span>
+          <span class="progress-pct">8 / 8 tasks</span>
+        </div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" style="width:100%"></div></div>
+      </div>
+      <div class="task-list">
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text">
+            <div class="task-name done-text">Australian Dollar pricing (A$XX.XX) across all pages</div>
+            <div class="task-desc">Replaced ₱ with A$ in script.js formatPrice(), cart.js, index.html TF section, and shop.html price filters</div>
+          </div>
+          <span class="task-tag">Pricing</span>
+        </div>
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text">
+            <div class="task-name done-text">Navbar 3-column grid layout — logo left, links center, actions right</div>
+            <div class="task-desc">CSS grid 1fr/auto/1fr replaces old flex layout. Logo+tagline pinned left, icons pinned right, nav links perfectly centered.</div>
+          </div>
+          <span class="task-tag">Navbar</span>
+        </div>
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text">
+            <div class="task-name done-text">K&A Exclusive badge: fa-fire → fa-gem (shadcn-style)</div>
+            <div class="task-desc">Topaz Flame exclusive tag icon updated from fire to gem in index.html</div>
+          </div>
+          <span class="task-tag">UI</span>
+        </div>
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text">
+            <div class="task-name done-text">Light/dark mode full CSS variable overrides</div>
+            <div class="task-desc">Comprehensive [data-theme="light"] block — all 30+ tokens, component-level overrides for cart, search modal, buttons, footer. Fixes border/bg invisibility in light mode.</div>
+          </div>
+          <span class="task-tag">Theming</span>
+        </div>
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text">
+            <div class="task-name done-text">About page — full rewrite with v2 design system</div>
+            <div class="task-desc">Centered hero, amber rule, highlight quote, reasons card list with icon circles, "Explore Our Collection" btn-amber CTA, full footer. No WhatsApp float.</div>
+          </div>
+          <span class="task-tag">About</span>
+        </div>
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text">
+            <div class="task-name done-text">Contact page — full rewrite with AU options &amp; redesigned FAQ</div>
+            <div class="task-desc">Removed WhatsApp + Facebook from Reach Us (kept Instagram + Email only). All borders use v2 --border/--border-subtle vars. FAQ: 8 questions with FA icons + rotate toggle. Payment: Bank Transfer, PayID, PayPal, Cash on Pickup.</div>
+          </div>
+          <span class="task-tag">Contact</span>
+        </div>
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text">
+            <div class="task-name done-text">Shop page — 4-column footer added</div>
+            <div class="task-desc">Full footer matching index.html applied to shop.html</div>
+          </div>
+          <span class="task-tag">Shop</span>
+        </div>
+        <div class="task">
+          <div class="task-check done"><i class="fas fa-check"></i></div>
+          <div class="task-text">
+            <div class="task-name done-text">V1 → V2 CSS compatibility aliases in :root</div>
+            <div class="task-desc">--gold, --dark, --dark-2, --dark-3, --dark-4, --black, --border-subtle mapped to v2 equivalents so old inline styles still resolve correctly</div>
+          </div>
+          <span class="task-tag">CSS</span>
+        </div>
+      </div>
+      <div class="notes-box">
+        <strong>Phase 4 completed June 20, 2026.</strong> All four pages now share the same 4-column footer. The store is fully AU-market ready with A$ pricing and Australian shipping/payment options (Bank Transfer, PayID, PayPal, Cash on Pickup) on the contact/order form. Light mode is now fully polished across all pages.
       </div>
     </div>
   </div>

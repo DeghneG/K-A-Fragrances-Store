@@ -1,96 +1,225 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact & Order â€” K&A Fragrances</title>
-  <meta name="description" content="Contact K&A Fragrances to place an order, ask about stock, or get a fragrance recommendation. Available on WhatsApp, Facebook, and email." />
+  <title>Contact & Order — K&A Fragrances</title>
+  <meta name="description" content="Contact K&A Fragrances to place an order, ask about stock, or get a fragrance recommendation." />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    .page-hero { padding:9rem 0 4rem; background:linear-gradient(135deg,#0a0a0a,#111); border-bottom:1px solid rgba(255,255,255,.06); }
-    .contact-layout { display:grid; grid-template-columns:1fr 1.4fr; gap:3rem; padding:4rem 0 6rem; }
-    /* Info Column */
+    .page-hero {
+      padding: 9rem 0 5rem;
+      background: linear-gradient(160deg, var(--ink-900) 0%, var(--ink-950) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero .label { display: block; margin-bottom: 1rem; }
+    .page-hero h1 { font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom: 0.75rem; }
+    .page-hero p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.8; }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 2.5rem;
+      padding: 4rem 0 6rem;
+      align-items: start;
+    }
+    @media(max-width:900px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-info-card { position: static !important; }
+    }
+    @media(max-width:600px) { .form-grid { grid-template-columns: 1fr; } }
+
     .contact-info-card {
-      background:var(--dark-2); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius-lg);
-      padding:2.5rem; height:fit-content; position:sticky; top:90px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      position: sticky;
+      top: 90px;
     }
-    .contact-info-title { font-family:var(--font-display); font-size:1.6rem; margin-bottom:.5rem; }
-    .contact-info-desc { font-size:.85rem; color:var(--text-muted); line-height:1.8; margin-bottom:2rem; }
-    .contact-methods { display:flex; flex-direction:column; gap:1rem; margin-bottom:2rem; }
+    .contact-info-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+    }
+    .contact-info-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 1.75rem;
+    }
+    .contact-methods { display: flex; flex-direction: column; gap: 0.85rem; margin-bottom: 1.5rem; }
     .contact-method {
-      display:flex; align-items:center; gap:1rem;
-      padding:1rem 1.25rem; background:var(--dark-3); border:1px solid var(--dark-4);
-      border-radius:var(--radius-md); transition:var(--transition); text-decoration:none;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.95rem 1.1rem;
+      background: var(--elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+      text-decoration: none;
+      color: inherit;
     }
-    .contact-method:hover { border-color:var(--gold); transform:translateX(4px); }
-    .contact-method-icon { width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }
-    .icon-wa { background:rgba(37,211,102,.15); color:#25d366; }
-    .icon-fb { background:rgba(24,119,242,.15); color:#1877f2; }
-    .icon-ig { background:rgba(225,48,108,.15); color:#e1306c; }
-    .icon-em { background:rgba(255,255,255,.08); color:var(--gold); }
-    .contact-method-info { flex:1; }
-    .contact-method-name { font-size:.8rem; font-weight:600; color:var(--text-primary); }
-    .contact-method-handle { font-size:.72rem; color:var(--text-muted); }
-    .contact-hours { font-size:.78rem; color:var(--text-dim); margin-top:.25rem; }
-    /* Order Form */
+    .contact-method:hover { border-color: var(--border-amber); transform: translateX(4px); }
+    .contact-method-icon {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .icon-ig { background: rgba(225,48,108,0.12); color: #e1306c; }
+    .icon-em { background: rgba(196,146,74,0.12); color: var(--amber-400); border: 1px solid var(--border-amber); }
+    .contact-method-info { flex: 1; }
+    .contact-method-name { font-size: 0.82rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.1rem; }
+    .contact-method-handle { font-size: 0.72rem; color: var(--text-muted); }
+    .contact-hours { font-size: 0.68rem; color: var(--amber-400); margin-top: 0.15rem; font-family: var(--font-mono); letter-spacing: 0.05em; }
+    .contact-availability {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      text-align: center;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
     .order-form-card {
-      background:var(--dark-2); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius-lg); padding:2.5rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
     }
-    .form-title { font-family:var(--font-display); font-size:1.6rem; margin-bottom:.5rem; }
-    .form-subtitle { font-size:.85rem; color:var(--text-muted); margin-bottom:2rem; }
-    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; }
-    .form-group { display:flex; flex-direction:column; gap:.5rem; }
-    .form-group.full { grid-column:1/-1; }
-    .form-label { font-size:.68rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); }
+    .form-title { font-family: var(--font-display); font-size: 1.5rem; color: var(--text-primary); margin-bottom: 0.35rem; }
+    .form-subtitle { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.75rem; line-height: 1.7; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--amber-400);
+      font-family: var(--font-mono);
+    }
     .form-input, .form-select, .form-textarea {
-      background:var(--dark-3); border:1px solid var(--dark-4); border-radius:var(--radius-sm);
-      padding:.85rem 1rem; font-size:.9rem; color:var(--text-primary); font-family:var(--font-sans);
-      outline:none; transition:var(--transition);
+      background: var(--elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.8rem 1rem;
+      font-size: 0.88rem;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      outline: none;
+      transition: var(--transition);
     }
-    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(255,255,255,.06); }
-    .form-input::placeholder, .form-textarea::placeholder { color:var(--text-dim); }
-    .form-textarea { resize:vertical; min-height:120px; }
-    .form-select { cursor:pointer; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--amber-400);
+      box-shadow: 0 0 0 3px rgba(196,146,74,0.1);
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--text-dim); }
+    .form-select { cursor: pointer; }
+    .form-textarea { resize: vertical; min-height: 110px; }
+
     .cart-summary-box {
-      background:var(--dark-3); border:1px solid var(--dark-4); border-radius:var(--radius-md);
-      padding:1.25rem; margin:1.5rem 0;
+      background: var(--elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.1rem;
+      margin: 1.25rem 0;
     }
-    .cart-summary-title { font-size:.68rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:.75rem; }
-    .cart-summary-empty { font-size:.82rem; color:var(--text-dim); text-align:center; padding:.5rem; }
-    .cart-summary-item { display:flex; justify-content:space-between; font-size:.82rem; padding:.3rem 0; border-bottom:1px solid var(--dark-4); }
-    .cart-summary-item:last-child { border:none; }
-    .cart-summary-total { display:flex; justify-content:space-between; font-size:.9rem; margin-top:.75rem; padding-top:.5rem; border-top:1px solid rgba(255,255,255,.12); }
-    .cart-summary-total strong { color:var(--gold); }
-    /* FAQ */
-    .faq-list { display:flex; flex-direction:column; gap:1rem; }
-    .faq-item { background:var(--dark-2); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius-md); overflow:hidden; }
+    .cart-summary-title {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--amber-400);
+      margin-bottom: 0.65rem;
+      font-family: var(--font-mono);
+    }
+    .cart-summary-empty { font-size: 0.8rem; color: var(--text-dim); text-align: center; padding: 0.5rem; }
+    .cart-summary-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .cart-summary-item:last-child { border: none; }
+    .cart-summary-total {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      margin-top: 0.65rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .cart-summary-total strong { color: var(--amber-400); }
+    .form-note { font-size: 0.7rem; color: var(--text-dim); text-align: center; margin-top: 0.65rem; line-height: 1.6; }
+    .form-success { display: none; text-align: center; padding: 3rem 2rem; }
+    .form-success-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .form-success h3 { font-family: var(--font-display); font-size: 1.8rem; color: var(--amber-400); margin-bottom: 0.5rem; }
+    .form-success p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.8; }
+
+    .faq-section { padding: 4rem 0 6rem; }
+    .faq-grid { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 3rem; }
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+    .faq-item:hover { border-color: var(--border-amber); }
+    .faq-item.open { border-color: var(--border-amber); }
     .faq-q {
-      padding:1.25rem 1.5rem; cursor:pointer; display:flex; justify-content:space-between; align-items:center;
-      font-weight:500; font-size:.9rem; transition:var(--transition);
+      padding: 1.2rem 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      transition: var(--transition);
+      user-select: none;
     }
-    .faq-q:hover { color:var(--gold); }
-    .faq-icon { color:var(--gold); transition:transform .3s ease; }
-    .faq-a { display:none; padding:0 1.5rem 1.25rem; font-size:.85rem; color:var(--text-muted); line-height:1.8; }
-    .faq-item.open .faq-a { display:block; }
-    .faq-item.open .faq-icon { transform:rotate(45deg); }
-    .fade-in{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}
-    .fade-in.visible{opacity:1;transform:translateY(0);}
-    .search-result-item{display:flex;align-items:center;gap:1rem;padding:.75rem;border-radius:var(--radius-md);border:1px solid var(--dark-3);transition:var(--transition);background:var(--dark-3);margin-bottom:.5rem;}
-    .search-result-item:hover{border-color:var(--gold);}
-    .search-result-item img{width:50px;height:60px;object-fit:cover;border-radius:6px;}
-    .search-result-brand{font-size:.62rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;}
-    .search-result-name{font-family:var(--font-serif);font-size:.95rem;}
-    .search-result-price{font-size:.8rem;color:var(--text-muted);}
-    .search-no-results{text-align:center;padding:2rem;color:var(--text-dim);}
-    .form-success {
-      display:none; text-align:center; padding:3rem 2rem;
+    .faq-q:hover { color: var(--amber-400); }
+    .faq-item.open .faq-q { color: var(--amber-400); }
+    .faq-q-icon {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(196,146,74,0.1);
+      border: 1px solid var(--border-amber);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--amber-400);
+      font-size: 0.72rem;
+      flex-shrink: 0;
     }
-    .form-success-icon { font-size:3rem; margin-bottom:1rem; }
-    .form-success h3 { font-family:var(--font-display); font-size:1.8rem; color:var(--gold); margin-bottom:.5rem; }
-    .form-success p { font-size:.9rem; color:var(--text-muted); }
-    @media(max-width:900px){.contact-layout{grid-template-columns:1fr;}.contact-info-card{position:static;}}
-    @media(max-width:600px){.form-grid{grid-template-columns:1fr;}}
+    .faq-q-text { flex: 1; }
+    .faq-toggle {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-dim);
+      font-size: 0.75rem;
+      flex-shrink: 0;
+      transition: transform 0.3s ease, border-color 0.2s ease;
+    }
+    .faq-item.open .faq-toggle { transform: rotate(45deg); border-color: var(--amber-400); color: var(--amber-400); }
+    .faq-a {
+      display: none;
+      padding: 0 1.5rem 1.25rem 4.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
@@ -102,7 +231,7 @@
       <img src="assets/images/ka logo.webp" alt="K&A Logo">
       <div class="nav-logo-text">
         <span class="nav-logo-name">K&A Fragrances</span>
-        <span class="nav-logo-tagline">ORIGINAL - NICHE - DECANT</span>
+        <span class="nav-logo-tagline">Original · Niche · Decant</span>
       </div>
     </a>
     <ul class="nav-links" id="nav-links">
@@ -132,8 +261,8 @@
   <div class="search-modal-inner">
     <p class="search-modal-title">Search Fragrances</p>
     <div class="search-input-wrap">
-      <input type="text" id="search-input" placeholder="Brand, name, notesâ€¦" autocomplete="off">
-      <button class="search-close-btn" data-close-search>âœ•</button>
+      <input type="text" id="search-input" placeholder="Brand, name, notes…" autocomplete="off">
+      <button class="search-close-btn" data-close-search>✕</button>
     </div>
     <div id="search-results"></div>
   </div>
@@ -142,59 +271,56 @@
 <!-- CART SIDEBAR -->
 <div class="cart-overlay" id="cart-overlay"></div>
 <aside class="cart-sidebar" id="cart-sidebar">
-  <div class="cart-header"><h3>Your Cart</h3><button class="cart-close" id="cart-close-btn">âœ•</button></div>
-  <div class="cart-empty" id="cart-empty"><div class="cart-empty-icon">ðŸ›ï¸</div><p>Your cart is empty</p></div>
-  <div id="cart-content" style="display:none;flex:1;flex-direction:column;">
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <button class="cart-close" id="cart-close-btn">✕</button>
+  </div>
+  <div class="cart-empty" id="cart-empty">
+    <div class="cart-empty-icon">🛍️</div>
+    <p>Your cart is empty</p>
+    <a href="shop.html" class="btn btn-ghost" onclick="closeCart()">Browse Fragrances</a>
+  </div>
+  <div id="cart-content" style="display:none;flex:1;display:flex;flex-direction:column;">
     <div class="cart-items" id="cart-items"></div>
     <div class="cart-footer">
       <div class="cart-subtotal">
         <span class="cart-subtotal-label">Subtotal</span>
-        <span class="cart-subtotal-price" id="cart-total">â‚±0</span>
+        <span class="cart-subtotal-price" id="cart-total">A$0.00</span>
       </div>
     </div>
   </div>
 </aside>
 
+<!-- SCROLL TO TOP -->
+<button class="scroll-top" id="scroll-top" title="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
 <!-- PAGE HERO -->
 <div class="page-hero">
   <div class="container">
     <span class="label">Get in Touch</span>
-    <span class="gold-line left"></span>
+    <div class="amber-rule"></div>
     <h1>Contact &amp; Order</h1>
-    <p style="color:var(--text-muted);margin-top:.75rem;font-size:.95rem;">Fill out the form below or reach us directly through WhatsApp, Facebook, or Instagram.</p>
+    <p>Fill out the form or reach us directly via Instagram or email — we typically reply within a few hours.</p>
   </div>
 </div>
 
-<!-- MAIN -->
+<!-- CONTACT LAYOUT -->
 <div class="container">
   <div class="contact-layout">
-    <!-- CONTACT INFO -->
+
+    <!-- REACH US -->
     <div class="contact-info-card fade-in">
       <div class="contact-info-title">Reach Us</div>
-      <p class="contact-info-desc">We typically respond within 1â€“2 hours on WhatsApp. Feel free to message us for stock inquiries, custom orders, or recommendations.</p>
+      <p class="contact-info-desc">We're available online and happy to help with orders, stock inquiries, custom requests, or fragrance recommendations.</p>
       <div class="contact-methods">
-        <a href="https://wa.me/639XXXXXXXXX?text=Hi!%20I%27d%20like%20to%20order." class="contact-method" target="_blank">
-          <div class="contact-method-icon icon-wa"><i class="fab fa-whatsapp"></i></div>
-          <div class="contact-method-info">
-            <div class="contact-method-name">WhatsApp</div>
-            <div class="contact-method-handle">+63 9XX XXX XXXX</div>
-            <div class="contact-hours">âš¡ Fastest Response</div>
-          </div>
-          <i class="fas fa-arrow-right" style="color:var(--text-dim);font-size:.8rem;"></i>
-        </a>
-        <a href="https://facebook.com/kafragrances" class="contact-method" target="_blank">
-          <div class="contact-method-icon icon-fb"><i class="fab fa-facebook-f"></i></div>
-          <div class="contact-method-info">
-            <div class="contact-method-name">Facebook</div>
-            <div class="contact-method-handle">K&A Fragrances</div>
-          </div>
-          <i class="fas fa-arrow-right" style="color:var(--text-dim);font-size:.8rem;"></i>
-        </a>
-        <a href="https://instagram.com/kafragrances" class="contact-method" target="_blank">
+        <a href="https://instagram.com/kafragrances" class="contact-method" target="_blank" rel="noopener">
           <div class="contact-method-icon icon-ig"><i class="fab fa-instagram"></i></div>
           <div class="contact-method-info">
             <div class="contact-method-name">Instagram</div>
             <div class="contact-method-handle">@kafragrances</div>
+            <div class="contact-hours">DM us anytime</div>
           </div>
           <i class="fas fa-arrow-right" style="color:var(--text-dim);font-size:.8rem;"></i>
         </a>
@@ -203,119 +329,144 @@
           <div class="contact-method-info">
             <div class="contact-method-name">Email</div>
             <div class="contact-method-handle">hello@kafragrances.com</div>
+            <div class="contact-hours">Response within 24h</div>
           </div>
           <i class="fas fa-arrow-right" style="color:var(--text-dim);font-size:.8rem;"></i>
         </a>
       </div>
-      <div style="font-size:.72rem;color:var(--text-dim);text-align:center;padding-top:1rem;border-top:1px solid var(--dark-3);">
-        ðŸ“ Available Online Â· Philippines
-      </div>
+      <p class="contact-availability">Available Online · Based in Australia</p>
     </div>
 
     <!-- ORDER FORM -->
     <div class="order-form-card fade-in">
       <div id="form-body">
         <div class="form-title">Place an Order</div>
-        <p class="form-subtitle">Fill in your details and we'll confirm your order via WhatsApp or email.</p>
+        <p class="form-subtitle">Fill in your details and we'll confirm your order via email within 24 hours.</p>
 
-        <!-- Cart Summary -->
         <div class="cart-summary-box">
           <div class="cart-summary-title">Your Cart Summary</div>
-          <div id="form-cart-summary"><p class="cart-summary-empty">No items in cart â€” add products from the shop first.</p></div>
+          <div id="form-cart-summary"><p class="cart-summary-empty">No items in cart — add products from the shop first.</p></div>
         </div>
 
         <form id="order-form">
           <div class="form-grid">
             <div class="form-group">
               <label class="form-label" for="fname">First Name *</label>
-              <input class="form-input" type="text" id="fname" name="fname" placeholder="Juan" required>
+              <input class="form-input" type="text" id="fname" name="fname" placeholder="Your first name" required>
             </div>
             <div class="form-group">
               <label class="form-label" for="lname">Last Name *</label>
-              <input class="form-input" type="text" id="lname" name="lname" placeholder="Dela Cruz" required>
+              <input class="form-input" type="text" id="lname" name="lname" placeholder="Your last name" required>
             </div>
             <div class="form-group">
-              <label class="form-label" for="phone">Phone / WhatsApp *</label>
-              <input class="form-input" type="tel" id="phone" name="phone" placeholder="+63 9XX XXX XXXX" required>
+              <label class="form-label" for="phone">Phone Number *</label>
+              <input class="form-input" type="tel" id="phone" name="phone" placeholder="+61 XXX XXX XXX" required>
             </div>
             <div class="form-group">
-              <label class="form-label" for="email">Email Address</label>
-              <input class="form-input" type="email" id="email" name="email" placeholder="you@email.com">
+              <label class="form-label" for="email">Email Address *</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="you@email.com" required>
             </div>
             <div class="form-group full">
               <label class="form-label" for="address">Delivery Address *</label>
-              <input class="form-input" type="text" id="address" name="address" placeholder="Street, Barangay, City, Province" required>
+              <input class="form-input" type="text" id="address" name="address" placeholder="Street, Suburb, State, Postcode" required>
             </div>
             <div class="form-group">
-              <label class="form-label" for="courier">Preferred Courier</label>
+              <label class="form-label" for="courier">Preferred Shipping</label>
               <select class="form-select" id="courier" name="courier">
-                <option value="">Any available</option>
-                <option value="jnt">J&T Express</option>
-                <option value="lbc">LBC</option>
-                <option value="flash">Flash Express</option>
-                <option value="ninjavan">Ninja Van</option>
-                <option value="grab">Grab / Lalamove</option>
+                <option value="">Standard shipping</option>
+                <option value="express">Express Post</option>
+                <option value="standard">Standard Post</option>
+                <option value="pickup">Local Pickup</option>
               </select>
             </div>
             <div class="form-group">
               <label class="form-label" for="payment">Payment Method *</label>
               <select class="form-select" id="payment" name="payment" required>
                 <option value="">Select payment</option>
-                <option value="gcash">GCash</option>
-                <option value="maya">Maya / PayMaya</option>
-                <option value="bdo">BDO Bank Transfer</option>
-                <option value="bpi">BPI Bank Transfer</option>
-                <option value="cod">COD (Metro areas only)</option>
+                <option value="bank">Bank Transfer (BSB/Account)</option>
+                <option value="payid">PayID</option>
+                <option value="paypal">PayPal</option>
+                <option value="cash">Cash on Pickup</option>
               </select>
             </div>
             <div class="form-group full">
-              <label class="form-label" for="notes">Additional Notes / Requests</label>
-              <textarea class="form-textarea" id="notes" name="notes" placeholder="Any specific items not in your cart, gift wrapping requests, or other notesâ€¦"></textarea>
+              <label class="form-label" for="notes">Additional Notes</label>
+              <textarea class="form-textarea" id="notes" name="notes" placeholder="Specific items not in cart, gift wrapping requests, or anything else…"></textarea>
             </div>
           </div>
-          <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;margin-top:1.5rem;font-size:.85rem;padding:1rem;">
+          <button type="submit" class="btn btn-amber" style="width:100%;justify-content:center;margin-top:1.5rem;font-size:.85rem;padding:1rem;">
             <i class="fas fa-paper-plane"></i> Submit Order Request
           </button>
-          <p style="font-size:.72rem;color:var(--text-dim);text-align:center;margin-top:.75rem;">
-            We'll confirm availability and total via WhatsApp or email within 24 hours.
-          </p>
+          <p class="form-note">We'll confirm availability and total via email within 24 hours.</p>
         </form>
       </div>
       <div class="form-success" id="form-success">
-        <div class="form-success-icon">âœ…</div>
+        <div class="form-success-icon">✅</div>
         <h3>Order Received!</h3>
-        <p>Thank you for your order request. We'll reach out to you within a few hours to confirm availability, total, and payment details.</p>
-        <a href="shop.html" class="btn btn-outline" style="margin-top:1.5rem;">Continue Shopping</a>
+        <p>Thank you for your order request. We'll reach out within 24 hours to confirm availability, total, and payment details.</p>
+        <a href="shop.html" class="btn btn-ghost" style="margin-top:1.5rem;">Continue Shopping</a>
       </div>
     </div>
   </div>
 
   <!-- FAQ -->
-  <section id="faq" style="padding:4rem 0 6rem;" class="fade-in">
+  <section id="faq" class="faq-section fade-in">
     <div class="section-heading">
       <span class="label">Got Questions?</span>
-      <span class="gold-line"></span>
+      <div class="amber-rule center"></div>
       <h2>Frequently Asked</h2>
+      <p>Everything you need to know about ordering, decants, and authenticity.</p>
     </div>
-    <div class="faq-list" id="faq-list">
-      <!-- rendered by JS -->
-    </div>
+    <div class="faq-grid" id="faq-list"></div>
   </section>
 </div>
-
-<!-- WHATSAPP -->
-<a class="whatsapp-float" href="https://wa.me/639XXXXXXXXX" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
 
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-bottom">
-      <p class="footer-copy">Â© 2025 K&A Fragrances. All rights reserved.</p>
-      <div style="display:flex;gap:1rem;">
-        <a href="index.html" style="font-size:.78rem;color:var(--text-dim);">Home</a>
-        <a href="shop.html" style="font-size:.78rem;color:var(--text-dim);">Shop</a>
-        <a href="about.html" style="font-size:.78rem;color:var(--text-dim);">About</a>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">K&A Fragrances</div>
+        <div class="amber-rule"></div>
+        <p class="footer-brand-desc">Your trusted source for 100% original Middle Eastern, Designer, and Niche fragrances — plus affordable decants and samples.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/639XXXXXXXXX" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+        </div>
       </div>
+      <div>
+        <div class="footer-col-title">Shop</div>
+        <div class="footer-links">
+          <a href="shop.html?cat=middle-eastern">Middle Eastern</a>
+          <a href="shop.html?cat=designer">Designer</a>
+          <a href="shop.html?cat=niche">Niche</a>
+          <a href="shop.html">All Fragrances</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Information</div>
+        <div class="footer-links">
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="contact.html#faq">FAQ</a>
+          <a href="contact.html#authenticity">Authenticity Guarantee</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links">
+          <a href="https://wa.me/639XXXXXXXXX"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+          <a href="mailto:hello@kafragrances.com"><i class="fas fa-envelope"></i> Email Us</a>
+          <a href="#"><i class="fab fa-facebook-f"></i> Facebook Page</a>
+          <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 K&A Fragrances. All rights reserved.</p>
+      <p class="footer-copy">100% Original · Authentic Guarantee</p>
     </div>
   </div>
 </footer>
@@ -324,77 +475,99 @@
 <script src="js/cart.js"></script>
 <script src="js/script.js"></script>
 <script>
-  // Cart summary on form
+  /* ── Theme ── */
+  const savedTheme = localStorage.getItem('ka-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('ka-theme', next);
+  });
+
+  /* ── Cart Summary on Form ── */
   function refreshFormCart() {
     const items = Cart.getItems();
     const el = document.getElementById('form-cart-summary');
     if (!items.length) {
-      el.innerHTML = '<p class="cart-summary-empty">No items in cart â€” add products from the shop first.</p>';
+      el.innerHTML = '<p class="cart-summary-empty">No items in cart — add products from the shop first.</p>';
       return;
     }
     el.innerHTML = items.map(i => `
       <div class="cart-summary-item">
-        <span>${i.brand} ${i.name} (${i.size}) Ã—${i.qty}</span>
-        <span style="color:var(--gold)">â‚±${(i.price * i.qty).toLocaleString()}</span>
+        <span>${i.brand} ${i.name} (${i.size}) ×${i.qty}</span>
+        <span style="color:var(--amber-400)">A$${(i.price * i.qty).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span>
       </div>`).join('') +
-      `<div class="cart-summary-total"><span>Total</span><strong>â‚±${Cart.getTotal().toLocaleString()}</strong></div>`;
+      `<div class="cart-summary-total"><span>Total</span><strong>A$${Cart.getTotal().toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</strong></div>`;
   }
   refreshFormCart();
   window.addEventListener('cart:updated', refreshFormCart);
 
-  // Form submit
+  /* ── Form Submit ── */
   document.getElementById('order-form').addEventListener('submit', e => {
     e.preventDefault();
-    // Build WhatsApp message
-    const fname = document.getElementById('fname').value;
-    const phone = document.getElementById('phone').value;
-    const address = document.getElementById('address').value;
-    const payment = document.getElementById('payment').value;
-    const notes = document.getElementById('notes').value;
-    const items = Cart.getItems();
-    let msg = `Hi K&A Fragrances! I'd like to place an order.\n\nðŸ‘¤ Name: ${fname}\nðŸ“ž Phone: ${phone}\nðŸ“ Address: ${address}\nðŸ’³ Payment: ${payment}\n\nðŸ›ï¸ Order:\n`;
-    items.forEach(i => msg += `â€¢ ${i.brand} ${i.name} (${i.size}) x${i.qty} = â‚±${(i.price*i.qty).toLocaleString()}\n`);
-    msg += `\nðŸ’° Total: â‚±${Cart.getTotal().toLocaleString()}`;
-    if (notes) msg += `\n\nðŸ“ Notes: ${notes}`;
-    // Show success
     document.getElementById('form-body').style.display = 'none';
     document.getElementById('form-success').style.display = 'block';
-    // Open WhatsApp
-    window.open('https://wa.me/639XXXXXXXXX?text=' + encodeURIComponent(msg), '_blank');
   });
 
-  // FAQ
+  /* ── FAQ ── */
   const faqs = [
-    { q: 'Are your fragrances 100% original?', a: 'Yes, absolutely. We source all our fragrances from verified, legitimate suppliers. We do not sell copies, fakes, or inspired versions. Every bottle is 100% authentic.' },
-    { q: 'How do decants work?', a: 'Decants are small samples (usually 5ml) taken directly from the original bottle and placed into clean atomizer vials. They let you experience a fragrance before buying a full bottle. Great for exploring new scents!' },
-    { q: 'How long does shipping take?', a: 'Shipping takes 2â€“5 business days depending on your location. We use trusted couriers like J&T, LBC, Flash Express, and Ninja Van. Same-day delivery is available in select Metro areas via Grab/Lalamove.' },
-    { q: 'What payment methods do you accept?', a: 'We accept GCash, Maya, BDO/BPI bank transfer, and COD (Metro areas only). Payment is settled before shipping for bank/e-wallet orders.' },
-    { q: 'Can I request a fragrance not listed on the website?', a: 'Yes! Our website only shows a portion of our catalog. Message us on WhatsApp and we\'ll check if we can source your desired fragrance.' },
-    { q: 'Do you offer gift wrapping?', a: 'Yes! Just mention it in the notes field or message us on WhatsApp. We offer elegant gift wrapping at a minimal additional cost.' },
-    { q: 'What is your return policy?', a: 'We do not accept returns on opened fragrances for hygiene reasons. However, if an item arrives damaged or is incorrect, please contact us within 24 hours with photos and we will resolve it immediately.' },
+    {
+      icon: 'fa-shield-halved',
+      q: 'Are your fragrances 100% original?',
+      a: 'Yes, absolutely. Every fragrance we carry is sourced from verified, legitimate suppliers. We do not sell copies, fakes, or inspired versions. Every bottle is 100% authentic — this is our core promise.'
+    },
+    {
+      icon: 'fa-flask',
+      q: 'What is a decant and how does it work?',
+      a: 'A decant is a small measured sample taken directly from an original full bottle and transferred into a clean atomizer vial. It lets you experience the exact same fragrance at a fraction of the cost. Perfect for testing before buying a full bottle.'
+    },
+    {
+      icon: 'fa-truck',
+      q: 'How long does shipping take?',
+      a: 'Standard shipping within Australia typically takes 3–7 business days. Express Post is available for faster delivery. Once your order is dispatched we will send you a tracking number via email.'
+    },
+    {
+      icon: 'fa-credit-card',
+      q: 'What payment methods do you accept?',
+      a: 'We accept Bank Transfer (BSB/Account), PayID, PayPal, and Cash on Pickup. Payment details are provided after your order is confirmed. For bank transfer and PayID we hold your order for 24 hours while awaiting payment.'
+    },
+    {
+      icon: 'fa-magnifying-glass',
+      q: 'Can I request a fragrance not listed on the website?',
+      a: "Absolutely. Our website shows only a portion of what we can source. DM us on Instagram or send an email with the fragrance name and we'll check if we can get it for you."
+    },
+    {
+      icon: 'fa-gift',
+      q: 'Do you offer gift wrapping?',
+      a: 'Yes! Just mention it in the Notes field when placing your order. We offer elegant gift wrapping with a personalised note card for a small additional fee.'
+    },
+    {
+      icon: 'fa-rotate-left',
+      q: 'What is your return and refund policy?',
+      a: 'We do not accept returns on opened fragrance products for hygiene reasons. However, if your order arrives damaged or is incorrect, please contact us within 48 hours with photos and we will resolve it immediately — either with a replacement or full refund.'
+    },
+    {
+      icon: 'fa-gem',
+      q: 'What makes K&A Fragrances different?',
+      a: 'We are a boutique curated store — not a mass reseller. Every fragrance is hand-picked for quality and authenticity. We carry Middle Eastern ouds, iconic designer bottles, and rare niche artisan scents, all available in sample sizes so you can explore without risk. Our Topaz Flame is an in-house original blend available exclusively from us.'
+    }
   ];
-  document.getElementById('faq-list').innerHTML = faqs.map((f,i) => `
+
+  document.getElementById('faq-list').innerHTML = faqs.map((f, i) => `
     <div class="faq-item">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-        <span>${f.q}</span>
-        <span class="faq-icon">+</span>
+        <span class="faq-q-icon"><i class="fas ${f.icon}"></i></span>
+        <span class="faq-q-text">${f.q}</span>
+        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
       </div>
       <div class="faq-a">${f.a}</div>
     </div>`).join('');
 
-  const io = new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target);}}),{threshold:.1});
-  document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
-
-  // Theme toggle
-  const themeToggle = document.getElementById('theme-toggle');
-  const savedTheme = localStorage.getItem('ka-theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', savedTheme);
-  themeToggle?.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('ka-theme', next);
-  });
+  /* ── Fade-in ── */
+  const io = new IntersectionObserver(e => e.forEach(x => {
+    if (x.isIntersecting) { x.target.classList.add('visible'); io.unobserve(x.target); }
+  }), { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
 </script>
 </body>
 </html>
