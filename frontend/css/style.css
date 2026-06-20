@@ -197,9 +197,9 @@ h1, h2, h3, h4 {
   gap: 0.8rem;
 }
 .nav-logo img {
-  width: 40px; height: 40px;
+  width: 55px; height: 55px;
   object-fit: cover;
-  filter: invert(1);
+  filter: grayscale(1) contrast(5) invert(1);
   mix-blend-mode: screen;
 }
 .nav-logo-text { line-height: 1; }
@@ -351,7 +351,7 @@ h1, h2, h3, h4 {
   line-height: 1.0;
   letter-spacing: -0.01em;
   margin-bottom: 0.15em;
-  color: var(--text-primary);
+  color: #fff;
 }
 .hero-title em {
   font-style: italic;
@@ -361,7 +361,7 @@ h1, h2, h3, h4 {
   font-family: var(--font-body);
   font-size: var(--text-sm);
   letter-spacing: 0.06em;
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.75);
   margin-bottom: 2.5rem;
   max-width: 380px;
   line-height: 1.8;
@@ -474,6 +474,7 @@ h1, h2, h3, h4 {
   padding-bottom: 2px;
 }
 .cat-bar::-webkit-scrollbar { display: none; }
+.cat-bar::after { content: ""; flex: 0 0 1rem; }
 .cat-pill {
   display: flex;
   align-items: center;
@@ -808,7 +809,7 @@ h1, h2, h3, h4 {
 }
 .tf-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.8fr 1.2fr;
   gap: 5rem;
   align-items: center;
   position: relative;
@@ -818,7 +819,7 @@ h1, h2, h3, h4 {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .tf-image-glow {
   position: absolute;
@@ -1151,7 +1152,14 @@ h1, h2, h3, h4 {
   gap: 3rem;
   margin-bottom: 3rem;
 }
-.footer-brand-name { font-family:var(--font-display); font-size:1.5rem; color:var(--amber-400); margin-bottom:0.5rem; }
+.footer-logo {
+  width: 55px; height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(5) invert(1);
+  mix-blend-mode: screen;
+}
+.footer-brand-name { font-family:var(--font-display); font-size:1.5rem; color:var(--amber-400); margin-bottom:0; }
 .footer-brand-desc { font-size:var(--text-sm); color:var(--text-dim); line-height:1.85; margin-bottom:1.5rem; }
 .footer-socials { display:flex; gap:0.65rem; }
 .social-btn {
@@ -1297,7 +1305,8 @@ h1, h2, h3, h4 {
 }
 [data-theme="light"] .navbar              { background:rgba(245,241,234,0.95) !important; }
 [data-theme="light"] .navbar.scrolled     { background:rgba(245,241,234,0.97) !important; }
-[data-theme="light"] .nav-logo img        { filter: none; mix-blend-mode: multiply; }
+[data-theme="light"] .nav-logo img,
+[data-theme="light"] .footer-logo         { filter: grayscale(1) contrast(5); mix-blend-mode: multiply; }
 [data-theme="light"] .cat-bar-wrap        { background:rgba(245,241,234,0.95); }
 [data-theme="light"] .theme-toggle .fa-sun  { display:inline; }
 [data-theme="light"] .theme-toggle .fa-moon { display:none; }

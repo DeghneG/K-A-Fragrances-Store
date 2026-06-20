@@ -50,7 +50,7 @@ const KA_PRODUCTS = [
   {
     id: 2,
     brand: "Swiss Arabian",
-    name: "Shaghaf Oud Aswad",
+    name: "Stronger With You Intensely",
     category: "middle-eastern",
     badge: "hot",
     badgeLabel: "Best Seller",
@@ -71,7 +71,7 @@ const KA_PRODUCTS = [
   {
     id: 3,
     brand: "Al Haramain",
-    name: "Amber Oud Gold",
+    name: "Vibrato",
     category: "middle-eastern",
     badge: "new",
     badgeLabel: "New",
@@ -94,7 +94,7 @@ const KA_PRODUCTS = [
   {
     id: 4,
     brand: "Dior",
-    name: "Sauvage EDP",
+    name: "Imagination",
     category: "designer",
     badge: "hot",
     badgeLabel: "Best Seller",
@@ -135,7 +135,7 @@ const KA_PRODUCTS = [
   {
     id: 6,
     brand: "YSL",
-    name: "Black Opium EDP",
+    name: "Bujairami Hectic",
     category: "designer",
     badge: "new",
     badgeLabel: "New",
@@ -220,7 +220,7 @@ const KA_PRODUCTS = [
   {
     id: 10,
     brand: "Kilian",
-    name: "Angels' Share",
+    name: "Bianco Latte",
     category: "niche",
     badge: "new",
     badgeLabel: "New",
@@ -241,7 +241,7 @@ const KA_PRODUCTS = [
   {
     id: 11,
     brand: "Creed",
-    name: "Aventus",
+    name: "Mykonos Dreamscape",
     category: "niche",
     badge: "hot",
     badgeLabel: "Best Seller",
