@@ -974,8 +974,8 @@ h1, h2, h3, h4 {
   justify-content: flex-end;
   padding: 1.5rem;
 }
-.cat-name { font-family:var(--font-display); font-size:1.35rem; color:var(--text-primary); }
-.cat-desc { font-size:var(--text-xs); color:var(--text-muted); margin:0.3rem 0 0.6rem; }
+.cat-name { font-family:var(--font-display); font-size:1.35rem; color:#fff; }
+.cat-desc { font-size:var(--text-xs); color:rgba(255,255,255,0.75); margin:0.3rem 0 0.6rem; }
 .cat-count { font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber-400); }
 
 .categories-wrap { position:relative; padding:10px 0; }
