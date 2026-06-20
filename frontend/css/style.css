@@ -198,8 +198,9 @@ h1, h2, h3, h4 {
 }
 .nav-logo img {
   width: 40px; height: 40px;
-  border-radius: 50%;
   object-fit: cover;
+  filter: invert(1);
+  mix-blend-mode: screen;
 }
 .nav-logo-text { line-height: 1; }
 .nav-logo-name {
@@ -1296,6 +1297,7 @@ h1, h2, h3, h4 {
 }
 [data-theme="light"] .navbar              { background:rgba(245,241,234,0.95) !important; }
 [data-theme="light"] .navbar.scrolled     { background:rgba(245,241,234,0.97) !important; }
+[data-theme="light"] .nav-logo img        { filter: none; mix-blend-mode: multiply; }
 [data-theme="light"] .cat-bar-wrap        { background:rgba(245,241,234,0.95); }
 [data-theme="light"] .theme-toggle .fa-sun  { display:inline; }
 [data-theme="light"] .theme-toggle .fa-moon { display:none; }

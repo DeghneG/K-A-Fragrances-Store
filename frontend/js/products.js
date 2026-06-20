@@ -1,4 +1,4 @@
-﻿/* ============================================
+/* ============================================
    K&A FRAGRANCES â€” PRODUCT DATA
    Each product has multiple size variants
    ============================================ */
@@ -21,10 +21,7 @@ const KA_PRODUCTS = [
     image: "assets/images/Topaz.webp",
     tags: ["oud", "saffron", "amber", "rose", "vanilla", "oriental", "signature"],
     variants: [
-      { size: "2ml",  type: "decant", price: 149 },
-      { size: "5ml",  type: "decant", price: 279 },
-      { size: "10ml", type: "decant", price: 499 },
-      { size: "50ml", type: "full",   price: 2999 }
+      { size: "50ml", type: "full",   price: 50 }
     ]
   },
 

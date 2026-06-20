@@ -405,7 +405,7 @@
 
   // ── TOPAZ FLAME SHOWCASE ──
   const tf = KA_PRODUCTS.find(p => p.id === 0);
-  let tfSelectedIdx = 3; // default: 50ml
+  let tfSelectedIdx = 0; // default: 50ml
   if (tf) {
     const tfVariantsEl = document.getElementById('tf-variants');
     tfVariantsEl.innerHTML = tf.variants.map((v, i) => `
