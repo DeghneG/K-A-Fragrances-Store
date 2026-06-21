@@ -341,7 +341,6 @@ function buildProductCard(product) {
     <div class="product-card fade-in ${product.isSignature ? 'signature-card' : ''}" data-id="${product.id}" data-category="${product.category}" id="card-${product.id}">
       <div class="product-card-img">
         <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.src='assets/images/decants.png'">
-        ${embersHTML}
         ${badge}
         ${!product.inStock ? `<div class="product-card-soldout">Sold Out</div>` : ''}
         <div class="product-card-overlay">
@@ -371,6 +370,7 @@ function buildProductCard(product) {
             : `<span style="font-size:0.6rem;color:#E8735A;letter-spacing:0.1em;font-family:var(--font-mono)">SOLD OUT</span>`}
         </div>
       </div>
+      ${embersHTML}
     </div>`;
 }
 

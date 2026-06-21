@@ -613,14 +613,6 @@ h1, h2, h3, h4 {
   0% { background-position: 0% 100%; opacity: 0.6; }
   100% { background-position: 0% 0%; opacity: 1; }
 }
-.signature-card .product-card-img img {
-  animation: fiery-pan 12s infinite alternate ease-in-out;
-}
-@keyframes fiery-pan {
-  0% { transform: scale(1.05) translate(0, 0); }
-  50% { transform: scale(1.15) translate(-3%, 3%); }
-  100% { transform: scale(1.2) translate(3%, -3%); }
-}
 
 .embers-container {
   position: absolute;
@@ -653,7 +645,7 @@ h1, h2, h3, h4 {
   0% { transform: translateY(0) scale(0.5) translateX(0); opacity: 0; }
   15% { opacity: 1; }
   85% { opacity: 0.8; }
-  100% { transform: translateY(-280px) scale(1.5) translateX(30px); opacity: 0; }
+  100% { transform: translateY(-550px) scale(1.5) translateX(30px); opacity: 0; }
 }
 .product-card-img {
   position: relative;
