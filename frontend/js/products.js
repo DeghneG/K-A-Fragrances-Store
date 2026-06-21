@@ -250,7 +250,7 @@ const KA_PRODUCTS = [
     rating: 5.0,
     reviews: 88,
     inStock: true,
-    image: "assets/images/dreamscape.webp",
+    image: "assets/images/dreamscape.jpg",
     tags: ["fresh", "fruity", "woody", "musk", "niche"],
     variants: [
       { size: "2ml",  type: "decant", price: 199 },
