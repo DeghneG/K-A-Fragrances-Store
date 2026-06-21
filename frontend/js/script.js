@@ -329,10 +329,19 @@ function buildProductCard(product) {
       <span class="vial-price">A$${v.price >= 1000 ? (v.price/1000).toFixed(1)+'k' : v.price}</span>
     </button>`).join('');
 
+  const embersHTML = product.isSignature ? `
+    <div class="embers-container">
+      <div class="ember"></div><div class="ember"></div>
+      <div class="ember"></div><div class="ember"></div>
+      <div class="ember"></div><div class="ember"></div>
+      <div class="ember"></div><div class="ember"></div>
+    </div>` : '';
+
   return `
     <div class="product-card fade-in ${product.isSignature ? 'signature-card' : ''}" data-id="${product.id}" data-category="${product.category}" id="card-${product.id}">
       <div class="product-card-img">
         <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.src='assets/images/decants.png'">
+        ${embersHTML}
         ${badge}
         ${!product.inStock ? `<div class="product-card-soldout">Sold Out</div>` : ''}
         <div class="product-card-overlay">
