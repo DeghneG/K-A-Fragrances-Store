@@ -330,7 +330,7 @@ function buildProductCard(product) {
     </button>`).join('');
 
   return `
-    <div class="product-card fade-in" data-id="${product.id}" data-category="${product.category}" id="card-${product.id}">
+    <div class="product-card fade-in ${product.isSignature ? 'signature-card' : ''}" data-id="${product.id}" data-category="${product.category}" id="card-${product.id}">
       <div class="product-card-img">
         <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.src='assets/images/decants.png'">
         ${badge}

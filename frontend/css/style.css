@@ -81,10 +81,18 @@
 html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
 body {
   font-family: var(--font-body);
-  background: var(--bg);
+  background: linear-gradient(-45deg, var(--ink-950), #141008, #1a140d, var(--ink-950));
+  background-size: 400% 400%;
+  animation: bgMove 20s ease infinite;
   color: var(--text-primary);
   line-height: 1.65;
   overflow-x: hidden;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 img  { max-width: 100%; display: block; }
 a    { text-decoration: none; color: inherit; }
@@ -551,6 +559,44 @@ h1, h2, h3, h4 {
   transform: translateY(-5px);
   border-color: var(--border-amber);
   box-shadow: var(--glow-card), var(--glow-amber);
+}
+
+/* ── PREMIUM SIGNATURE CARD (TOPAZ FLAME) ── */
+.signature-card {
+  border-color: rgba(196, 146, 74, 0.4);
+  animation: signature-pulse 3s infinite alternate ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+.signature-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(45deg, transparent, rgba(196, 146, 74, 0.5), rgba(232, 115, 90, 0.3), transparent);
+  background-size: 200% 200%;
+  animation: flame-border-shift 2.5s linear infinite;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.signature-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: rgba(196, 146, 74, 0.8);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.8), 0 0 50px rgba(196, 146, 74, 0.4), 0 0 80px rgba(232, 115, 90, 0.2);
+  z-index: 2;
+}
+.signature-card:hover::before {
+  opacity: 1;
+}
+@keyframes signature-pulse {
+  0% { box-shadow: 0 0 15px rgba(196, 146, 74, 0.15), inset 0 0 10px rgba(232, 115, 90, 0.05); }
+  100% { box-shadow: 0 0 35px rgba(232, 115, 90, 0.35), inset 0 0 20px rgba(196, 146, 74, 0.1); }
+}
+@keyframes flame-border-shift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
 }
 .product-card-img {
   position: relative;

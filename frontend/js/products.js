@@ -18,7 +18,7 @@ const KA_PRODUCTS = [
     rating: 5.0,
     reviews: 136,
     inStock: true,
-    image: "assets/images/Topaz.webp",
+    image: "assets/images/kafrag.jpg",
     tags: ["oud", "saffron", "amber", "rose", "vanilla", "oriental", "signature"],
     variants: [
       { size: "50ml", type: "full",   price: 50 }
