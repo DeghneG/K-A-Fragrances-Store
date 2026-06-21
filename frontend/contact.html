@@ -36,7 +36,7 @@
       border-radius: var(--radius-lg);
       padding: 2rem;
       position: sticky;
-      top: 90px;
+      top: 110px;
     }
     .contact-info-title {
       font-family: var(--font-display);
@@ -220,6 +220,90 @@
 
     .fade-in { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── PAYMENT PICKER ── */
+    .payment-picker { position: relative; }
+    .payment-btn {
+      width: 100%;
+      background: var(--elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.8rem 1rem;
+      font-size: 0.88rem;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      transition: var(--transition);
+      text-align: left;
+    }
+    .payment-btn:focus { outline: none; border-color: var(--amber-400); box-shadow: 0 0 0 3px rgba(196,146,74,0.1); }
+    .payment-picker.open .payment-btn { border-color: var(--amber-400); }
+    .payment-btn.error { border-color: #E8735A; box-shadow: 0 0 0 3px rgba(232,115,90,0.12); }
+    .payment-placeholder { color: var(--text-dim); }
+    .payment-chevron { font-size: 0.65rem; color: var(--text-dim); transition: transform 0.22s ease; flex-shrink: 0; }
+    .payment-picker.open .payment-chevron { transform: rotate(180deg); }
+    .payment-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 5px);
+      left: 0; right: 0;
+      background: var(--ink-800);
+      border: 1px solid var(--border-amber);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      z-index: 200;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+    }
+    .payment-picker.open .payment-dropdown { display: block; }
+    .payment-opt {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      font-size: 0.88rem;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+    }
+    .payment-opt:hover { background: rgba(255,255,255,0.04); }
+    .payment-opt.active { background: rgba(196,146,74,0.12); }
+
+    /* Brand accent on label text when hovered */
+    .payment-opt[data-val="apple-pay"]:hover  span { color: var(--text-primary); }
+    .payment-opt[data-val="google-pay"]:hover span { color: #4285F4; }
+    .payment-opt[data-val="visa"]:hover       span { color: #5B9BD5; }
+    .payment-opt[data-val="mastercard"]:hover span { color: #F79E1B; }
+    .payment-opt[data-val="amex"]:hover       span { color: #4EB6E8; }
+    .payment-opt[data-val="jcb"]:hover        span { color: #5C85D6; }
+
+    [data-theme="light"] .payment-opt[data-val="apple-pay"]:hover  span { color: #000; }
+    [data-theme="light"] .payment-opt[data-val="google-pay"]:hover span { color: #34A853; }
+    [data-theme="light"] .payment-opt[data-val="visa"]:hover       span { color: #1A1F71; }
+    [data-theme="light"] .payment-opt[data-val="mastercard"]:hover span { color: #EB001B; }
+    [data-theme="light"] .payment-opt[data-val="amex"]:hover       span { color: #016FD0; }
+    [data-theme="light"] .payment-opt[data-val="jcb"]:hover        span { color: #003087; }
+    .payment-opt i { font-size: 1.6rem; flex-shrink: 0; line-height: 1; }
+    .payment-opt + .payment-opt { border-top: 1px solid var(--border); }
+
+    /* Real brand colors */
+    .pi-apple  { color: var(--text-primary); }   /* adapts: white dark / black light */
+    .pi-gpay   { color: #4285F4; }
+    .pi-visa   { color: #1A1F71; }
+    .pi-mc     { color: #F79E1B; }
+    .pi-amex   { color: #016FD0; }
+    .pi-jcb    { color: #003087; }
+
+    /* Dark-mode: navy/dark blues are invisible on dark bg — brighten them */
+    [data-theme="dark"] .pi-visa  { color: #5B9BD5; }
+    [data-theme="dark"] .pi-amex  { color: #4EB6E8; }
+    [data-theme="dark"] .pi-jcb   { color: #5C85D6; }
+
+    [data-theme="light"] .pi-apple { color: #000; }
   </style>
 </head>
 <body>
@@ -228,7 +312,7 @@
 <nav class="navbar scrolled" id="navbar">
   <div class="container nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="assets/images/ka_frag_final_logo.jpg" alt="K&A Logo">
+      <img src="assets/images/KAFRAG.png" alt="K&A Logo">
       <div class="nav-logo-text">
         <span class="nav-logo-name">K&A Fragrances</span>
         <span class="nav-logo-tagline">Original · Niche · Decant</span>
@@ -315,20 +399,20 @@
       <div class="contact-info-title">Reach Us</div>
       <p class="contact-info-desc">We're available online and happy to help with orders, stock inquiries, custom requests, or fragrance recommendations.</p>
       <div class="contact-methods">
-        <a href="https://instagram.com/kafragrances" class="contact-method" target="_blank" rel="noopener">
+        <a href="https://www.instagram.com/ka.fragrances1" class="contact-method" target="_blank" rel="noopener">
           <div class="contact-method-icon icon-ig"><i class="fab fa-instagram"></i></div>
           <div class="contact-method-info">
             <div class="contact-method-name">Instagram</div>
-            <div class="contact-method-handle">@kafragrances</div>
+            <div class="contact-method-handle">@ka.fragrances1</div>
             <div class="contact-hours">DM us anytime</div>
           </div>
           <i class="fas fa-arrow-right" style="color:var(--text-dim);font-size:.8rem;"></i>
         </a>
-        <a href="mailto:hello@kafragrances.com" class="contact-method">
+        <a href="mailto:kafragrances.store@gmail.com" class="contact-method">
           <div class="contact-method-icon icon-em"><i class="fas fa-envelope"></i></div>
           <div class="contact-method-info">
             <div class="contact-method-name">Email</div>
-            <div class="contact-method-handle">hello@kafragrances.com</div>
+            <div class="contact-method-handle">kafragrances.store@gmail.com</div>
             <div class="contact-hours">Response within 24h</div>
           </div>
           <i class="fas fa-arrow-right" style="color:var(--text-dim);font-size:.8rem;"></i>
@@ -381,13 +465,33 @@
             </div>
             <div class="form-group">
               <label class="form-label" for="payment">Payment Method *</label>
-              <select class="form-select" id="payment" name="payment" required>
-                <option value="">Select payment</option>
-                <option value="bank">Bank Transfer (BSB/Account)</option>
-                <option value="payid">PayID</option>
-                <option value="paypal">PayPal</option>
-                <option value="cash">Cash on Pickup</option>
-              </select>
+              <input type="hidden" id="payment" name="payment">
+              <div class="payment-picker" id="payment-picker">
+                <button type="button" class="payment-btn" id="payment-btn" onclick="togglePayPicker(event)">
+                  <span id="payment-display"><span class="payment-placeholder">Select payment method</span></span>
+                  <i class="fas fa-chevron-down payment-chevron"></i>
+                </button>
+                <div class="payment-dropdown">
+                  <div class="payment-opt" data-val="apple-pay" data-label="Apple Pay" data-icon="fab fa-apple-pay pi-apple" onclick="pickPayment(this)">
+                    <i class="fab fa-apple-pay pi-apple"></i><span>Apple Pay</span>
+                  </div>
+                  <div class="payment-opt" data-val="google-pay" data-label="Google Pay" data-icon="fab fa-google-pay pi-gpay" onclick="pickPayment(this)">
+                    <i class="fab fa-google-pay pi-gpay"></i><span>Google Pay</span>
+                  </div>
+                  <div class="payment-opt" data-val="visa" data-label="Visa" data-icon="fab fa-cc-visa pi-visa" onclick="pickPayment(this)">
+                    <i class="fab fa-cc-visa pi-visa"></i><span>Visa</span>
+                  </div>
+                  <div class="payment-opt" data-val="mastercard" data-label="Mastercard" data-icon="fab fa-cc-mastercard pi-mc" onclick="pickPayment(this)">
+                    <i class="fab fa-cc-mastercard pi-mc"></i><span>Mastercard</span>
+                  </div>
+                  <div class="payment-opt" data-val="amex" data-label="American Express" data-icon="fab fa-cc-amex pi-amex" onclick="pickPayment(this)">
+                    <i class="fab fa-cc-amex pi-amex"></i><span>American Express</span>
+                  </div>
+                  <div class="payment-opt" data-val="jcb" data-label="JCB" data-icon="fab fa-cc-jcb pi-jcb" onclick="pickPayment(this)">
+                    <i class="fab fa-cc-jcb pi-jcb"></i><span>JCB</span>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="form-group full">
               <label class="form-label" for="notes">Additional Notes</label>
@@ -426,16 +530,16 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand-wrap" style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.5rem;">
-          <img src="assets/images/ka_frag_final_logo.jpg" alt="K&A Logo" class="footer-logo">
-          <div class="footer-brand-name" style="margin-bottom:0;">K&A Fragrances</div>
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.4rem;">
+          <img src="assets/images/KAFRAG.png" alt="K&A Logo" class="footer-logo">
+          <div class="footer-brand-name">K&A Fragrances</div>
         </div>
         <div class="amber-rule"></div>
         <p class="footer-brand-desc">Your trusted source for 100% original Middle Eastern, Designer, and Niche fragrances — plus affordable decants and samples.</p>
         <div class="footer-socials">
-          <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
-          <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-btn"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.youtube.com/@KAFragrances" class="social-btn" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/ka.fragrances1" class="social-btn" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@ka.fragrances" class="social-btn" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
         </div>
       </div>
       <div>
@@ -453,21 +557,30 @@
           <a href="about.html">About Us</a>
           <a href="contact.html">Contact</a>
           <a href="contact.html#faq">FAQ</a>
-          <a href="contact.html#authenticity">Authenticity Guarantee</a>
+          <a href="#" onclick="openShippingModal();return false;">Shipping Policy</a>
+          <a href="#" onclick="openPrivacyModal();return false;">Privacy Policy</a>
         </div>
       </div>
       <div>
         <div class="footer-col-title">Contact</div>
         <div class="footer-links">
-          <a href="#"><i class="fab fa-tiktok"></i> TikTok</a>
-          <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
-          <a href="mailto:hello@kafragrances.com"><i class="fas fa-envelope"></i> Email Us</a>
-          <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+          <a href="https://www.tiktok.com/@ka.fragrances" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i> TikTok</a>
+          <a href="https://www.youtube.com/@KAFragrances" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> YouTube</a>
+          <a href="mailto:kafragrances.store@gmail.com"><i class="fas fa-envelope"></i> Email Us</a>
+          <a href="https://www.instagram.com/ka.fragrances1" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copy">© 2025 K&A Fragrances. All rights reserved.</p>
+      <p class="footer-copy">© 2026 K&A Fragrances. All rights reserved.</p>
+      <div class="footer-payments" title="Accepted payments">
+        <i class="fab fa-cc-visa"></i>
+        <i class="fab fa-cc-mastercard"></i>
+        <i class="fab fa-cc-amex"></i>
+        <i class="fab fa-cc-jcb"></i>
+        <i class="fab fa-apple-pay"></i>
+        <i class="fab fa-google-pay"></i>
+      </div>
       <p class="footer-copy">100% Original · Authentic Guarantee</p>
     </div>
   </div>
@@ -504,9 +617,36 @@
   refreshFormCart();
   window.addEventListener('cart:updated', refreshFormCart);
 
+  /* ── Payment Picker ── */
+  function togglePayPicker(e) {
+    e.stopPropagation();
+    document.getElementById('payment-picker').classList.toggle('open');
+  }
+  document.addEventListener('click', () => {
+    document.getElementById('payment-picker').classList.remove('open');
+  });
+  function pickPayment(el) {
+    const val   = el.dataset.val;
+    const label = el.dataset.label;
+    const icon  = el.dataset.icon;
+    document.getElementById('payment').value = val;
+    document.getElementById('payment-display').innerHTML =
+      `<i class="${icon}" style="font-size:1.25rem;margin-right:.55rem;vertical-align:middle;"></i>${label}`;
+    document.querySelectorAll('.payment-opt').forEach(o => o.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('payment-picker').classList.remove('open');
+    document.getElementById('payment-btn').classList.remove('error');
+  }
+
   /* ── Form Submit ── */
   document.getElementById('order-form').addEventListener('submit', e => {
     e.preventDefault();
+    if (!document.getElementById('payment').value) {
+      const btn = document.getElementById('payment-btn');
+      btn.classList.add('error');
+      btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
     document.getElementById('form-body').style.display = 'none';
     document.getElementById('form-success').style.display = 'block';
   });
@@ -531,7 +671,7 @@
     {
       icon: 'fa-credit-card',
       q: 'What payment methods do you accept?',
-      a: 'We accept Bank Transfer (BSB/Account), PayID, PayPal, and Cash on Pickup. Payment details are provided after your order is confirmed. For bank transfer and PayID we hold your order for 24 hours while awaiting payment.'
+      a: 'We accept Apple Pay, Google Pay, Visa, Mastercard, American Express, and JCB. Payment details are provided after your order is confirmed and we will send you a secure payment link.'
     },
     {
       icon: 'fa-magnifying-glass',
