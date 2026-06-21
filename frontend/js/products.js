@@ -59,7 +59,7 @@ const KA_PRODUCTS = [
     rating: 4.8,
     reviews: 67,
     inStock: true,
-    image: "assets/images/Swyi.jpg",
+    image: "assets/images/SWYI.jpg",
     tags: ["oud", "smoky", "rose", "saffron", "oriental"],
     variants: [
       { size: "2ml",  type: "decant", price: 4 },
