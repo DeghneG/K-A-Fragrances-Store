@@ -313,8 +313,7 @@ function vialFill(size) {
 
 /* ── Build a Product Card with Vial Selector ── */
 function buildProductCard(product) {
-  const badge = product.badge && product.badgeLabel
-    ? `<span class="product-card-badge badge-${product.badge}">${product.badgeLabel}</span>` : '';
+  const badge = '';
   const stars = '★'.repeat(Math.round(product.rating)) + '☆'.repeat(5 - Math.round(product.rating));
 
   const vials = product.variants.map((v, i) => `
