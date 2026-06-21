@@ -252,10 +252,9 @@ const KA_PRODUCTS = [
     image: "assets/images/dreamscape.jpg",
     tags: ["fresh", "fruity", "woody", "musk", "niche"],
     variants: [
-      { size: "2ml",  type: "decant", price: 199 },
-      { size: "5ml",  type: "decant", price: 399 },
-      { size: "10ml", type: "decant", price: 749 },
-      { size: "100ml", type: "full",  price: 12500 }
+      { size: "2ml",  type: "decant", price: 7 },
+      { size: "5ml",  type: "decant", price: 16 },
+      { size: "10ml", type: "decant", price: 30 }
     ]
   },
   {

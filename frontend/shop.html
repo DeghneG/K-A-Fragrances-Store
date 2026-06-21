@@ -318,9 +318,20 @@
   function renderShop() {
     let products = getFilteredProducts();
     const sort = document.getElementById('shop-sort').value;
-    if (sort === 'price-asc')  products = [...products].sort((a,b) => a.variants[0].price - b.variants[0].price);
-    if (sort === 'price-desc') products = [...products].sort((a,b) => b.variants[0].price - a.variants[0].price);
-    if (sort === 'rating')     products = [...products].sort((a,b) => b.rating - a.rating);
+    
+    if (sort === 'price-asc') {
+      products = [...products].sort((a,b) => a.variants[0].price - b.variants[0].price);
+    } else if (sort === 'price-desc') {
+      products = [...products].sort((a,b) => b.variants[0].price - a.variants[0].price);
+    } else if (sort === 'rating') {
+      products = [...products].sort((a,b) => b.rating - a.rating);
+    } else {
+      products = [...products].sort((a,b) => {
+        const isFeatured = p => ['signature', 'hot', 'new'].includes(p.badge) ? 1 : 0;
+        return isFeatured(b) - isFeatured(a);
+      });
+    }
+    
     const grid = document.getElementById('shop-grid');
     if (!products.length) {
       grid.innerHTML = `<div class="no-results" style="grid-column:1/-1">
