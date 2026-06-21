@@ -29,7 +29,7 @@ const KA_PRODUCTS = [
   {
     id: 1,
     brand: "Rasasi",
-    name: "Dhan Al Oudh Safwa",
+    name: "N/A",
     category: "middle-eastern",
     badge: "middle-eastern",
     badgeLabel: "Middle Eastern",
@@ -38,7 +38,7 @@ const KA_PRODUCTS = [
     rating: 4.9,
     reviews: 42,
     inStock: true,
-    image: "assets/images/middle_eastern.png",
+    image: "assets/images/no-picture.png",
     tags: ["oud", "rose", "amber", "saffron", "oriental"],
     variants: [
       { size: "2ml",  type: "decant", price: 99 },
@@ -115,7 +115,7 @@ const KA_PRODUCTS = [
   {
     id: 5,
     brand: "Chanel",
-    name: "Bleu de Chanel EDP",
+    name: "N/A",
     category: "designer",
     badge: null,
     notes: { top: "Grapefruit, Bergamot, Lemon", heart: "Labdanum, Iso E Super", base: "Incense, Vetiver, Cedar" },
@@ -123,7 +123,7 @@ const KA_PRODUCTS = [
     rating: 4.8,
     reviews: 95,
     inStock: true,
-    image: "assets/images/designer.png",
+    image: "assets/images/no-picture.png",
     tags: ["woody", "aromatic", "citrus", "fresh", "designer"],
     variants: [
       { size: "2ml",  type: "decant", price: 149 },
@@ -155,7 +155,7 @@ const KA_PRODUCTS = [
   {
     id: 7,
     brand: "Versace",
-    name: "Eros EDT",
+    name: "N/A",
     category: "designer",
     badge: null,
     notes: { top: "Mint, Green Apple, Lemon", heart: "Tonka Bean, Geranium, Ambroxan", base: "Virginia Cedar, Vetiver" },
@@ -163,7 +163,7 @@ const KA_PRODUCTS = [
     rating: 4.6,
     reviews: 73,
     inStock: true,
-    image: "assets/images/designer.png",
+    image: "assets/images/no-picture.png",
     tags: ["fresh", "aromatic", "mint", "tonka", "designer"],
     variants: [
       { size: "2ml",  type: "decant", price: 89 },
@@ -177,7 +177,7 @@ const KA_PRODUCTS = [
   {
     id: 8,
     brand: "Maison Margiela",
-    name: "By the Fireplace",
+    name: "N/A",
     category: "niche",
     badge: "niche",
     badgeLabel: "Niche",
@@ -186,7 +186,7 @@ const KA_PRODUCTS = [
     rating: 4.9,
     reviews: 44,
     inStock: true,
-    image: "assets/images/niche.png",
+    image: "assets/images/no-picture.png",
     tags: ["woody", "smoky", "vanilla", "warm", "niche"],
     variants: [
       { size: "2ml",  type: "decant", price: 199 },
@@ -198,7 +198,7 @@ const KA_PRODUCTS = [
   {
     id: 9,
     brand: "Byredo",
-    name: "Bal d'Afrique",
+    name: "N/A",
     category: "niche",
     badge: "niche",
     badgeLabel: "Niche",
@@ -207,7 +207,7 @@ const KA_PRODUCTS = [
     rating: 4.8,
     reviews: 31,
     inStock: false,
-    image: "assets/images/niche.png",
+    image: "assets/images/no-picture.png",
     tags: ["floral", "citrus", "violet", "musk", "niche"],
     variants: [
       { size: "2ml",  type: "decant", price: 249 },
@@ -260,7 +260,7 @@ const KA_PRODUCTS = [
   {
     id: 12,
     brand: "Tom Ford",
-    name: "Tobacco Vanille",
+    name: "N/A",
     category: "niche",
     badge: null,
     notes: { top: "Tobacco Leaf, Spice", heart: "Vanilla, Cacao, Tonka Bean", base: "Dry Fruit, Wood Sap" },
@@ -268,7 +268,7 @@ const KA_PRODUCTS = [
     rating: 4.9,
     reviews: 62,
     inStock: true,
-    image: "assets/images/niche.png",
+    image: "assets/images/no-picture.png",
     tags: ["oriental", "vanilla", "tobacco", "spicy", "niche"],
     variants: [
       { size: "2ml",  type: "decant", price: 219 },
@@ -280,7 +280,7 @@ const KA_PRODUCTS = [
   {
     id: 13,
     brand: "Parfums de Marly",
-    name: "Layton",
+    name: "N/A",
     category: "niche",
     badge: null,
     notes: { top: "Apple, Cardamom, Bergamot", heart: "Jasmine, Geranium, Violet", base: "Sandalwood, Vanilla, Musk" },
@@ -288,7 +288,7 @@ const KA_PRODUCTS = [
     rating: 4.8,
     reviews: 54,
     inStock: true,
-    image: "assets/images/niche.png",
+    image: "assets/images/no-picture.png",
     tags: ["fresh", "apple", "vanilla", "floral", "niche"],
     variants: [
       { size: "2ml",  type: "decant", price: 169 },
