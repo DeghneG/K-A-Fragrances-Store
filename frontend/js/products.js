@@ -49,23 +49,23 @@ const KA_PRODUCTS = [
   },
   {
     id: 2,
-    brand: "Swiss Arabian",
+    brand: "Emporio Armani",
     name: "Stronger With You Intensely",
-    category: "middle-eastern",
+    category: "designer",
     badge: "hot",
     badgeLabel: "Best Seller",
-    notes: { top: "Black Oud, Saffron", heart: "Rose, Vetiver", base: "Musks, Sandalwood" },
+    notes: { top: "Cinnamon, Vanilla, Amber", heart: "Rose, Vetiver", base: "Musks, Sandalwood" },
     description: "An intense and smoky black oud composition layered with Bulgarian rose and earthy vetiver.",
     rating: 4.8,
     reviews: 67,
     inStock: true,
-    image: "assets/images/middle_eastern.png",
+    image: "assets/images/Swyi.jpg",
     tags: ["oud", "smoky", "rose", "saffron", "oriental"],
     variants: [
-      { size: "2ml",  type: "decant", price: 109 },
-      { size: "5ml",  type: "decant", price: 219 },
-      { size: "10ml", type: "decant", price: 389 },
-      { size: "75ml", type: "full",   price: 2199 }
+      { size: "2ml",  type: "decant", price: 4 },
+      { size: "5ml",  type: "decant", price: 10 },
+      { size: "10ml", type: "decant", price: 20 },
+      { size: "30ml", type: "full",   price: 55 }
     ]
   },
   {
