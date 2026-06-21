@@ -19,7 +19,7 @@ const KA_PRODUCTS = [
     reviews: 136,
     inStock: true,
     image: "assets/images/kafrag.jpg",
-    tags: ["oud", "saffron", "amber", "rose", "vanilla", "oriental", "signature"],
+    tags: ["oud", "saffron", "amber", "rose", "vanilla", "oriental", "signature", "winter-samples"],
     variants: [
       { size: "50ml", type: "full",   price: 50 }
     ]
@@ -60,7 +60,7 @@ const KA_PRODUCTS = [
     reviews: 67,
     inStock: true,
     image: "assets/images/SWYI.jpg",
-    tags: ["oud", "smoky", "rose", "saffron", "oriental"],
+    tags: ["oud", "smoky", "rose", "saffron", "oriental", "winter-samples"],
     variants: [
       { size: "2ml",  type: "decant", price: 4 },
       { size: "5ml",  type: "decant", price: 10 },
@@ -372,6 +372,67 @@ const KA_PRODUCTS = [
     inStock: true,
     image: "assets/images/no-picture.png",
     tags: ["fresh", "summer", "aquatic"],
+    variants: [
+      { size: "2ml", type: "decant", price: 15 },
+      { size: "5ml", type: "decant", price: 29 },
+      { size: "10ml", type: "decant", price: 49 }
+    ]
+  },
+  // ── WINTER SAMPLES ─────────────────────────────────────────
+  {
+    id: 105,
+    brand: "Maison Francis Kurkdjian",
+    name: "Grand Soir",
+    category: "winter-samples",
+    badge: "winter-samples",
+    badgeLabel: "Winter Samples",
+    notes: { top: "N/A", heart: "N/A", base: "N/A" },
+    description: "A warm and majestic winter fragrance.",
+    rating: 4.9,
+    reviews: 42,
+    inStock: true,
+    image: "assets/images/no-picture.png",
+    tags: ["winter-samples", "amber", "vanilla"],
+    variants: [
+      { size: "2ml", type: "decant", price: 15 },
+      { size: "5ml", type: "decant", price: 29 },
+      { size: "10ml", type: "decant", price: 49 }
+    ]
+  },
+  {
+    id: 106,
+    brand: "Xerjoff",
+    name: "La Capitale",
+    category: "winter-samples",
+    badge: "winter-samples",
+    badgeLabel: "Winter Samples",
+    notes: { top: "N/A", heart: "N/A", base: "N/A" },
+    description: "A rich and indulgent scent for the cold months.",
+    rating: 4.8,
+    reviews: 18,
+    inStock: true,
+    image: "assets/images/no-picture.png",
+    tags: ["winter-samples", "sweet", "fruity"],
+    variants: [
+      { size: "2ml", type: "decant", price: 15 },
+      { size: "5ml", type: "decant", price: 29 },
+      { size: "10ml", type: "decant", price: 49 }
+    ]
+  },
+  {
+    id: 107,
+    brand: "Argos",
+    name: "Triumph of Bacchus",
+    category: "winter-samples",
+    badge: "winter-samples",
+    badgeLabel: "Winter Samples",
+    notes: { top: "N/A", heart: "N/A", base: "N/A" },
+    description: "An intoxicating and spicy masterpiece.",
+    rating: 5.0,
+    reviews: 24,
+    inStock: true,
+    image: "assets/images/no-picture.png",
+    tags: ["winter-samples", "spicy", "boozy"],
     variants: [
       { size: "2ml", type: "decant", price: 15 },
       { size: "5ml", type: "decant", price: 29 },

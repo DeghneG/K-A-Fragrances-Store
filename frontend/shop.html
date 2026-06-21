@@ -298,7 +298,7 @@
   function getFilteredProducts() {
     const q = filters.search.toLowerCase();
     return KA_PRODUCTS.filter(p => {
-      if (filters.category !== 'all' && p.category !== filters.category) return false;
+      if (filters.category !== 'all' && p.category !== filters.category && !(p.tags && p.tags.includes(filters.category))) return false;
       if (filters.stock === 'instock' && !p.inStock) return false;
       if (filters.tag !== 'all' && !p.tags.includes(filters.tag)) return false;
       if (p.variants[0].price > filters.price) return false;
