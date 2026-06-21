@@ -83,10 +83,10 @@ const KA_PRODUCTS = [
     image: "assets/images/vibrato.webp",
     tags: ["amber", "oud", "rose", "bergamot", "oriental"],
     variants: [
-      { size: "2ml",  type: "decant", price: 79 },
-      { size: "5ml",  type: "decant", price: 165 },
-      { size: "10ml", type: "decant", price: 299 },
-      { size: "60ml", type: "full",   price: 1650 }
+      { size: "2ml",  type: "decant", price: 12 },
+      { size: "5ml",  type: "decant", price: 28 },
+      { size: "10ml", type: "decant", price: 65 },
+      { size: "30ml", type: "full",   price: 190 }
     ]
   },
 
