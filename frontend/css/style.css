@@ -986,7 +986,6 @@ h1, h2, h3, h4 {
   line-height: 1.9;
   margin-bottom: 2rem;
   max-width: 460px;
-  text-align: center;
 }
 .tf-notes {
   display: flex;
