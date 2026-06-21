@@ -216,6 +216,8 @@
               <option value="price-asc">Price: Low to High</option>
               <option value="price-desc">Price: High to Low</option>
               <option value="rating">Top Rated</option>
+              <option value="popularity">Popularity</option>
+              <option value="newest">Newest</option>
             </select>
           </div>
         </div>
@@ -315,6 +317,10 @@
       products = [...products].sort((a,b) => b.variants[0].price - a.variants[0].price);
     } else if (sort === 'rating') {
       products = [...products].sort((a,b) => b.rating - a.rating);
+    } else if (sort === 'popularity') {
+      products = [...products].sort((a,b) => b.reviews - a.reviews);
+    } else if (sort === 'newest') {
+      products = [...products].sort((a,b) => b.id - a.id);
     } else {
       products = [...products].sort((a,b) => {
         const isFeatured = p => ['signature', 'hot', 'new'].includes(p.badge) ? 1 : 0;

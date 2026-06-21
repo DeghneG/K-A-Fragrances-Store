@@ -296,6 +296,87 @@ const KA_PRODUCTS = [
       { size: "10ml", type: "decant", price: 649 },
       { size: "125ml", type: "full",  price: 8200 }
     ]
+  },
+  // ── SUMMER SAMPLES ─────────────────────────────────────────
+  {
+    id: 101,
+    brand: "City Rhythm",
+    name: "City Rhythm Miami",
+    category: "summer-samples",
+    badge: "summer-samples",
+    badgeLabel: "Summer Samples",
+    notes: { top: "N/A", heart: "N/A", base: "N/A" },
+    description: "Experience the ultimate summer vibe with a fresh decant.",
+    rating: 5.0,
+    reviews: 12,
+    inStock: true,
+    image: "assets/images/no-picture.png",
+    tags: ["fresh", "summer"],
+    variants: [
+      { size: "2ml", type: "decant", price: 15 },
+      { size: "5ml", type: "decant", price: 29 },
+      { size: "10ml", type: "decant", price: 49 }
+    ]
+  },
+  {
+    id: 102,
+    brand: "Stephane Humbert Lucas",
+    name: "Pink Boa",
+    category: "summer-samples",
+    badge: "summer-samples",
+    badgeLabel: "Summer Samples",
+    notes: { top: "N/A", heart: "N/A", base: "N/A" },
+    description: "A vibrant and exotic summer fragrance.",
+    rating: 4.8,
+    reviews: 8,
+    inStock: true,
+    image: "assets/images/no-picture.png",
+    tags: ["fresh", "summer", "fruity"],
+    variants: [
+      { size: "2ml", type: "decant", price: 15 },
+      { size: "5ml", type: "decant", price: 29 },
+      { size: "10ml", type: "decant", price: 49 }
+    ]
+  },
+  {
+    id: 103,
+    brand: "Stephane Humbert Lucas",
+    name: "God of Fire",
+    category: "summer-samples",
+    badge: "summer-samples",
+    badgeLabel: "Summer Samples",
+    notes: { top: "N/A", heart: "N/A", base: "N/A" },
+    description: "An intense, legendary summer scent.",
+    rating: 5.0,
+    reviews: 34,
+    inStock: true,
+    image: "assets/images/no-picture.png",
+    tags: ["fresh", "summer", "fruity"],
+    variants: [
+      { size: "2ml", type: "decant", price: 15 },
+      { size: "5ml", type: "decant", price: 29 },
+      { size: "10ml", type: "decant", price: 49 }
+    ]
+  },
+  {
+    id: 104,
+    brand: "Room 1015",
+    name: "Wave child",
+    category: "summer-samples",
+    badge: "summer-samples",
+    badgeLabel: "Summer Samples",
+    notes: { top: "N/A", heart: "N/A", base: "N/A" },
+    description: "Ride the wave with this refreshing summer sample.",
+    rating: 4.7,
+    reviews: 19,
+    inStock: true,
+    image: "assets/images/no-picture.png",
+    tags: ["fresh", "summer", "aquatic"],
+    variants: [
+      { size: "2ml", type: "decant", price: 15 },
+      { size: "5ml", type: "decant", price: 29 },
+      { size: "10ml", type: "decant", price: 49 }
+    ]
   }
 ];
 
