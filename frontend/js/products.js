@@ -106,10 +106,10 @@ const KA_PRODUCTS = [
     image: "assets/images/Imagination lv.jpg",
     tags: ["fresh", "aromatic", "ambroxan", "woody", "designer"],
     variants: [
-      { size: "2ml",  type: "decant", price: 129 },
-      { size: "5ml",  type: "decant", price: 249 },
-      { size: "10ml", type: "decant", price: 449 },
-      { size: "100ml", type: "full",  price: 3500 }
+      { size: "2ml",  type: "decant", price: 15 },
+      { size: "5ml",  type: "decant", price: 36 },
+      { size: "10ml", type: "decant", price: 72 },
+      { size: "30ml", type: "full",   price: 210 }
     ]
   },
   {
@@ -147,10 +147,9 @@ const KA_PRODUCTS = [
     image: "assets/images/hectic-02.webp",
     tags: ["gourmand", "coffee", "vanilla", "floral", "designer"],
     variants: [
-      { size: "2ml",  type: "decant", price: 119 },
-      { size: "5ml",  type: "decant", price: 219 },
-      { size: "10ml", type: "decant", price: 399 },
-      { size: "90ml", type: "full",   price: 3100 }
+      { size: "2ml",  type: "decant", price: 6 },
+      { size: "5ml",  type: "decant", price: 14 },
+      { size: "10ml", type: "decant", price: 20 }
     ]
   },
   {
@@ -232,10 +231,10 @@ const KA_PRODUCTS = [
     image: "assets/images/bianco.jpg",
     tags: ["gourmand", "vanilla", "woody", "spicy", "niche"],
     variants: [
-      { size: "2ml",  type: "decant", price: 329 },
-      { size: "5ml",  type: "decant", price: 570 },
-      { size: "10ml", type: "decant", price: 1050 },
-      { size: "50ml", type: "full",   price: 8500 }
+      { size: "2ml",  type: "decant", price: 8 },
+      { size: "5ml",  type: "decant", price: 20 },
+      { size: "10ml", type: "decant", price: 40 },
+      { size: "30ml", type: "full",   price: 110 }
     ]
   },
   {
