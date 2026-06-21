@@ -400,11 +400,6 @@
   });
   cGrid.addEventListener('click', e => { if (isDragging) { e.preventDefault(); e.stopPropagation(); isDragging = false; } });
 
-  // ── DECANTS PREVIEW ──
-  const dGrid = document.getElementById('decants-preview-grid');
-  const decantPreview = KA_PRODUCTS.filter(p => p.category === 'niche').slice(0, 4);
-  dGrid.innerHTML = decantPreview.map(p => buildProductCard(p)).join('');
-  observeFadeIns(dGrid);
 
   // ── TOPAZ FLAME SHOWCASE ──
   const tf = KA_PRODUCTS.find(p => p.id === 0);
