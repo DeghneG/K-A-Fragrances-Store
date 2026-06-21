@@ -563,40 +563,63 @@ h1, h2, h3, h4 {
 
 /* ── PREMIUM SIGNATURE CARD (TOPAZ FLAME) ── */
 .signature-card {
-  border-color: rgba(196, 146, 74, 0.4);
+  border: 2px solid transparent;
+  background-clip: padding-box;
   animation: signature-pulse 3s infinite alternate ease-in-out;
   position: relative;
   z-index: 1;
 }
-.signature-card::before {
+.signature-card::after {
   content: '';
   position: absolute;
-  inset: -1px;
+  inset: -2px;
+  border: 2px solid transparent;
   border-radius: var(--radius-md);
-  background: linear-gradient(45deg, transparent, rgba(196, 146, 74, 0.5), rgba(232, 115, 90, 0.3), transparent);
-  background-size: 200% 200%;
-  animation: flame-border-shift 2.5s linear infinite;
-  z-index: -1;
+  background: linear-gradient(45deg, #ff3300, #ffb347, #ff3300, #ff9900) border-box;
+  background-size: 300% 300%;
+  animation: fiery-border 2s linear infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
   pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  z-index: 10;
 }
 .signature-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  border-color: rgba(196, 146, 74, 0.8);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.8), 0 0 50px rgba(196, 146, 74, 0.4), 0 0 80px rgba(232, 115, 90, 0.2);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.9), 0 0 60px rgba(255, 51, 0, 0.5), 0 0 90px rgba(255, 179, 71, 0.3);
   z-index: 2;
 }
-.signature-card:hover::before {
-  opacity: 1;
-}
 @keyframes signature-pulse {
-  0% { box-shadow: 0 0 15px rgba(196, 146, 74, 0.15), inset 0 0 10px rgba(232, 115, 90, 0.05); }
-  100% { box-shadow: 0 0 35px rgba(232, 115, 90, 0.35), inset 0 0 20px rgba(196, 146, 74, 0.1); }
+  0% { box-shadow: 0 0 20px rgba(255, 51, 0, 0.2), inset 0 0 15px rgba(255, 179, 71, 0.1); }
+  100% { box-shadow: 0 0 40px rgba(255, 51, 0, 0.5), inset 0 0 30px rgba(255, 179, 71, 0.2); }
 }
-@keyframes flame-border-shift {
+@keyframes fiery-border {
   0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.signature-card .product-card-img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(255, 51, 0, 0.4), transparent, rgba(255, 179, 71, 0.2));
+  background-size: 100% 200%;
+  animation: fiery-overlay 3s infinite alternate ease-in-out;
+  mix-blend-mode: color-dodge;
+  z-index: 1;
+  pointer-events: none;
+}
+@keyframes fiery-overlay {
+  0% { background-position: 0% 100%; opacity: 0.6; }
+  100% { background-position: 0% 0%; opacity: 1; }
+}
+.signature-card .product-card-img img {
+  animation: fiery-pan 12s infinite alternate ease-in-out;
+}
+@keyframes fiery-pan {
+  0% { transform: scale(1.05) translate(0, 0); }
+  50% { transform: scale(1.15) translate(-3%, 3%); }
+  100% { transform: scale(1.2) translate(3%, -3%); }
 }
 .product-card-img {
   position: relative;
