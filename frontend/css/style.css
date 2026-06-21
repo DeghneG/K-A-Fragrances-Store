@@ -329,7 +329,7 @@ h1, h2, h3, h4 {
   transition: opacity 1.2s ease-in-out, transform 8s ease-out;
 }
 .hero-bg-slide.active { opacity: 1; transform: scale(1); }
-.slide-1 { background-image: url('../assets/images/sospiro banner.webp'); }
+.slide-1 { background-image: url('../assets/images/HomeKa.webp'); }
 .slide-2 { background-image: url('../assets/images/Valentino banner.webp'); }
 .slide-3 { background-image: url('../assets/images/Buj banner.webp'); }
 
