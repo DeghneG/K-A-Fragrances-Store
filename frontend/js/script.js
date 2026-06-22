@@ -13,24 +13,32 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: true });
 
   /* ── Mobile Menu ── */
-  const hamburger = document.getElementById('nav-hamburger');
-  const navLinks = document.getElementById('nav-links');
+  const hamburger        = document.getElementById('nav-hamburger');
+  const mobileMenu       = document.getElementById('mobile-menu');
+  const mobileBackdrop   = document.getElementById('mobile-menu-backdrop');
+  const mobileMenuClose  = document.getElementById('mobile-menu-close');
 
-  hamburger?.addEventListener('click', () => {
-    const isOpen = navLinks?.classList.contains('mobile-open');
-    if (isOpen) {
-      navLinks?.classList.remove('mobile-open');
-      document.body.style.overflow = '';
-    } else {
-      navLinks?.classList.add('mobile-open');
-      document.body.style.overflow = 'hidden';
-    }
-  });
-  navLinks?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('mobile-open');
-      document.body.style.overflow = '';
-    });
+  function openMobileMenu() {
+    mobileMenu?.classList.add('is-open');
+    mobileBackdrop?.classList.add('is-open');
+    hamburger?.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    mobileMenu?.setAttribute('aria-hidden', 'false');
+  }
+  function closeMobileMenu() {
+    mobileMenu?.classList.remove('is-open');
+    mobileBackdrop?.classList.remove('is-open');
+    hamburger?.classList.remove('is-open');
+    document.body.style.overflow = '';
+    mobileMenu?.setAttribute('aria-hidden', 'true');
+  }
+  window.closeMobileMenu = closeMobileMenu;
+
+  hamburger?.addEventListener('click', openMobileMenu);
+  mobileMenuClose?.addEventListener('click', closeMobileMenu);
+  mobileBackdrop?.addEventListener('click', closeMobileMenu);
+  mobileMenu?.querySelectorAll('.mobile-menu-link').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
   });
 
   /* ── Theme Persistence ── */
