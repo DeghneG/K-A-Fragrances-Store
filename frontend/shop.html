@@ -207,10 +207,17 @@
           </div>
         </div>
         <div class="filter-section">
+          <div class="filter-title">Min Price (A$)</div>
+          <div class="price-range">
+            <input type="range" id="price-min" min="0" max="1000" value="0" step="10">
+            <div class="price-labels"><span id="price-min-label">A$0</span><span>A$1,000</span></div>
+          </div>
+        </div>
+        <div class="filter-section">
           <div class="filter-title">Max Price (A$)</div>
           <div class="price-range">
-            <input type="range" id="price-range" min="0" max="1000" value="1000" step="10">
-            <div class="price-labels"><span>A$0</span><span id="price-label">A$1,000+</span></div>
+            <input type="range" id="price-max" min="0" max="1000" value="1000" step="10">
+            <div class="price-labels"><span>A$0</span><span id="price-max-label">A$1,000+</span></div>
           </div>
         </div>
         <div class="filter-section">
@@ -331,7 +338,7 @@
 <script src="js/script.js"></script>
 <script>
   // ── FILTER STATE ──
-  let filters = { category: 'all', stock: 'all', tag: 'all', price: 1000, search: '' };
+  let filters = { category: 'all', stock: 'all', tag: 'all', minPrice: 0, maxPrice: 1000, search: '' };
 
   function getFilteredProducts() {
     const q = filters.search.toLowerCase();
@@ -339,7 +346,8 @@
       if (filters.category !== 'all' && p.category !== filters.category && !(p.tags && p.tags.includes(filters.category))) return false;
       if (filters.stock === 'instock' && !p.inStock) return false;
       if (filters.tag !== 'all' && !p.tags.includes(filters.tag)) return false;
-      if (p.variants[0].price > filters.price) return false;
+      if (p.variants[0].price < filters.minPrice) return false;
+      if (p.variants[0].price > filters.maxPrice) return false;
       if (q && !p.name.toLowerCase().includes(q) && !p.brand.toLowerCase().includes(q) && !p.tags.some(t=>t.includes(q))) return false;
       return true;
     });
@@ -406,11 +414,30 @@
   });
 
   // ── PRICE RANGE ──
-  const priceRange = document.getElementById('price-range');
-  priceRange?.addEventListener('input', () => {
-    const v = parseInt(priceRange.value);
-    filters.price = v;
-    document.getElementById('price-label').textContent = v >= 1000 ? 'A$1,000+' : 'A$' + v.toLocaleString();
+  const priceMin = document.getElementById('price-min');
+  const priceMax = document.getElementById('price-max');
+  
+  priceMin?.addEventListener('input', () => {
+    let minV = parseInt(priceMin.value);
+    let maxV = parseInt(priceMax.value);
+    if (minV > maxV) {
+      minV = maxV;
+      priceMin.value = minV;
+    }
+    filters.minPrice = minV;
+    document.getElementById('price-min-label').textContent = 'A$' + minV.toLocaleString();
+    renderShop();
+  });
+
+  priceMax?.addEventListener('input', () => {
+    let minV = parseInt(priceMin.value);
+    let maxV = parseInt(priceMax.value);
+    if (maxV < minV) {
+      maxV = minV;
+      priceMax.value = maxV;
+    }
+    filters.maxPrice = maxV;
+    document.getElementById('price-max-label').textContent = maxV >= 1000 ? 'A$1,000+' : 'A$' + maxV.toLocaleString();
     renderShop();
   });
 
@@ -430,12 +457,18 @@
 
   // ── CLEAR ──
   function clearFilters() {
-    filters = { category: 'all', stock: 'all', tag: 'all', price: 1000, search: '' };
+    filters = { category: 'all', stock: 'all', tag: 'all', minPrice: 0, maxPrice: 1000, search: '' };
     document.querySelectorAll('.filter-chip').forEach(c => {
       c.classList.toggle('active', c.dataset.val === 'all');
     });
-    if (priceRange) priceRange.value = 1000;
-    document.getElementById('price-label').textContent = 'A$1,000+';
+    if (priceMin) {
+      priceMin.value = 0;
+      document.getElementById('price-min-label').textContent = 'A$0';
+    }
+    if (priceMax) {
+      priceMax.value = 1000;
+      document.getElementById('price-max-label').textContent = 'A$1,000+';
+    }
     if (document.getElementById('shop-search')) document.getElementById('shop-search').value = '';
     renderShop();
   }
