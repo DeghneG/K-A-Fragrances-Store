@@ -401,7 +401,7 @@
   let exactScroll = 0;
   function autoScroll() {
     if (!isDown && !isHovered) {
-      exactScroll += 0.3;
+      exactScroll += 0.85;
       if (exactScroll >= cGrid.scrollWidth / 2) exactScroll = 0;
       cGrid.scrollLeft = exactScroll;
     } else {
