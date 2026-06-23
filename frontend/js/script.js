@@ -408,7 +408,6 @@ function openPQV(productId) {
         <span class="stars-val">${stars}</span>
         <span class="stars-count">(${p.reviews} reviews)</span>
       </div>
-      <p class="pqv-desc">${p.description}</p>
       <div class="pqv-notes">
         ${p.notes.top !== 'N/A' ? `<div class="pqv-note"><span class="pqv-note-label">Top</span><span class="pqv-note-val">${p.notes.top}</span></div>` : ''}
         ${p.notes.heart !== 'N/A' ? `<div class="pqv-note"><span class="pqv-note-label">Heart</span><span class="pqv-note-val">${p.notes.heart}</span></div>` : ''}
