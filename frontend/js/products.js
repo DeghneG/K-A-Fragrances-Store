@@ -548,7 +548,7 @@ const KA_CATEGORIES = [
     description: "Fresh & Aquatic Scents",
     image: "assets/images/summer bundle.jpg",
     icon: "â˜€ï¸",
-    count: KA_PRODUCTS.filter(p => p.category === "summer").length
+    count: KA_PRODUCTS.filter(p => p.category === "summer-samples").length
   },
   {
     id: "winter",
@@ -556,7 +556,7 @@ const KA_CATEGORIES = [
     description: "Warm & Cozy Fragrances",
     image: "assets/images/winter bundle.jpg",
     icon: "â„ï¸",
-    count: KA_PRODUCTS.filter(p => p.category === "winter").length
+    count: KA_PRODUCTS.filter(p => p.category === "winter-samples").length
   },
   {
     id: "bundles",
@@ -572,6 +572,6 @@ const KA_CATEGORIES = [
     description: "Versatile Year-Round Signatures",
     image: "assets/images/all bundle.jpg",
     icon: "â™¾ï¸",
-    count: KA_PRODUCTS.filter(p => p.category === "all").length
+    count: KA_PRODUCTS.filter(p => p.category === "all-season").length
   }
 ];
