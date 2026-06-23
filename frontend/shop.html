@@ -209,8 +209,8 @@
         <div class="filter-section">
           <div class="filter-title">Max Price (A$)</div>
           <div class="price-range">
-            <input type="range" id="price-range" min="0" max="10000" value="10000" step="100">
-            <div class="price-labels"><span>A$0</span><span id="price-label">A$10,000+</span></div>
+            <input type="range" id="price-range" min="0" max="1000" value="1000" step="10">
+            <div class="price-labels"><span>A$0</span><span id="price-label">A$1,000+</span></div>
           </div>
         </div>
         <div class="filter-section">
@@ -331,7 +331,7 @@
 <script src="js/script.js"></script>
 <script>
   // ── FILTER STATE ──
-  let filters = { category: 'all', stock: 'all', tag: 'all', price: 10000, search: '' };
+  let filters = { category: 'all', stock: 'all', tag: 'all', price: 1000, search: '' };
 
   function getFilteredProducts() {
     const q = filters.search.toLowerCase();
@@ -410,7 +410,7 @@
   priceRange?.addEventListener('input', () => {
     const v = parseInt(priceRange.value);
     filters.price = v;
-    document.getElementById('price-label').textContent = v >= 10000 ? 'A$10,000+' : 'A$' + v.toLocaleString();
+    document.getElementById('price-label').textContent = v >= 1000 ? 'A$1,000+' : 'A$' + v.toLocaleString();
     renderShop();
   });
 
@@ -430,12 +430,12 @@
 
   // ── CLEAR ──
   function clearFilters() {
-    filters = { category: 'all', stock: 'all', tag: 'all', price: 10000, search: '' };
+    filters = { category: 'all', stock: 'all', tag: 'all', price: 1000, search: '' };
     document.querySelectorAll('.filter-chip').forEach(c => {
       c.classList.toggle('active', c.dataset.val === 'all');
     });
-    if (priceRange) priceRange.value = 10000;
-    document.getElementById('price-label').textContent = 'A$10,000+';
+    if (priceRange) priceRange.value = 1000;
+    document.getElementById('price-label').textContent = 'A$1,000+';
     if (document.getElementById('shop-search')) document.getElementById('shop-search').value = '';
     renderShop();
   }
