@@ -1816,7 +1816,8 @@ h1, h2, h3, h4 {
 
 .pqv-img-col {
   position: relative;
-  aspect-ratio: 3/4;
+  height: 100%;
+  min-height: 450px;
   overflow: hidden;
   border-radius: var(--radius-lg) 0 0 var(--radius-lg);
 }
