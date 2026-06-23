@@ -19,7 +19,7 @@ const KA_PRODUCTS = [
     reviews: 136,
     inStock: true,
     image: "assets/images/kafrag.jpg",
-    tags: ["oud", "saffron", "amber", "rose", "vanilla", "oriental", "signature", "winter-samples"],
+    tags: ["oud", "saffron", "amber", "rose", "vanilla", "oriental", "signature", "winter-samples", "all-season"],
     variants: [
       { size: "50ml", type: "full",   price: 50 }
     ]
@@ -44,6 +44,26 @@ const KA_PRODUCTS = [
       { size: "2ml",  type: "decant", price: 7 },
       { size: "5ml",  type: "decant", price: 16 },
       { size: "10ml", type: "decant", price: 30 }
+    ]
+  },
+  {
+    id: 6,
+    brand: "Bujairami",
+    name: "Hectic",
+    category: "middle-eastern",
+    badge: "new",
+    badgeLabel: "New",
+    notes: { top: "Citron, Bergamot, Orange", heart: "Coffee, Jasmine", base: "White Musk, Vanilla, Cedarwood" },
+    description: "An addictive feminine gourmand. Rockstar energy of coffee and white floral over vanilla musk.",
+    rating: 4.7,
+    reviews: 58,
+    inStock: true,
+    image: "assets/images/hectic-02.webp",
+    tags: ["gourmand", "coffee", "vanilla", "floral", "middle-eastern"],
+    variants: [
+      { size: "2ml",  type: "decant", price: 6 },
+      { size: "5ml",  type: "decant", price: 14 },
+      { size: "10ml", type: "decant", price: 20 }
     ]
   },
   {
@@ -101,7 +121,7 @@ const KA_PRODUCTS = [
     reviews: 28,
     inStock: true,
     image: "assets/images/vibrato.webp",
-    tags: ["amber", "oud", "rose", "bergamot", "oriental"],
+    tags: ["amber", "oud", "rose", "bergamot", "oriental", "all-season"],
     variants: [
       { size: "2ml",  type: "decant", price: 12 },
       { size: "5ml",  type: "decant", price: 28 },
@@ -152,26 +172,7 @@ const KA_PRODUCTS = [
       { size: "100ml", type: "full",  price: 4200 }
     ]
   },
-  {
-    id: 6,
-    brand: "Bujairami",
-    name: "Hectic",
-    category: "middle-eastern",
-    badge: "new",
-    badgeLabel: "New",
-    notes: { top: "Citron, Bergamot, Orange", heart: "Coffee, Jasmine", base: "White Musk, Vanilla, Cedarwood" },
-    description: "An addictive feminine gourmand. Rockstar energy of coffee and white floral over vanilla musk.",
-    rating: 4.7,
-    reviews: 58,
-    inStock: true,
-    image: "assets/images/hectic-02.webp",
-    tags: ["gourmand", "coffee", "vanilla", "floral", "designer"],
-    variants: [
-      { size: "2ml",  type: "decant", price: 6 },
-      { size: "5ml",  type: "decant", price: 14 },
-      { size: "10ml", type: "decant", price: 20 }
-    ]
-  },
+
   {
     id: 7,
     brand: "Versace",
@@ -497,38 +498,7 @@ const KA_PRODUCTS = [
     variants: [{ size: "TBA", type: "decant", price: 0 }]
   },
   // ── ALL SEASONS placeholders ──────────────────────────────
-  {
-    id: 114,
-    brand: "",
-    name: "Topaz Flame",
-    category: "all-season",
-    badge: "all-season",
-    badgeLabel: "All Season",
-    notes: { top: "N/A", heart: "N/A", base: "N/A" },
-    description: "",
-    rating: 0,
-    reviews: 0,
-    inStock: false,
-    image: "assets/images/no-picture.png",
-    tags: ["all-season"],
-    variants: [{ size: "TBA", type: "decant", price: 0 }]
-  },
-  {
-    id: 115,
-    brand: "",
-    name: "Vibrato",
-    category: "all-season",
-    badge: "all-season",
-    badgeLabel: "All Season",
-    notes: { top: "N/A", heart: "N/A", base: "N/A" },
-    description: "",
-    rating: 0,
-    reviews: 0,
-    inStock: false,
-    image: "assets/images/no-picture.png",
-    tags: ["all-season"],
-    variants: [{ size: "TBA", type: "decant", price: 0 }]
-  },
+
   {
     id: 116,
     brand: "",
