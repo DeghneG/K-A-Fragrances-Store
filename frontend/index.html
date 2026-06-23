@@ -346,14 +346,14 @@
   // ── HERO SLIDER ──
   const heroSlides = document.querySelectorAll('.hero-bg-slide');
   let currentSlide = 0;
-  let slideInterval = setInterval(nextSlide, 3500);
+  let slideInterval = setInterval(nextSlide, 4500);
   function showSlide(i) {
     heroSlides.forEach(s => s.classList.remove('active'));
     heroSlides[i].classList.add('active');
   }
   function nextSlide() { currentSlide = (currentSlide + 1) % heroSlides.length; showSlide(currentSlide); resetInterval(); }
   function prevSlide() { currentSlide = (currentSlide - 1 + heroSlides.length) % heroSlides.length; showSlide(currentSlide); resetInterval(); }
-  function resetInterval() { clearInterval(slideInterval); slideInterval = setInterval(nextSlide, 3500); }
+  function resetInterval() { clearInterval(slideInterval); slideInterval = setInterval(nextSlide, 4500); }
 
   // ── MARQUEE ──
   const marqueeItems = ['Designer Brands', 'Middle Eastern Oud', 'Niche Fragrances', 'Decants from 2ml', '100% Original', 'Best Price Guarantee', 'Topaz Flame'];
