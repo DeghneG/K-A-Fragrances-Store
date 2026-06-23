@@ -408,10 +408,12 @@
 
   let isDown = false, isHovered = false, startX, scrollLeft, isDragging = false;
   let exactScroll = 0;
+  let maxScroll = 0;
   function autoScroll() {
+    if (!maxScroll) maxScroll = cGrid.scrollWidth / 2;
     if (!isDown && !isHovered) {
-      exactScroll += 0.4;
-      if (exactScroll >= cGrid.scrollWidth / 2) exactScroll = 0;
+      exactScroll += 0.5;
+      if (exactScroll >= maxScroll) exactScroll = 0;
       cGrid.scrollLeft = exactScroll;
     } else {
       exactScroll = cGrid.scrollLeft;
@@ -419,6 +421,7 @@
     requestAnimationFrame(autoScroll);
   }
   requestAnimationFrame(autoScroll);
+  window.addEventListener('resize', () => { maxScroll = 0; });
   cGrid.addEventListener('mouseenter', () => { isHovered = true; });
   cGrid.addEventListener('mousedown', e => { isDown = true; isDragging = false; startX = e.pageX - cGrid.offsetLeft; scrollLeft = cGrid.scrollLeft; });
   cGrid.addEventListener('mouseleave', () => { isDown = false; isHovered = false; });
