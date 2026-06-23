@@ -426,9 +426,6 @@ function openPQV(productId) {
           onclick="pqvAddToCart(${p.id})" ${!p.inStock ? 'disabled' : ''}>
           <i class="fas fa-shopping-bag"></i> ${p.inStock ? 'Add to Cart' : 'Sold Out'}
         </button>
-        <button class="btn btn-ghost" onclick="closePQV()" style="padding:0.8rem 1.2rem;">
-          <i class="fas fa-times"></i>
-        </button>
       </div>
     </div>`;
 
