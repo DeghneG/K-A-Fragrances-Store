@@ -33,7 +33,7 @@ const KA_PRODUCTS = [
     category: "middle-eastern",
     badge: "middle-eastern",
     badgeLabel: "Middle Eastern",
-    notes: { top: "Oud, Saffron", heart: "Rose, Amber", base: "Musk, Sandalwood" },
+    notes: { top: "N/A", heart: "Rose, Amber", base: "Musk, Sandalwood" },
     description: "A rich and opulent oud fragrance with a heart of velvety rose and warm amber.",
     rating: 4.9,
     reviews: 42,
@@ -118,7 +118,7 @@ const KA_PRODUCTS = [
     name: "N/A",
     category: "designer",
     badge: null,
-    notes: { top: "Grapefruit, Bergamot, Lemon", heart: "Labdanum, Iso E Super", base: "Incense, Vetiver, Cedar" },
+    notes: { top: "N/A", heart: "Labdanum, Iso E Super", base: "Incense, Vetiver, Cedar" },
     description: "A woody, aromatic fragrance for a man who defies convention. Sensual and sophisticated.",
     rating: 4.8,
     reviews: 95,
@@ -158,7 +158,7 @@ const KA_PRODUCTS = [
     name: "N/A",
     category: "designer",
     badge: null,
-    notes: { top: "Mint, Green Apple, Lemon", heart: "Tonka Bean, Geranium, Ambroxan", base: "Virginia Cedar, Vetiver" },
+    notes: { top: "N/A", heart: "Tonka Bean, Geranium, Ambroxan", base: "Virginia Cedar, Vetiver" },
     description: "A bold and vibrant fragrance inspired by the Greek god of love. Fresh and sensual.",
     rating: 4.6,
     reviews: 73,
@@ -181,7 +181,7 @@ const KA_PRODUCTS = [
     category: "niche",
     badge: "niche",
     badgeLabel: "Niche",
-    notes: { top: "Orange Blossom, Cloves, Chestnut", heart: "Guaiacwood, Cashmeran", base: "Vanilla, Musk" },
+    notes: { top: "N/A", heart: "Guaiacwood, Cashmeran", base: "Vanilla, Musk" },
     description: "Memories of winter by the fireplace â€” smoky, warm and cozy. A seasonal masterpiece.",
     rating: 4.9,
     reviews: 44,
@@ -202,7 +202,7 @@ const KA_PRODUCTS = [
     category: "niche",
     badge: "niche",
     badgeLabel: "Niche",
-    notes: { top: "Bergamot, African Marigold", heart: "Violet, Neroli, Rose", base: "Vetiver, Musk, Cedarwood" },
+    notes: { top: "N/A", heart: "Violet, Neroli, Rose", base: "Vetiver, Musk, Cedarwood" },
     description: "Inspired by an African cultural movement in 1920s Paris. A sunny, optimistic journey.",
     rating: 4.8,
     reviews: 31,
@@ -263,7 +263,7 @@ const KA_PRODUCTS = [
     name: "N/A",
     category: "niche",
     badge: null,
-    notes: { top: "Tobacco Leaf, Spice", heart: "Vanilla, Cacao, Tonka Bean", base: "Dry Fruit, Wood Sap" },
+    notes: { top: "N/A", heart: "Vanilla, Cacao, Tonka Bean", base: "Dry Fruit, Wood Sap" },
     description: "The richest private blend. Decadent tobacco enriched with vanilla and spice.",
     rating: 4.9,
     reviews: 62,
@@ -283,7 +283,7 @@ const KA_PRODUCTS = [
     name: "N/A",
     category: "niche",
     badge: null,
-    notes: { top: "Apple, Cardamom, Bergamot", heart: "Jasmine, Geranium, Violet", base: "Sandalwood, Vanilla, Musk" },
+    notes: { top: "N/A", heart: "Jasmine, Geranium, Violet", base: "Sandalwood, Vanilla, Musk" },
     description: "A celebrated crowd-pleaser. Fresh apple opening evolving into creamy, smooth vanilla musk.",
     rating: 4.8,
     reviews: 54,
@@ -305,17 +305,18 @@ const KA_PRODUCTS = [
     category: "summer-samples",
     badge: "summer-samples",
     badgeLabel: "Summer Samples",
-    notes: { top: "N/A", heart: "N/A", base: "N/A" },
+    notes: { top: "Coconut, Lime, Saffron", heart: "N/A", base: "N/A" },
     description: "Experience the ultimate summer vibe with a fresh decant.",
     rating: 5.0,
     reviews: 12,
     inStock: true,
-    image: "assets/images/no-picture.png",
+    image: "assets/images/city.jpg",
     tags: ["fresh", "summer"],
     variants: [
-      { size: "2ml", type: "decant", price: 15 },
-      { size: "5ml", type: "decant", price: 29 },
-      { size: "10ml", type: "decant", price: 49 }
+      { size: "2ml", type: "decant", price: 12 },
+      { size: "5ml", type: "decant", price: 25 },
+      { size: "10ml", type: "decant", price: 50 },
+      { size: "30ml", type: "full", price: 140 }
     ]
   },
   {
@@ -325,17 +326,16 @@ const KA_PRODUCTS = [
     category: "summer-samples",
     badge: "summer-samples",
     badgeLabel: "Summer Samples",
-    notes: { top: "N/A", heart: "N/A", base: "N/A" },
+    notes: { top: "Blackcurrant, Rosemary, Blackberry, Bergamot", heart: "N/A", base: "N/A" },
     description: "A vibrant and exotic summer fragrance.",
     rating: 4.8,
     reviews: 8,
     inStock: true,
-    image: "assets/images/no-picture.png",
+    image: "assets/images/pink.jpg",
     tags: ["fresh", "summer", "fruity"],
     variants: [
-      { size: "2ml", type: "decant", price: 15 },
-      { size: "5ml", type: "decant", price: 29 },
-      { size: "10ml", type: "decant", price: 49 }
+      { size: "2ml", type: "decant", price: 18 },
+      { size: "5ml", type: "decant", price: 40 }
     ]
   },
   {
@@ -345,39 +345,19 @@ const KA_PRODUCTS = [
     category: "summer-samples",
     badge: "summer-samples",
     badgeLabel: "Summer Samples",
-    notes: { top: "N/A", heart: "N/A", base: "N/A" },
+    notes: { top: "Mango, Lemon, Ginger, Red Berries", heart: "N/A", base: "N/A" },
     description: "An intense, legendary summer scent.",
     rating: 5.0,
     reviews: 34,
     inStock: true,
-    image: "assets/images/no-picture.png",
+    image: "assets/images/gof.jpg",
     tags: ["fresh", "summer", "fruity"],
     variants: [
-      { size: "2ml", type: "decant", price: 15 },
-      { size: "5ml", type: "decant", price: 29 },
-      { size: "10ml", type: "decant", price: 49 }
+      { size: "2ml", type: "decant", price: 18 },
+      { size: "5ml", type: "decant", price: 40 }
     ]
   },
-  {
-    id: 104,
-    brand: "Room 1015",
-    name: "Wave child",
-    category: "summer-samples",
-    badge: "summer-samples",
-    badgeLabel: "Summer Samples",
-    notes: { top: "N/A", heart: "N/A", base: "N/A" },
-    description: "Ride the wave with this refreshing summer sample.",
-    rating: 4.7,
-    reviews: 19,
-    inStock: true,
-    image: "assets/images/no-picture.png",
-    tags: ["fresh", "summer", "aquatic"],
-    variants: [
-      { size: "2ml", type: "decant", price: 15 },
-      { size: "5ml", type: "decant", price: 29 },
-      { size: "10ml", type: "decant", price: 49 }
-    ]
-  },
+
   // ── WINTER SAMPLES ─────────────────────────────────────────
   {
     id: 105,
