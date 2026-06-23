@@ -347,16 +347,12 @@ function buildProductCard(product) {
 
   return `
     <div class="product-card fade-in ${product.isSignature ? 'signature-card' : ''}" data-id="${product.id}" data-category="${product.category}" id="card-${product.id}">
-      <div class="product-card-img">
+      <div class="product-card-img" onclick="openPQV(${product.id})" style="cursor:pointer;">
         <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.src='assets/images/decants.png'">
         ${badge}
         ${!product.inStock ? `<div class="product-card-soldout">Sold Out</div>` : ''}
         <div class="product-card-overlay">
-          <button class="btn btn-amber" style="flex:1;justify-content:center;"
-                  onclick="addSelectedVariant(${product.id})"
-                  ${!product.inStock ? 'disabled' : ''}>
-            ${product.inStock ? '<i class="fas fa-shopping-bag"></i> Add to Cart' : 'Sold Out'}
-          </button>
+          <span class="pqv-hint"><i class="fas fa-expand-alt"></i> View Details</span>
         </div>
       </div>
       <div class="product-card-body">
@@ -381,6 +377,95 @@ function buildProductCard(product) {
       ${embersHTML}
     </div>`;
 }
+
+/* ── Product Quick-View Modal ── */
+function openPQV(productId) {
+  const p = KA_PRODUCTS.find(x => x.id === productId);
+  if (!p) return;
+  const stars = '★'.repeat(Math.round(p.rating)) + '☆'.repeat(5 - Math.round(p.rating));
+  const vials = p.variants.map((v, i) => `
+    <button class="vial-option ${i === 0 ? 'active' : ''}"
+            data-idx="${i}"
+            onclick="pqvSelectVariant(${p.id}, ${i}, this)"
+            title="${v.size}">
+      <div class="vial-tube">
+        <div class="vial-cap"></div>
+        <div class="vial-liquid" style="--fill:${vialFill(v.size)}"></div>
+      </div>
+      <span class="vial-size">${v.size}</span>
+      <span class="vial-price">A$${v.price >= 1000 ? (v.price/1000).toFixed(1)+'k' : v.price}</span>
+    </button>`).join('');
+
+  document.getElementById('pqv-inner').innerHTML = `
+    <div class="pqv-img-col">
+      <img src="${p.image}" alt="${p.name}" onerror="this.src='assets/images/decants.png'">
+      ${!p.inStock ? '<div class="pqv-soldout-banner">Sold Out</div>' : ''}
+    </div>
+    <div class="pqv-info-col">
+      <div class="product-card-brand" style="font-size:0.7rem;margin-bottom:0.5rem;">${p.brand}</div>
+      <h2 class="pqv-title">${p.name}</h2>
+      <div class="product-card-stars" style="margin-bottom:1rem;">
+        <span class="stars-val">${stars}</span>
+        <span class="stars-count">(${p.reviews} reviews)</span>
+      </div>
+      <p class="pqv-desc">${p.description}</p>
+      <div class="pqv-notes">
+        ${p.notes.top !== 'N/A' ? `<div class="pqv-note"><span class="pqv-note-label">Top</span><span class="pqv-note-val">${p.notes.top}</span></div>` : ''}
+        ${p.notes.heart !== 'N/A' ? `<div class="pqv-note"><span class="pqv-note-label">Heart</span><span class="pqv-note-val">${p.notes.heart}</span></div>` : ''}
+        ${p.notes.base !== 'N/A' ? `<div class="pqv-note"><span class="pqv-note-label">Base</span><span class="pqv-note-val">${p.notes.base}</span></div>` : ''}
+      </div>
+      <div class="vial-selector" style="margin-bottom:1.5rem;" data-product-id="pqv-${p.id}">${vials}</div>
+      <div class="pqv-price-row">
+        <div>
+          <div class="product-card-price" id="pqv-price-${p.id}" style="font-size:1.6rem;">${formatPrice(p.variants[0].price)}</div>
+          <div class="product-card-size-label" id="pqv-size-label-${p.id}">${p.variants[0].size} ${p.variants[0].type === 'decant' ? 'Decant' : 'Bottle'}</div>
+        </div>
+      </div>
+      <div class="pqv-actions">
+        <button class="btn btn-amber" style="flex:1;justify-content:center;"
+          onclick="pqvAddToCart(${p.id})" ${!p.inStock ? 'disabled' : ''}>
+          <i class="fas fa-shopping-bag"></i> ${p.inStock ? 'Add to Cart' : 'Sold Out'}
+        </button>
+        <button class="btn btn-ghost" onclick="closePQV()" style="padding:0.8rem 1.2rem;">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>`;
+
+  document.getElementById('pqv-overlay').classList.add('open');
+  document.getElementById('pqv-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePQV() {
+  document.getElementById('pqv-overlay').classList.remove('open');
+  document.getElementById('pqv-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+const pqvVariants = {};
+function pqvSelectVariant(productId, idx, btn) {
+  pqvVariants[productId] = idx;
+  const p = KA_PRODUCTS.find(x => x.id === productId);
+  const v = p.variants[idx];
+  const priceEl = document.getElementById(`pqv-price-${productId}`);
+  const labelEl = document.getElementById(`pqv-size-label-${productId}`);
+  if (priceEl) priceEl.textContent = formatPrice(v.price);
+  if (labelEl) labelEl.textContent = `${v.size} ${v.type === 'decant' ? 'Decant' : 'Bottle'}`;
+  btn.closest('.vial-selector').querySelectorAll('.vial-option').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function pqvAddToCart(productId) {
+  const p = KA_PRODUCTS.find(x => x.id === productId);
+  if (!p || !p.inStock) return;
+  Cart.add(p, pqvVariants[productId] ?? 0);
+  closePQV();
+}
+
+/* Close modal on Escape key */
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePQV(); });
+
 
 /* ── Track selected variant per product ── */
 const selectedVariants = {};
