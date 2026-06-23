@@ -867,8 +867,8 @@ h1, h2, h3, h4 {
 .tf-showcase {
   position: relative;
   overflow: hidden;
-  padding: 7rem 0;
-  background: url('../assets/images/Topaz flame banner.webp') center/cover no-repeat;
+  padding: 4rem 0;
+  background: url('../assets/images/Topaz flame banner.webp') right center/cover no-repeat;
 }
 .tf-showcase::before {
   content: '';
@@ -960,11 +960,11 @@ h1, h2, h3, h4 {
 .tf-stars { color: var(--amber-400); font-size: 0.85rem; }
 .tf-rating-text { font-size: var(--text-sm); color: var(--text-muted); }
 .tf-desc {
-  font-size: var(--text-base);
+  font-size: 0.92rem;
   color: var(--text-secondary);
-  line-height: 1.9;
-  margin-bottom: 2rem;
-  max-width: 460px;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
 }
 .tf-notes {
   display: flex;
