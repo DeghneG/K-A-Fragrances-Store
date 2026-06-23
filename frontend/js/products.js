@@ -27,6 +27,26 @@ const KA_PRODUCTS = [
 
   // â”€â”€ MIDDLE EASTERN â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
+    id: 11,
+    brand: "Mykonos",
+    name: "Dreamscape",
+    category: "middle-eastern",
+    badge: "hot",
+    badgeLabel: "Best Seller",
+    notes: { top: "Mango, Lemon, Rhubarb", heart: "Rose, Jasmine, Birch", base: "Musk, Oakmoss, Ambergris" },
+    description: "The legendary king of fragrances. Iconic, timeless, and unmatched in versatility.",
+    rating: 5.0,
+    reviews: 88,
+    inStock: true,
+    image: "assets/images/dreamscape.jpg",
+    tags: ["fresh", "fruity", "woody", "musk", "middle-eastern"],
+    variants: [
+      { size: "2ml",  type: "decant", price: 7 },
+      { size: "5ml",  type: "decant", price: 16 },
+      { size: "10ml", type: "decant", price: 30 }
+    ]
+  },
+  {
     id: 1,
     brand: "Rasasi",
     name: "N/A",
@@ -237,46 +257,7 @@ const KA_PRODUCTS = [
       { size: "30ml", type: "full",   price: 110 }
     ]
   },
-  {
-    id: 11,
-    brand: "Mykonos",
-    name: "Dreamscape",
-    category: "middle-eastern",
-    badge: "hot",
-    badgeLabel: "Best Seller",
-    notes: { top: "Mango, Lemon, Rhubarb", heart: "Rose, Jasmine, Birch", base: "Musk, Oakmoss, Ambergris" },
-    description: "The legendary king of fragrances. Iconic, timeless, and unmatched in versatility.",
-    rating: 5.0,
-    reviews: 88,
-    inStock: true,
-    image: "assets/images/dreamscape.jpg",
-    tags: ["fresh", "fruity", "woody", "musk", "niche"],
-    variants: [
-      { size: "2ml",  type: "decant", price: 7 },
-      { size: "5ml",  type: "decant", price: 16 },
-      { size: "10ml", type: "decant", price: 30 }
-    ]
-  },
-  {
-    id: 12,
-    brand: "Tom Ford",
-    name: "N/A",
-    category: "niche",
-    badge: null,
-    notes: { top: "N/A", heart: "Vanilla, Cacao, Tonka Bean", base: "Dry Fruit, Wood Sap" },
-    description: "The richest private blend. Decadent tobacco enriched with vanilla and spice.",
-    rating: 4.9,
-    reviews: 62,
-    inStock: true,
-    image: "assets/images/no-picture.png",
-    tags: ["oriental", "vanilla", "tobacco", "spicy", "niche"],
-    variants: [
-      { size: "2ml",  type: "decant", price: 219 },
-      { size: "5ml",  type: "decant", price: 459 },
-      { size: "10ml", type: "decant", price: 849 },
-      { size: "50ml", type: "full",   price: 9800 }
-    ]
-  },
+
   {
     id: 13,
     brand: "Parfums de Marly",
@@ -513,6 +494,103 @@ const KA_PRODUCTS = [
     inStock: false,
     image: "assets/images/no-picture.png",
     tags: ["summer-samples"],
+    variants: [{ size: "TBA", type: "decant", price: 0 }]
+  },
+  // ── ALL SEASONS placeholders ──────────────────────────────
+  {
+    id: 114,
+    brand: "",
+    name: "Topaz Flame",
+    category: "all-season",
+    badge: "all-season",
+    badgeLabel: "All Season",
+    notes: { top: "N/A", heart: "N/A", base: "N/A" },
+    description: "",
+    rating: 0,
+    reviews: 0,
+    inStock: false,
+    image: "assets/images/no-picture.png",
+    tags: ["all-season"],
+    variants: [{ size: "TBA", type: "decant", price: 0 }]
+  },
+  {
+    id: 115,
+    brand: "",
+    name: "Vibrato",
+    category: "all-season",
+    badge: "all-season",
+    badgeLabel: "All Season",
+    notes: { top: "N/A", heart: "N/A", base: "N/A" },
+    description: "",
+    rating: 0,
+    reviews: 0,
+    inStock: false,
+    image: "assets/images/no-picture.png",
+    tags: ["all-season"],
+    variants: [{ size: "TBA", type: "decant", price: 0 }]
+  },
+  {
+    id: 116,
+    brand: "",
+    name: "Ingenious ginger",
+    category: "all-season",
+    badge: "all-season",
+    badgeLabel: "All Season",
+    notes: { top: "N/A", heart: "N/A", base: "N/A" },
+    description: "",
+    rating: 0,
+    reviews: 0,
+    inStock: false,
+    image: "assets/images/no-picture.png",
+    tags: ["all-season"],
+    variants: [{ size: "TBA", type: "decant", price: 0 }]
+  },
+  {
+    id: 117,
+    brand: "",
+    name: "YSL Myself",
+    category: "all-season",
+    badge: "all-season",
+    badgeLabel: "All Season",
+    notes: { top: "N/A", heart: "N/A", base: "N/A" },
+    description: "",
+    rating: 0,
+    reviews: 0,
+    inStock: false,
+    image: "assets/images/no-picture.png",
+    tags: ["all-season"],
+    variants: [{ size: "TBA", type: "decant", price: 0 }]
+  },
+  {
+    id: 118,
+    brand: "",
+    name: "Wulong Cha X",
+    category: "all-season",
+    badge: "all-season",
+    badgeLabel: "All Season",
+    notes: { top: "N/A", heart: "N/A", base: "N/A" },
+    description: "",
+    rating: 0,
+    reviews: 0,
+    inStock: false,
+    image: "assets/images/no-picture.png",
+    tags: ["all-season"],
+    variants: [{ size: "TBA", type: "decant", price: 0 }]
+  },
+  {
+    id: 119,
+    brand: "",
+    name: "Rouge Trafalgar",
+    category: "all-season",
+    badge: "all-season",
+    badgeLabel: "All Season",
+    notes: { top: "N/A", heart: "N/A", base: "N/A" },
+    description: "",
+    rating: 0,
+    reviews: 0,
+    inStock: false,
+    image: "assets/images/no-picture.png",
+    tags: ["all-season"],
     variants: [{ size: "TBA", type: "decant", price: 0 }]
   }
 ];
