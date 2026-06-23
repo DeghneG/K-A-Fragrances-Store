@@ -659,7 +659,7 @@ const KA_CATEGORIES = [
     id: "designer",
     name: "Designer",
     description: "Iconic Houses & Global Signatures",
-    image: "assets/images/desugner.jpeg",
+    image: "assets/images/designer.jpg",
     icon: "ðŸ‘‘",
     count: KA_PRODUCTS.filter(p => p.category === "designer").length
   },
