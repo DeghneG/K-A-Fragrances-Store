@@ -185,7 +185,7 @@
   <div class="container">
     <span class="label">Our Collection</span>
     <div class="amber-rule" style="margin:0.75rem 0"></div>
-    <h1>Shop All Fragrances</h1>
+    <h1 id="shop-title">Shop All Fragrances</h1>
     <p style="color:var(--text-muted);margin-top:.5rem;font-size:.9rem;line-height:1.8;">
       100% original perfumes — full bottles &amp; decants available for every fragrance
     </p>
@@ -378,6 +378,19 @@
       observeFadeIns(grid);
     }
     document.getElementById('shop-count').textContent = `Showing ${products.length} of ${KA_PRODUCTS.length} fragrances`;
+    
+    // Update title based on category
+    const titleEl = document.getElementById('shop-title');
+    if (titleEl) {
+      if (filters.category === 'all') {
+        titleEl.textContent = 'Shop All Fragrances';
+      } else {
+        const activeChip = document.querySelector(`.filter-chip[data-filter="category"][data-val="${filters.category}"]`);
+        if (activeChip) {
+          titleEl.textContent = 'Shop ' + activeChip.textContent;
+        }
+      }
+    }
   }
 
   // ── FILTER CHIPS ──
