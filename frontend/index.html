@@ -170,31 +170,16 @@
   <div class="marquee-track" id="marquee-track"></div>
 </div>
 
-<!-- CATEGORY FILTER BAR -->
-<div class="cat-bar-wrap">
-  <div class="container">
-    <div class="cat-bar" id="cat-bar">
-      <button class="cat-pill active" data-cat="all">All</button>
-      <button class="cat-pill" data-cat="middle-eastern">Middle Eastern</button>
-      <button class="cat-pill" data-cat="designer">Designer</button>
-      <button class="cat-pill" data-cat="niche">Niche</button>
-      <button class="cat-pill" data-cat="signature">Topaz Flame</button>
-    </div>
-  </div>
-</div>
-
-<!-- FEATURED PRODUCTS -->
-<section class="section" style="background:var(--surface);padding-top:4rem;padding-bottom:5rem;">
-  <div class="container">
+<!-- SHOP BY CATEGORY -->
+<section class="section">
+  <div class="container" style="max-width: 1650px;">
     <div class="section-heading fade-in">
-      <span class="label">Hand-Picked</span>
+      <span class="label">Collections</span>
       <div class="amber-rule"></div>
-      <h2>Featured Fragrances</h2>
-      <p>Best sellers and new arrivals loved by our community.</p>
+      <h2>Shop by Category</h2>
     </div>
-    <div class="products-grid" id="featured-grid"></div>
-    <div style="text-align:center;margin-top:3rem;" class="fade-in">
-      <a href="shop.html" class="btn btn-ghost">View All Fragrances <i class="fas fa-arrow-right"></i></a>
+    <div class="categories-wrap">
+      <div class="categories-grid" id="categories-grid"></div>
     </div>
   </div>
 </section>
@@ -257,16 +242,31 @@
 </section>
 <div class="tf-divider"></div>
 
-<!-- SHOP BY CATEGORY -->
-<section class="section">
-  <div class="container" style="max-width: 1650px;">
-    <div class="section-heading fade-in">
-      <span class="label">Collections</span>
-      <div class="amber-rule"></div>
-      <h2>Shop by Category</h2>
+<!-- CATEGORY FILTER BAR -->
+<div class="cat-bar-wrap">
+  <div class="container">
+    <div class="cat-bar" id="cat-bar">
+      <button class="cat-pill active" data-cat="all">All</button>
+      <button class="cat-pill" data-cat="middle-eastern">Middle Eastern</button>
+      <button class="cat-pill" data-cat="designer">Designer</button>
+      <button class="cat-pill" data-cat="niche">Niche</button>
+      <button class="cat-pill" data-cat="signature">Topaz Flame</button>
     </div>
-    <div class="categories-wrap">
-      <div class="categories-grid" id="categories-grid"></div>
+  </div>
+</div>
+
+<!-- FEATURED PRODUCTS -->
+<section class="section" style="background:var(--surface);padding-top:4rem;padding-bottom:5rem;">
+  <div class="container">
+    <div class="section-heading fade-in">
+      <span class="label">Hand-Picked</span>
+      <div class="amber-rule"></div>
+      <h2>Featured Fragrances</h2>
+      <p>Best sellers and new arrivals loved by our community.</p>
+    </div>
+    <div class="products-grid" id="featured-grid"></div>
+    <div style="text-align:center;margin-top:3rem;" class="fade-in">
+      <a href="shop.html" class="btn btn-ghost">View All Fragrances <i class="fas fa-arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -348,14 +348,14 @@
   // ── HERO SLIDER ──
   const heroSlides = document.querySelectorAll('.hero-bg-slide');
   let currentSlide = 0;
-  let slideInterval = setInterval(nextSlide, 7000);
+  let slideInterval = setInterval(nextSlide, 5000);
   function showSlide(i) {
     heroSlides.forEach(s => s.classList.remove('active'));
     heroSlides[i].classList.add('active');
   }
   function nextSlide() { currentSlide = (currentSlide + 1) % heroSlides.length; showSlide(currentSlide); resetInterval(); }
   function prevSlide() { currentSlide = (currentSlide - 1 + heroSlides.length) % heroSlides.length; showSlide(currentSlide); resetInterval(); }
-  function resetInterval() { clearInterval(slideInterval); slideInterval = setInterval(nextSlide, 7000); }
+  function resetInterval() { clearInterval(slideInterval); slideInterval = setInterval(nextSlide, 5000); }
 
   // ── MARQUEE ──
   const marqueeItems = ['Designer Brands', 'Middle Eastern Oud', 'Niche Fragrances', 'Decants from 2ml', '100% Original', 'Best Price Guarantee', 'Topaz Flame'];
